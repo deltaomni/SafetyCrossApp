@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     //Global Variables
     let isPWA = true;  // Enables or disables the service worker and PWA
     let isAJAX = true; // AJAX transitions. Requires local server or server
-    var pwaName = "Appkit"; //Local Storage Names for PWA
+    //var pwaName = "Appkit"; //Local Storage Names for PWA
+    var pwaName = "Safety Cross"; //Local Storage Names for PWA
     var pwaRemind = 1; //Days to re-remind to add to home
     var pwaNoCache = false; //Requires server and HTTPS/SSL. Will clear cache with each visit
 
@@ -579,8 +580,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     const latitude  = position.coords.latitude;
                     const longitude = position.coords.longitude;
                     locationCoordinates.innerHTML = '<strong>Longitude:</strong> ' + longitude + '<br><strong>Latitude:</strong> '+ latitude;
-                    var mapL1 = 'https://www.google.com/maps/embed/v1/view?key=AIzaSyAM3nxDVrkjyKwdIZp8QOplmBKLRVI5S_Y&center=';
-                    var mapL2 = latitude+',';
+                    //var mapL1 = 'https://www.google.com/maps/embed/v1/view?key=AIzaSyAM3nxDVrkjyKwdIZp8QOplmBKLRVI5S_Y&center=';
+                    var mapL1 = 'https://www.google.com/maps/embed/v1/view?key=AIzaSyC8F1bVIGsP_nHBaOBgBpDCsRd-LYeFUsA&center=';
+                    var mapL2 = latitude + ',';
                     var mapL3 = longitude;
                     var mapL4 = '&zoom=16&maptype=satellite'
                     var mapL5 = ''
