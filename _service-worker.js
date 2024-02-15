@@ -36,6 +36,8 @@ var REQUIRED_FILES = [
 	'fonts/webfonts/fa-solid-900.woff2',
 	// Images
 	'images/empty.png',
+	// Mapomega
+	'mapomega/mo500_blob_putimage.js',
 ];
 
 // Service Worker Diagnostic. Set true to get console logs.
