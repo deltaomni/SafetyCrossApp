@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\mapomega",
+    "\\mapomega\\img"
   ],
-  "SelectedNode": "\\C:\\Users\\mapomega_01\\source\\repos\\MO500_FS\\SC23MVP500\\wwwroot\\App_web\\SafetyCrossApp",
+  "SelectedNode": "\\_service-worker.js",
   "PreviewInSolutionExplorer": false
 }
