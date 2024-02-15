@@ -131,8 +131,10 @@ function moblob_f_display_image(readXml, img, imgid) {
         objectUrl = readXml;
     }
     img1.onload = function () {
-
-        var scalew = 240 / this.width;
+        var vw = window.innerWidth - 20
+        var vw1 = window.outerWidth;
+        console.log(vw,vw1);
+        var scalew = vw / this.width;
         var scaleh = scalew;
 
         var imgw = Math.round(this.width * scalew);
@@ -217,6 +219,12 @@ async function moblob_io_toblob() {
             moblob_endPostItem(directoryfiles,container)//
         })
         .catch(error => console.error('Unable to add item.', error));
+
+    /// ok msg
+    var toastId = "moblob_toast-1";
+    var toastTitle = "Sucesso!";
+    var toastBody = "Aviso de Atenção enviado.";
+    moblob_f_showtoastOK(toastId, toastTitle, toastBody)
 }
 
 function moblob_f_removeFromBlob() {
@@ -270,15 +278,15 @@ function moblob_f_getimageurl(img) {
 }
 
 
-function moblob_endPostItem(directoryfiles,container) {
+function moblob_endPostItem(directoryfiles, container) {
     if (!container) {
         container = _defaultContainer;
     }
     console.log(directoryfiles)
 
-   var pathfile = _path + container + "/";
+    var pathfile = _path + container + "/";
     var directory = []
-    
+
 
     if (!directoryfiles) {
         console.log(null)
@@ -286,7 +294,7 @@ function moblob_endPostItem(directoryfiles,container) {
     }
     directory = directoryfiles.split(",")
 
-    // console.log(directory)
+
     var imgHtml = "";
     var thumb = "";
 
@@ -297,8 +305,18 @@ function moblob_endPostItem(directoryfiles,container) {
             imgHtml += thumb;
         }
     }
-     console.log(imgHtml)
+    // console.log(imgHtml)
     document.getElementById("blob_images").innerHTML = imgHtml;
+
+}
+
+function moblob_f_showtoastOK(toastId, toastTitle, toastBody) {
+
+    _(toastId + "-title").innerHTML = toastTitle;
+    _(toastId + "-body").innerHTML = toastBody;
+    var toastID = _(toastId);
+    toastID = new bootstrap.Toast(toastID);
+    toastID.show();
 }
 
 function moblob_f_displaySelectedImage(ev, container) {
