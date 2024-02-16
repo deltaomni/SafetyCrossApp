@@ -53,7 +53,7 @@ function _(el) {
 async function moblob_f_getMetaData(el) {
     var image = await moblob_f_serialize_image(el.target, _blobSelectedImageId);
     _(_blobSelectedImageId).removeAttribute("imgId")
-    moblob_f_displayImgAttributes(image);
+   // moblob_f_displayImgAttributes(image);
 }
 
 function moblob_f_displayImgAttributes(image) {
@@ -123,7 +123,6 @@ function moblob_f_display_image(readXml, img, imgid) {
     image.classList.add("loaded");
     image.style = "background-image: url(" + readXml + ")";
 
-
     img1 = new Image();
     if (img) {
         var objectUrl = _URL.createObjectURL(img);
@@ -131,10 +130,10 @@ function moblob_f_display_image(readXml, img, imgid) {
         objectUrl = readXml;
     }
     img1.onload = function () {
-        var vw = window.innerWidth - 20
+        var vw = window.innerWidth - 50
         var vw1 = window.outerWidth;
         console.log(vw,vw1);
-        var scalew = vw / this.width;
+         var scalew = vw / this.width;
         var scaleh = scalew;
 
         var imgw = Math.round(this.width * scalew);
@@ -147,8 +146,8 @@ function moblob_f_display_image(readXml, img, imgid) {
         //var htmlout = "</strong><br>";
         //var htmlend = "</small>";
 
-        _("moblob_size")
-            .innerHTML = "<strong>Size: </strong><small>w:" + this.width + "px, h:" + this.height + "px</small>";
+        //_("moblob_size")
+        //    .innerHTML = "<strong>Size: </strong><small>w:" + this.width + "px, h:" + this.height + "px</small>";
 
         _URL.revokeObjectURL(objectUrl);
     };
@@ -260,7 +259,7 @@ async function moblob_io_removeFromBlob(container, imgSrc) {
                 selectedImage.style = "";
                 selectedImage.removeAttribute("imgid");
                 selectedImage.classList.remove("loaded");
-                moblob_f_displayImgAttributes(null); // clear Details
+              //  moblob_f_displayImgAttributes(null); // clear Details
             }
         })
         .catch(error => console.error('Unable to delete item.', error));

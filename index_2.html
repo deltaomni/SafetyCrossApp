@@ -1,0 +1,514 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-741770V4ZG"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-741770V4ZG');
+	</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+	<title>Safety Cross App</title>
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
+	<link rel="stylesheet" type="text/css" href="mapomega/mo500appstyle.css" />
+    <link rel="manifest" href="_manifest.json">
+	<!--<link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">-->
+	<link rel="apple-touch-icon" sizes="57x57" href="https://www.safetycross.app/app/icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="https://www.safetycross.app/app/icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="https://www.safetycross.app/app/icons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="https://www.safetycross.app/app/icons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="https://www.safetycross.app/app/icons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="https://www.safetycross.app/app/icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="https://www.safetycross.app/app/icons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="https://www.safetycross.app/app/icons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://www.safetycross.app/app/icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="https://www.safetycross.app/app/icons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://www.safetycross.app/app/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="https://www.safetycross.app/app/icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://www.safetycross.app/app/icons/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+</head>
+
+<body class="theme-light">
+
+    <div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+
+    <div id="page">
+
+        <div class="header header-fixed header-logo-left">
+            <h2><a href="index.html" class="header-title mo-1">Safety Cross</a></h2>
+            <!--<a href="#" data-back-button class="header-icon header-icon-4"><i class="fas fa-chevron-left"></i></a>-->
+            <a href="#" class="header-icon icon-l header-icon-2 me-4 color-theme">
+                <!--<i class="fas fa-warning pe-3"></i>-->
+                <svg class="mo-ic" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12,2L1,21H23M12,6L19.53,19H4.47M11,10V14H13V10M11,16V18H13V16" />
+                </svg>
+                <span class="position-absolute bottom-50 end-0 translate-end p-1 me-2 mb-1 bg-danger  rounded-circle">
+                    <span class="visually-hidden">New alerts</span>
+                </span>
+            </a>
+            <a href="#" class="header-icon icon-l header-icon-1 me-3 color-theme">
+                <!--<i class="fas fa-share"></i>-->
+                <svg class="mo-ic-28" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M14,5V9C7,10 4,15 3,20C5.5,16.5 9,14.9 14,14.9V19L21,12L14,5M16,9.83L18.17,12L16,14.17V12.9H14C11.93,12.9 10.07,13.28 8.34,13.85C9.74,12.46 11.54,11.37 14.28,11L16,10.73V9.83Z" />
+                </svg>
+            </a>
+        </div>
+        <div class="header header-fixed header-logo-center header-auto-show">
+            <h2><a href="index.html" class="header-title mo-1">Supra Ltda.</a></h2>
+            <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-chevron-left"></i></a>
+            <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
+            <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-dark"><i class="fas fa-sun"></i></a>
+            <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-light"><i class="fas fa-moon"></i></a>
+        </div>
+
+        <div id="footer-bar" class="footer-bar-6">
+            <a href="index-components.html"><i class="fa fa-layer-group"></i><span>Features</span></a>
+            <a href="index-pages.html" class="active-nav"><i class="fa fa-file"></i><span>Pages</span></a>
+            <a href="index.html" class="mo_1 circle-nav">
+                <i><img width="54" src="mapomega/img/SC_523_Short_24x24.svg" /></i>
+            </a>
+            <!--<a href="index.html" class="circle-nav"><i class="fa fa-home"></i><span>Welcome</span></a>-->
+            <!--<a href="index-projects.html"><i class="fa fa-camera"></i><span>Projects</span></a>-->
+            <a data-menu="menu-cart" href="#"><i class="fa fa-camera"></i><span>Projects</span></a>
+            <a href="#" data-menu="menu-main"><i class="fa fa-bars"></i><span>Menu</span></a>
+        </div>
+
+        <!--<div class="card card-fixed mb-n5 rounded-0" style="background-image:url(images/pets/6m.jpg)" data-card-height="550">-->
+        <div class="card card-fixed mb-n5 rounded-0 mo-1" data-card-height="540">
+
+            <!--<div class="card-top pe-3">
+                <div class="d-flex flex-row justify-content-end mt-2 ms-3">
+                </div>
+            </div>-->
+            <div class="card-bottom mo-1 p-3 pb-4">
+                <div class="d-flex flex-column">
+                    <div class="d-flex flex-row mb-2">
+                        <!--<div class="flex-fill">
+                        <p class="mb-0 font-14 font-700 color-white opacity-70">Americal Pitbull</p>
+                        <h1 class="color-white font-30 font-800 mb-0">Maximus</h1>
+                        </div>-->
+                        <div class="flex-fill">
+                            <p class="mb-0 font-14 font-700 color-highlight opacity-70">São Paulo, SP</p>
+                            <h1 class="color-theme font-30 font-800 mb-0">Supra Ltda.</h1>
+                        </div>
+                        <!--Record-->
+                        <div class="col-2 ms-auto text-center align-self-center text-success">
+                            <svg class="mo-ic-32" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M18 2C17.1 2 16 3 16 4H8C8 3 6.9 2 6 2H2V11C2 12 3 13 4 13H6.2C6.6 15 7.9 16.7 11 17V19.08C8 19.54 8 22 8 22H16C16 22 16 19.54 13 19.08V17C16.1 16.7 17.4 15 17.8 13H20C21 13 22 12 22 11V2H18M6 11H4V4H6V11M16 11.5C16 13.43 15.42 15 12 15C8.59 15 8 13.43 8 11.5V6H16V11.5M20 11H18V4H20V11Z" />
+                            </svg>
+                            <h5 class="text-success mb-0">188 d</h5>
+                        </div>
+
+                        <!--Days since last acc-->
+                        <div class="col-2 me-auto text-center align-self-center color-red-light">
+                            <svg class="mo-ic-32" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M12,2L1,21H23M12,6L19.53,19H4.47M11,10V14H13V10M11,16V18H13V16" />
+                            </svg>
+                            <h5 class="color-red-light mb-0">0 d</h5>
+                        </div>
+                    </div>
+                    <div class="splide story-slider slider-no-dots mb-4" id="story-slider">
+                        <div class="splide__track">
+                            <div class="splide__list">
+                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="images/pictures/1s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">PWA</span></a></div>
+                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="images/pictures/31s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">Mobile</span></a></div>
+                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="images/pictures/25s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">Bootstrap</span></a></div>
+                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="images/pictures/22s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">Dark</span></a></div>
+                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="images/pictures/16s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">Flexbile</span></a></div>
+                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="images/pictures/12s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">Trending</span></a></div>
+                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="images/pictures/1s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">PWA</span></a></div>
+                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="images/pictures/31s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">Mobile</span></a></div>
+                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="images/pictures/25s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">Bootstrap</span></a></div>
+                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="images/pictures/22s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">Dark</span></a></div>
+                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="images/pictures/16s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">Flexbile</span></a></div>
+                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="images/pictures/12s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">Trending</span></a></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!--<p class="color-white opacity-80 pb-3 pt-2">
+            Max is an adorable pupper that is looking for a forever home. He's big, but don't be fooled! His love and affection is even bigger!
+        </p>-->
+            </div>
+            <!--<div class="card-overlay bg-gradient mo-1 rounded-0"></div>-->
+            <div class="card-overlay rounded-0"></div>
+        </div>
+        <div class="card card-clear" data-card-height="560"></div>
+
+
+        <div class="page-content pb-3">
+
+            <div class="card card-full rounded-m pb-4">
+                <div class="drag-line"></div>
+
+
+                <div class="content mb-n2">
+                    <div class="row mb-0">
+                        <div class="col-7 pe-1">
+                            <div class="card card-style mb-3 mx-0" style="background-image:url(images/pets/8l.jpg);" data-card-height="350">
+                                <div class="card-bottom p-3">
+                                    <h2 class="color-white">Powerful</h2>
+                                    <p class="color-white opacity-60 line-height-s">
+                                        Max will guard you with his life. That's a certainty.
+                                    </p>
+                                </div>
+                                <div class="card-overlay bg-gradient opacity-30"></div>
+                                <div class="card-overlay bg-gradient"></div>
+                            </div>
+                        </div>
+                        <div class="col-5">
+
+                            <div class="card card-style mx-0 mb-2" style="background-image:url(images/pets/9l.jpg);" data-card-height="170">
+                                <!--<div class="card-bottom p-3">
+                            <h2 class="color-white mb-0">Smart</h2>
+                            <p class="color-white opacity-60 line-height-s font-12">
+                                He likes tricks!
+                            </p>
+                            </div>-->
+                                <div class="card-center text-start ps-4 pe-4">
+                                    <div class="p-0 m-4 mb-0 text-center">
+                                    </div>
+                                    <a data-menu="article-5" href="#" class="d-block mx-auto icon color-theme bg-theme icon-s rounded-sm scale-box icon-40"><i class="fa fa-circle"></i></a>
+                                </div>
+                                <div class="card-overlay bg-gradient opacity-30"></div>
+                                <div class="card-overlay bg-gradient"></div>
+                            </div>
+                            <div class="card card-style mx-0 mb-0" style="background-image:url(images/pets/7l.jpg);" data-card-height="170">
+                                <div class="card-bottom p-3">
+                                    <h2 class="color-white mb-0">Cuddly</h2>
+                                    <p class="color-white opacity-60 line-height-s font-12">
+                                        And belly rubs!
+                                    </p>
+                                </div>
+                                <div class="card-overlay bg-gradient opacity-30"></div>
+                                <div class="card-overlay bg-gradient"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="content mb-0">
+                    <div id="blob_images" class="row text-center row-cols-3 mb-0 mb-0">
+                        <!-- Blob Images -->
+                    </div>
+                </div>
+
+                <div class="content mt-2 mb-0">
+                    <div class="row">
+                        <div class="col-4">
+                            <span class="font-11">Breed</span>
+                            <p class="mt-n2 mb-1">
+                                <strong class="color-theme">Pitbull</strong>
+                            </p>
+                        </div>
+                        <div class="col-4">
+                            <span class="font-11">Vaccinated</span>
+                            <p class="mt-n2 mb-1">
+                                <strong class="color-theme">Yes</strong>
+                            </p>
+                        </div>
+                        <div class="col-4">
+                            <span class="font-11">Good with Kids</span>
+                            <p class="mt-n2 mb-1">
+                                <strong class="color-theme">Yes</strong>
+                            </p>
+                        </div>
+                        <div class="col-4">
+                            <span class="font-11">Energy</span>
+                            <p class="mt-n2 mb-1">
+                                <strong class="color-theme">7/10</strong>
+                            </p>
+                        </div>
+                        <div class="col-4">
+                            <span class="font-11">Weight</span>
+                            <p class="mt-n2 mb-1">
+                                <strong class="color-theme">23kg+</strong>
+                            </p>
+                        </div>
+                        <div class="col-4">
+                            <span class="font-11">Maintenance</span>
+                            <p class="mt-n2 mb-1">
+                                <strong class="color-theme">Medium</strong>
+                            </p>
+                        </div>
+                        <div class="col-4">
+                            <span class="font-11">Lifespan</span>
+                            <p class="mt-n2 mb-1">
+                                <strong class="color-theme">15+ Yrs</strong>
+                            </p>
+                        </div>
+                        <div class="col-4">
+                            <span class="font-11">Pedigree</span>
+                            <p class="mt-n2 mb-1">
+                                <strong class="color-theme">Yes</strong>
+                            </p>
+                        </div>
+                        <div class="col-4">
+                            <span class="font-11">Attitude</span>
+                            <p class="mt-n2 mb-1">
+                                <strong class="color-theme">Soft</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Emergência -->
+                <a href="https://wa.me/5521996485172" class="default-link card card-style mb-5 mt-n2"
+                   style="background-image:url('mapomega/img/whatsapp.svg');"
+                   data-card-height="100">
+                    <div class="card-center ps-3">
+                        <h1 class="color-white mb-n2 font-24">Emergência</h1>
+                        <p class="color-white opacity-70 mb-0">Use este canal em caso de emergência neste local.</p>
+                    </div>
+                    <div class="card-overlay bg-whatsapp opacity-60"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page content ends here-->
+    <!-------------->
+    <!-------------->
+    <!--Menu Cart -->
+    <!-------------->
+    <!-------------->
+
+    <div id="menu-cart"
+         class="menu menu-box-bottom rounded-m bg-theme"
+         data-menu-height="470">
+        <div class="menu-title">
+            <p class="color-highlight font-14 font-700 ">Novo</p>
+            <h1 class="font-800">Aviso de Atenção</h1>
+            <a href="#" class="close-menu"><i class="fa fa-times-circle"></i></a>
+        </div>
+
+        <div class="content">
+            <div class="d-flex flex-row m-0 mb-4 justify-content-center">
+                <div class="card2 m-0 p-0">
+                    <div class="card-img-top m-0 p-0 ">
+                        <div class="d-flex justify-content-center text-center m-0 p-0">
+                            <!--IMAGE TO INPUT-->
+                            <input id="moblob_input_image" type="file" multiple accept=".gif,.jpg,.jpeg,.png,.svg" class="form-control mo-1 bg-light text-center">
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+
+                                <div class="btn-group w-100" role="group" aria-label="Basic example">
+                                    <a href="#" id="moblob_copyimg" class="btn btn-primary">
+                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                        </svg>
+                                    </a>
+                                    <a href="#" id="moblob_openimg" class="btn btn-primary">
+                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="btn btn-primary disabled">
+                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M19.35,10.04C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.04C2.34,8.36 0,10.91 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.04M19,18H6A4,4 0 0,1 2,14C2,11.95 3.53,10.24 5.56,10.03L6.63,9.92L7.13,8.97C8.08,7.14 9.94,6 12,6C14.62,6 16.88,7.86 17.39,10.43L17.69,11.93L19.22,12.04C20.78,12.14 22,13.45 22,15A3,3 0 0,1 19,18M8,13H10.55V16H13.45V13H16L12,9L8,13Z" />
+                                        </svg>
+                                    </a>
+                                    <a href="#" id="moblob_erase" class="btn btn-danger">
+                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8,9H16V19H8V9M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="list-group-item" id="moblob_name"><strong>Name:</strong></li>
+                            <li class="list-group-item" id="moblob_size"><strong>Size:</strong></li>
+                            <li class="list-group-item" id="moblob_type"><strong>Type:</strong></li>
+                            <li class="list-group-item" id="moblob_modified"><strong>Modified:</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex mb-3">
+                <div>
+                    <img src="images/pictures/17s.jpg" class="rounded-sm" width="70">
+                </div>
+                <div class="w-100 ms-3 pt-1">
+                    <h6 class="font-500 font-14">Beats by Dre Studio  with carying pouch</h6>
+                    <h4 class="font-700 color-highlight">$98.<sup>50</sup></h4>
+                </div>
+                <div class="align-self-center me-n2">
+                    <a href="#" data-menu="menu-cart-item"><i class="fa fa-info-circle font-20 icon-20 ms-2 me-2"></i></a>
+                </div>
+            </div>
+
+            <div class="d-flex mb-3">
+                <div>
+                    <img src="images/pictures/18s.jpg" class="rounded-sm" width="70">
+                </div>
+                <div class="w-100 ms-3 pt-1">
+                    <h6 class="font-500 font-14">Apple Airpods 2nd Generation wireless charging.</h6>
+                    <h4 class="font-700 color-highlight">$199.<sup>50</sup></h4>
+                </div>
+                <div class="align-self-center me-n2">
+                    <a href="#" data-menu="menu-cart-item"><i class="fa fa-info-circle font-20 icon-20 ms-2 me-2"></i></a>
+                </div>
+            </div>
+
+            <div class="divider mb-2 mt-3"></div>
+
+            <div class="d-flex">
+                <div class="pe-4 w-60">
+                    <p class="font-600 color-highlight mb-0 font-13">Your Total</p>
+                    <h1>$2798<sup>.00</sup></h1>
+                </div>
+                <div class="w-100 pt-1">
+                    <h6 class="font-14 font-700">Shipping<span class="float-end color-green-dark">+$50</span></h6>
+                    <div class="divider mb-2 mt-1"></div>
+                    <h6 class="font-14 font-700">Taxes<span class="float-end color-red-dark">+$0.15</span></h6>
+                </div>
+            </div>
+
+            <div class="divider mt-2 mb-2"></div>
+
+            <div class="row">
+                <div class="col-6">
+                    <a href="#" class="close-menu btn btn-full gradient-red font-12 btn-m font-600 mt-3 rounded-s">Cancelar</a>
+                </div>
+                <div class="col-6">
+                    <a id="moblob_toblob" href="#" class="close-menu btn btn-full gradient-green font-12 btn-m font-600 mt-3 rounded-s">Enviar Aviso</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- article-5 -->
+    <div id="article-5"
+         class="menu menu-box-modal rounded-0"
+         data-menu-height="cover"
+         data-menu-width="cover">
+
+        <div class="card rounded-0 bg-18" data-card-height="500">
+            <div class="card-top pt-4 ps-3 pe-3">
+                <a href="#" class="close-menu icon icon-s rounded-l bg-theme "><i class="fa fa-times color-red-dark"></i></a>
+                <a href="#" class="float-end icon icon-s rounded-l bg-theme color-theme ms-3"><i class="fa fa-home"></i></a>
+                <a href="#" class="float-end icon icon-s rounded-l bg-theme color-theme ms-3 show-on-theme-light" data-toggle-theme><i class="fa fa-moon"></i></a>
+                <a href="#" class="float-end icon icon-s rounded-l bg-theme color-theme ms-3 show-on-theme-dark" data-toggle-theme><i class="fa fa-sun"></i></a>
+            </div>
+            <div class="card-bottom ps-3 pe-3 mb-5 pb-4">
+                <h1 class="color-white font-36">Modal Card</h1>
+                <p class="color-white opacity-50">
+                    This article will deploy from the top of the page. You can deploy articles from any part of the page you want.
+                </p>
+            </div>
+            <div class="card-overlay bg-gradient"></div>
+        </div>
+
+        <div class="card card-style card-full-right" style="margin-top:-100px; margin-bottom:-80px; z-index:1">
+            <div class="content">
+                <p class="mb-n1 color-highlight font-600">Awesome Article</p>
+                <h1>Read with Style</h1>
+                <p>It's difficult to design an article card that looks great on Mobile, not anymore. Appkit comes ready with designs that make your page look absolutely gorgeous. From here we'll keep writing with Lorem Ipsums o we can express the design even better. We know you'llhave your own awesome content to add here.</p>
+
+                <div class="row text-center row-cols-3 mb-0">
+                    <a class="col mb-4" data-gallery="gallery-1" href="images/pictures/27t.jpg" title="Vynil and Typerwritter"><img src="images/empty.png" data-src="images/pictures/32s.jpg" class="preload-img img-fluid rounded-xs" alt="img"></a>
+                    <a class="col mb-4" data-gallery="gallery-1" href="images/pictures/22t.jpg" title="Cream Cookie"><img src="images/empty.png" data-src="images/pictures/18s.jpg" class="preload-img img-fluid rounded-xs" alt="img"></a>
+                    <a class="col mb-4" data-gallery="gallery-1" href="images/pictures/23t.jpg" title="Cookies and Flowers"><img src="images/empty.png" data-src="images/pictures/16s.jpg" class="preload-img img-fluid rounded-xs" alt="img"></a>
+                </div>
+
+                <h4>Appkit is Awesome</h4>
+                <p class="pb-4">Donec consectetur dictum nisi, et sodales lectus rutrum at. Donec lacinia metus quis metus rutrum, sed aliquet neque faucibus.Donec consectetur dictum nisi, et sodales lectus rutrum at. Donec lacinia metus quis metus rutrum, sed aliquet neque faucibus.Donec consectetur dictum nisi, et sodales lectus rutrum at. Donec lacinia metus quis metus rutrum, sed aliquet neque faucibus.Donec consectetur dictum nisi, et sodales lectus rutrum at. Donec lacinia metus quis metus rutrum, sed aliquet neque faucibus.</p>
+            </div>
+        </div>
+
+        <div class="card rounded-0 bg-1" data-card-height="400">
+            <div class="card-center">
+                <h1 class="color-white font-italic text-center font-40">"Built for You"</h1>
+                <p class="color-white text-center mb-0 mt-n2">With loads of Care and Love by Enabled</p>
+            </div>
+            <div class="card-overlay bg-gradient"></div>
+        </div>
+
+        <div class="card card-style card-full-left" style="margin-top:-100px; z-index:1">
+            <div class="content">
+                <p class="mb-n1 color-highlight font-600">Left or Right</p>
+                <h1>Card Styles</h1>
+                <p>Donec consectetur dictum nisi, et sodales lectus rutrum at. Donec lacinia metus quis metus rutrum, sed aliquet neque faucibus.Donec consectetur dictum nisi, et sodales lectus rutrum at. Donec lacinia metus quis metus rutrum, sed aliquet neque faucibus.</p>
+
+                <div class="list-group list-custom-large mb-4 pb-3">
+                    <a data-trigger-switch="switch-1d" class="border-0" href="#">
+                        <div class="d-flex">
+                            <div>
+                                <i class="fa font-14 fa-bookmark shadow-s bg-red-dark color-white"></i>
+                                <span>Read this Later</span>
+                                <strong>Save it now, read it later.</strong>
+                            </div>
+                        </div>
+                        <div class="custom-control scale-switch ios-switch">
+                            <input type="checkbox" class="ios-input" id="switch-1d">
+                            <label class="custom-control-label" for="switch-1d"></label>
+                        </div>
+                    </a>
+                </div>
+                <p>Donec consectetur dictum nisi, et sodales lectus rutrum at. Donec lacinia metus quis metus rutrum, sed aliquet neque faucibus.Donec consectetur dictum nisi, et sodales lectus rutrum at. Donec lacinia metus quis metus rutrum, sed aliquet neque faucibus.Donec consectetur dictum nisi, et sodales lectus rutrum at. Donec lacinia metus quis metus rutrum, sed aliquet neque faucibus.Donec consectetur dictum nisi, et sodales lectus rutrum at. Donec lacinia metus quis metus rutrum, sed aliquet neque faucibus.</p>
+
+                <div class="divider"></div>
+
+                <div class="d-flex mb-4">
+                    <div class="me-2"><img src="images/pictures/6s.jpg" width="40" class="rounded-s"></div>
+                    <div>
+                        <h5>Jane Louder</h5>
+                        <p class="mb-0 mt-n2">Content Writer at Enabled</p>
+                    </div>
+                    <div class="ms-auto">
+                        <a href="#" data-menu="menu-share" class="icon icon-s bg-theme shadow-xl rounded-xl float-end"><i class="fa color-theme fa-share-alt"></i></a>
+                        <a href="#" data-menu="menu-heart" class="icon icon-s bg-theme shadow-xl rounded-xl float-end me-2"><i class="fa color-red-dark fa-bookmark"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="close-menu btn btn-l rounded-sm font-600 btn-full btn-margins gradient-red">Close Article</a>
+
+
+    </div>
+
+    <!--Bootstrap Toast-->
+    <div id="moblob_toast-1" data-dismiss="moblob_toast-1" data-bs-delay="3000" data-bs-autohide="true" class="notification bg-green-dark shadow-xl opacity-95">
+        <div class="toast-body color-white p-3">
+            <h1 id="moblob_toast-1-title" class="ms-0 ps-0 pb-2 mt-0 color-white">All Good</h1>
+            <div id="moblob_toast-1-body">
+                We always listen to your feedback, so we added Boostrap to our items. Just as fast as before, only now, with code you are familiar with slightly upgraded for maximum performance!
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Menu-->
+    <div id="menu-main" class="menu menu-box-left rounded-0" data-menu-load="menu-main.html" data-menu-width="280" data-menu-active="nav-contact"></div>
+
+    <!-- Share Menu-->
+    <div id="menu-share" class="menu menu-box-bottom rounded-m" data-menu-load="menu-share.html" data-menu-height="370"></div>
+
+    <!-- Colors Menu-->
+    <div id="menu-colors" class="menu menu-box-bottom rounded-m" data-menu-load="menu-colors.html" data-menu-height="480"></div>
+    </div>
+
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/custom.js"></script>
+    <script type="text/javascript" src="mapomega/mo500_blob_putImage.js"></script>
+
+</body>
+ 
