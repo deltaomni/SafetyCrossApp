@@ -1,0 +1,116 @@
+﻿
+.img_safetycross{
+
+}
+
+input.form-control.mo-1 {
+    width: 100%;
+    height: 240px;
+    background-image: url('img/camera-plus.svg');
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+input.form-control.loaded {
+    width: unset;
+    height: unset;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+input[type="file"] {
+    color: rgba(0,0,0,0);
+    font-size: 0px;
+    text-indent: -999px;
+    border: 0;
+}
+
+.card.card-fixed.mo-1 {
+    background-image: url('img/sc_sample1.svg');
+    background-size: 84%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: 70px !important;
+}
+
+.bg-gradient.mo-1 {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.7) 95%, black 100%) !important;
+}
+
+.header-title.mo-1 {
+    font-size: inherit;
+}
+
+.circle-nav.mo_1 {
+    /*opacity:1;*/
+    top: -38px;
+}
+
+.footer-bar-6 .circle-nav strong {
+    top: unset;
+}
+
+.card-bottom.mo-1 {
+    bottom: -20px;
+}
+
+.bg-18.mo-1 {
+    background-image: url('img/camera-plus.svg');
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: 50px !important;
+}
+
+.mo-ic {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.mo-ic-28 {
+    width: 28px;
+    height: 28px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.mo-ic-32 {
+    width: 32px;
+    height: 32px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.mo-ic-36 {
+    width: 36px;
+    height: 36px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.mo-ic-40 {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.cropped-image-clip-rectangle {
+    height: 20%;
+    clip-path: inset(20px 50px 10px 0 round 50px);
+}
+
+.center-cropped {
+    width: calc(30vw - 10px);
+    height: calc(30vw - 10px);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 1px;
+}
+
+
