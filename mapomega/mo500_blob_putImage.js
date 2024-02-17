@@ -38,6 +38,8 @@ _("blob_images")
 _("moblob_erase")
     .addEventListener("click", moblob_f_removeFromBlob);
 
+
+
 var getimages =  moblob_io_GETFromBlob();
 
 

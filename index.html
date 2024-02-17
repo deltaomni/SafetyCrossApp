@@ -50,6 +50,7 @@
         <div class="header header-fixed header-logo-left">
             <h2><a href="index.html" class="header-title mo-1">Safety Cross</a></h2>
             <a href="#" class="header-icon icon-l header-icon-2 me-4 color-theme">
+                <!-- Alerts Header -->
                 <svg class="mo-ic" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M12,2L1,21H23M12,6L19.53,19H4.47M11,10V14H13V10M11,16V18H13V16" />
                 </svg>
@@ -58,6 +59,7 @@
                 </span>
             </a>
             <a href="#" class="header-icon icon-l header-icon-1 me-3 color-theme">
+                <!-- Share Header -->
                 <svg class="mo-ic-28" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M14,5V9C7,10 4,15 3,20C5.5,16.5 9,14.9 14,14.9V19L21,12L14,5M16,9.83L18.17,12L16,14.17V12.9H14C11.93,12.9 10.07,13.28 8.34,13.85C9.74,12.46 11.54,11.37 14.28,11L16,10.73V9.83Z" />
                 </svg>
@@ -85,16 +87,18 @@
         <div class="page-title-clear"></div>
 
         <div class="page-content">
-            <div class="splide story-slider slider-no-dots  mb-0" id="story-slider">
+            <div class="splide story-slider slider-no-dots  mb-0" id="moheader-story-slider">
                 <div class="splide__track">
                     <div class="splide__list">
                         <div class="splide__slide text-center active">
-                        <a data-menu="menu-story" href="#">
-    <img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-light border border-s">
-    <span class="position-absolute top-50 end-0 translate-end p-2 me-4 mb-3 border border-light bg-primary rounded-circle">
-
-    </span><br><span class="d-block pt-2 font-12 color-theme opacity-60">Consolidado</span>
-</a></div>
+                            <a data-menu="menu-story" href="#">
+                                <img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-light border border-s">
+                                <span class="position-absolute end-0 bottom-0 mb-4 me-4">
+                                    <i class="fa fa-plus-circle"></i>
+                                </span>
+                                <br><span class="d-block pt-2 font-12 color-theme opacity-60">Consolidado</span>
+                            </a>
+                        </div>
                         <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-dark-dark border border-s"><br><span class="d-block pt-2 font-12 color-theme opacity-60">GER MNT 1</span></a></div>
                         <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-warning border border-s"><br><span class="d-block pt-2 font-12 color-theme opacity-60">GER MNT 2</span></a></div>
                         <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-primary border border-s"><br><span class="d-block pt-2 font-12 color-theme opacity-60">MNT 1</span></a></div>
@@ -111,7 +115,7 @@
             </div>
 
             <!--<div class="card card-style bg-6" data-card-height="450">-->
-            <div class="card card-style ms-0 me-0 rounded-0 bg-transparent shadow-0 border-0" data-card-height="550">
+            <div class="card card-style m-0 mb-4 mt-1 rounded-0 bg-transparent shadow-0 border-0" data-card-height="450">
                 <div class="card-top">
 
 
@@ -120,49 +124,29 @@
                     <img src="mapomega/img/sc_sample1.svg" />
                 </div>
 
-                <div class="card-bottom m-4 mb-0">
-                    <div class="d-flex flex-column p-2">
-                        <div class="d-flex flex-row mt-2">
-                            <div class="flex-fill">
-                                <p class="mb-0 font-14 font-700 color-highlight opacity-70"><i class="fa fa-map-marker me-2"></i>São Paulo, SP</p>
-                                <h1 class="color-theme font-30 font-800 mb-0">Supra Ltda.</h1>
-                            </div>
+                <div class="card-bottom m-4 mb-2">
+                    <div class="d-flex flex-row mt-2">
+                        <div class="flex-fill">
+                            <p class="mb-0 font-14 font-700 color-highlight opacity-70"><i class="fa fa-map-marker me-2"></i>São Paulo, SP</p>
+                            <h1 class="color-theme font-30 font-800 mb-0">Supra Ltda.</h1>
+                        </div>
 
-                            <!--Record-->
-                            <div class="col-2 ms-auto text-center align-self-center text-success">
-                                <svg class="mo-ic-32" viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="M18 2C17.1 2 16 3 16 4H8C8 3 6.9 2 6 2H2V11C2 12 3 13 4 13H6.2C6.6 15 7.9 16.7 11 17V19.08C8 19.54 8 22 8 22H16C16 22 16 19.54 13 19.08V17C16.1 16.7 17.4 15 17.8 13H20C21 13 22 12 22 11V2H18M6 11H4V4H6V11M16 11.5C16 13.43 15.42 15 12 15C8.59 15 8 13.43 8 11.5V6H16V11.5M20 11H18V4H20V11Z" />
-                                </svg>
-                                <h5 class="text-success mb-0">188 d</h5>
-                            </div>
-
-                            <!--Days since last acc-->
-                            <div class="col-2 me-auto text-center align-self-center color-red-light">
-                                <svg class="mo-ic-32" viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="M12,2L1,21H23M12,6L19.53,19H4.47M11,10V14H13V10M11,16V18H13V16" />
-                                </svg>
-                                <h5 class="color-red-light mb-0">0 d</h5>
-                            </div>
+                        <div class="col-4 ms-auto text-center align-self-center">
+                            <a href="#" data-menu="menu-cart" class="icon icon-xxl rounded-xl bg-highlight text-light">
+                                <i class="fa fa-hand-point-right"></i>
+                                <!--<span class="position-absolute top-0 end-0 badge rounded-pill bg-danger">
+        +
+        <span class="visually-hidden"></span>
+    </span>-->
+                                <span class="position-absolute start-0 top-0 ms-4 mt-4">
+                                    <i class="fa fa-plus-circle color-red-light"></i>
+                                </span>
+                            </a>
+                        
                         </div>
                     </div>
-                    <div class="splide story-slider slider-no-dots mb-0" id="story-slider">
-                        <div class="splide__track">
-                            <div class="splide__list">
-                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-light border border-s"><br><span class="d-block pt-2 font-12 color-theme opacity-60">Consolidado</span></a></div>
-                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-dark-dark border border-s"><br><span class="d-block pt-2 font-12 color-theme opacity-60">GER MNT 1</span></a></div>
-                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-warning border border-s"><br><span class="d-block pt-2 font-12 color-theme opacity-60">GER MNT 2</span></a></div>
-                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-primary border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">MNT 1</span></a></div>
-                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-dark-light border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">MNT 2</span></a></div>
-                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-fade-pink2-dark border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">MNT 3</span></a></div>
-                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-success border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">DIR OPER</span></a></div>
-                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-yellow-light border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">CAVA 1</span></a></div>
-                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-blue-dark border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">CAVA 2</span></a></div>
-                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-fade-teal-dark border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">CAVA 3</span></a></div>
-                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-brown-dark border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">RES 1</span></a></div>
-                                <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-green-dark border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">RES 2</span></a></div>
-                            </div>
-                        </div>
-                    </div>
+
+
 
                 </div>
                 <!--<div class="card-overlay bg-gradient"></div>-->
@@ -170,7 +154,23 @@
 
             <div class="card card-style">
                 <div class="content mb-0">
-                    <div class="row mb-0 text-center">
+                    <div class="d-flex flex-row mb-0 text-center">
+                        <!--Record-->
+                        <div class="col-2 ms-auto text-center align-self-center text-success">
+                            <svg class="mo-ic-32" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M18 2C17.1 2 16 3 16 4H8C8 3 6.9 2 6 2H2V11C2 12 3 13 4 13H6.2C6.6 15 7.9 16.7 11 17V19.08C8 19.54 8 22 8 22H16C16 22 16 19.54 13 19.08V17C16.1 16.7 17.4 15 17.8 13H20C21 13 22 12 22 11V2H18M6 11H4V4H6V11M16 11.5C16 13.43 15.42 15 12 15C8.59 15 8 13.43 8 11.5V6H16V11.5M20 11H18V4H20V11Z" />
+                            </svg>
+                            <h5 class="text-success mb-0">188 d</h5>
+                        </div>
+
+                        <!--Days since last acc-->
+                        <div class="col-2 me-auto text-center align-self-center color-red-light">
+                            <svg class="mo-ic-32" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M12,2L1,21H23M12,6L19.53,19H4.47M11,10V14H13V10M11,16V18H13V16" />
+                            </svg>
+                            <h5 class="color-red-light mb-0">0 d</h5>
+                        </div>
+
                         <div class="col-4">
                             <h1 class="mb-n1">351</h1>
                             <p class="font-10 mb-0 pb-0">Followers</p>
@@ -213,7 +213,9 @@
                    data-card-height="90">
                     <div class="card-center p-3">
                         <h1 class="color-red-dark mb-n2 font-24 font-800">Emergência</h1>
-                        <p class=" col-8 color-white opacity-100 font-14 mb-0">Use este canal em caso de emergência neste local.</p>
+                        <p class=" col-8 color-white opacity-100 font-16 mb-0">
+                        Aperte em caso de emergência neste local!
+                        </p>
                     </div>
                     <div class="card-overlay bg-whatsapp opacity-60"></div>
                 </a>
@@ -235,7 +237,7 @@
              data-menu-height="470">
             <div class="menu-title">
                 <p class="color-highlight font-14 font-700 ">Novo</p>
-                <h1 class="font-800">Relato Individual</h1>
+                <h1 class="font-800">Apontamento Individual</h1>
                 <a href="#" class="close-menu"><i class="fa fa-times-circle"></i></a>
             </div>
 
@@ -330,24 +332,28 @@
                         <a href="#" class="close-menu btn btn-full gradient-red font-12 btn-m font-600 mt-3 rounded-s">Cancelar</a>
                     </div>
                     <div class="col-6">
-                        <a id="moblob_toblob" href="#" class="close-menu btn btn-full gradient-green font-12 btn-m font-600 mt-3 rounded-s">Enviar Relato</a>
+                        <a id="moblob_toblob" href="#" class="close-menu btn btn-full gradient-green font-12 btn-m font-600 mt-3 rounded-s">Apontar</a>
                     </div>
                 </div>
 
             </div>
         </div>
 
+        <!--Snackbars-->
+        <div id="moblob-snackbar-1" class="snackbar-toast color-white mb-4 bg-highlight color-white" data-bs-delay="3000" data-bs-autohide="false"><i class="fa fa-sync fa-spin me-3"></i>Processando...</div>
+
+
         <!--Bootstrap Toast-->
         <div id="moblob_toast-1" data-dismiss="moblob_toast-1" data-bs-delay="3000" data-bs-autohide="true" class="notification bg-green-dark shadow-xl opacity-95">
-           
+
             <div class="toast-body color-white p-3">
                 <h1 id="moblob_toast-1-title" class="ms-0 ps-0 pb-2 mt-0 color-white">All Good</h1>
                 <div id="moblob_toast-1-body">
                     We always listen to your feedback, so we added Boostrap to our items. Just as fast as before, only now, with code you are familiar with slightly upgraded for maximum performance!
                 </div>
             </div>
-        </div> 
-         
+        </div>
+
 
         <!-- Main Menu-->
         <div id="menu-main" class="menu menu-box-left rounded-0" data-menu-load="menu-main.html" data-menu-width="280" data-menu-active="nav-pages"></div>

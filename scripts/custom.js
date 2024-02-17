@@ -143,11 +143,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         autoplay:true,
                         interval:4000,
                         perPage: 1,
+
                     }).mount();
                     var sliderNext = document.querySelectorAll('.slider-next');
                     var sliderPrev = document.querySelectorAll('.slider-prev');
                     sliderNext.forEach(el => el.addEventListener('click', el => {single.go('>');}));
-                    sliderPrev.forEach(el => el.addEventListener('click', el => {single.go('<');}));
+                    sliderPrev.forEach(el => el.addEventListener('click', el => { single.go('<'); }));
+                   // console.log(1)
                 });
             }
 
@@ -160,7 +162,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         interval:4000,
                         arrows:false,
                         perPage: 2,
-                    }).mount();
+                     }).mount();
+                  //  console.log(2)
+
                 });
             }
 
@@ -178,7 +182,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         arrows:false,
                         perPage: 2,
                         perMove: 1,
-                    }).mount();
+                     }).mount();
+                  //  console.log(3)
+
                 });
             }
         }
@@ -195,12 +201,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 arrows:false,
                 perPage: 3,
                 perMove: 1,
-            }).mount();
+             }).mount();
+           // console.log(4)
+
         }
         var storySlider = document.querySelectorAll('.story-slider');
-        if(storySlider.length){
+        if (storySlider.length) {
+            console.log(storySlider);
+            //// MapOmega
+            var moLoop = 'loop';
+            if (['moheader-story-slider'].indexOf(storySlider[0].id) > -1) {
+                 moLoop = '';
+            }
+            //// MapOmega End
+
              var topic = new Splide( '.story-slider', {
-                type:'loop',
+                type: moLoop, //'loop',
                 autoplay:false,
                 padding: {
                     left   :'0px',
@@ -209,7 +225,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 arrows:false,
                 perPage: 4,
                 perMove: 1,
-            }).mount();
+             }).mount();
+           // console.log(5)
+
         }
 
 
