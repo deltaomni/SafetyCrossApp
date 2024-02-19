@@ -3,7 +3,7 @@
 // var APP_NAME = 'AppKit';
 //var APP_VER = '2.3L';
 var APP_NAME = 'Safety Cross';
-var APP_VER = '3.2';
+var APP_VER = '4.0';
 var CACHE_NAME = APP_NAME + '-' + APP_VER;
 
 // Files required to make this app work offline.
@@ -37,7 +37,7 @@ var REQUIRED_FILES = [
 	// Images
 	'images/empty.png',
 	// Mapomega
-	'mapomega/mo500_blob_putimage.js',
+	//'mapomega/mo_mod/mo_blob_putimage/mo_js/mo500_blob_putimage.js',
 ];
 
 // Service Worker Diagnostic. Set true to get console logs.

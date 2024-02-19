@@ -25,26 +25,48 @@ var _htmlin = "<strong><small>";
 var _htmlout = "</strong>";
 var _htmlend = "</small>";
 
-_("moblob_copyimg")
-    .addEventListener("click", moblob_f_copyimg);
-_("moblob_openimg")
-    .addEventListener("click", moblob_f_openimg);
-_("moblob_toblob")
-    .addEventListener("click", moblob_io_toblob);
-_("moblob_input_image")
-    .addEventListener("input", moblob_f_getMetaData);
-_("blob_images")
-    .addEventListener("click", moblob_f_displaySelectedImage);
-_("moblob_erase")
-    .addEventListener("click", moblob_f_removeFromBlob);
+
+function moio_setBlobEvents() {
+    _("moblob_copyimg")
+        .addEventListener("click", moblob_f_copyimg);
+    _("moblob_openimg")
+        .addEventListener("click", moblob_f_openimg);
+    _("moblob_toblob")
+        .addEventListener("click", moblob_io_toblob);
+    _("moblob_input_image")
+        .addEventListener("input", moblob_f_getMetaData);
+    _("blob_images")
+        .addEventListener("click", moblob_f_displaySelectedImage);
+    _("moblob_erase")
+        .addEventListener("click", moblob_f_removeFromBlob);
 
 
 
-var getimages =  moblob_io_GETFromBlob();
+}
+
+/**
+* Blink element when I/O Operation is in progress
+* @param {bool} status - true: start blinking/ false: end blinking
+* @returns {id} - element id (Optional)
+*/
+function moblob_blinkIOActivity(status, id) {
+
+    if (id) {
+        var divTimer = id;
+    } else {
+        blinkel = "mo_blinkEl";
+    }
+    var blink = _cn(blinkel);
+    for (var i = 0; i < blink.length; i++) {
+        var list = blink[i].classList;
+        if (status === false) { // STOP PROCESS
+          list.add('d-none');
+        } else { // START PROCESS
+            list.remove('d-none')
+        }
+    }
 
 
-function _(el) {
-    return document.getElementById(el);
 }
 
 /**
@@ -183,6 +205,7 @@ function moblob_f_openimg() {
 }
 
 async function moblob_io_GETFromBlob() {
+    moblob_blinkIOActivity(true)
     const response = await fetch(_uri);
     const data = await response.json();
     console.log(data);
@@ -193,7 +216,7 @@ async function moblob_io_GETFromBlob() {
 
 async function moblob_io_toblob() {
     console.log("POST to blob");
-
+    moblob_blinkIOActivity(true)
    // var _uri = "/blobapi/Images";
 
     //var files = document.getElementById("inputGroupFile01").files;
@@ -217,15 +240,19 @@ async function moblob_io_toblob() {
             var filenames = JSON.parse(response);
             var directoryfiles = filenames.listnames;
             var container = filenames.container;
-            moblob_endPostItem(directoryfiles,container)//
+            moblob_endPostItem(directoryfiles, container)//
+            moblob_f_showtoastOK('mo_msgtoast_ok','Item salvo')
         })
-        .catch(error => console.error('Unable to add item.', error));
+        .catch(error => {
+            console.error('Unable to add item.', error)
+            moblob_blinkIOActivity(false)
+            // show no ok
+            moblob_f_showtoastOK('mo_msgtoast_nok','Erro ao salvar')
+        });
 
-    /// ok msg
-    var toastId = "moblob_toast-1";
-    var toastTitle = "Sucesso!";
-    var toastBody = "Aviso de Atenção enviado.";
-    moblob_f_showtoastOK(toastId, toastTitle, toastBody)
+
+    moblob_blinkIOActivity(false)
+   
 }
 
 function moblob_f_removeFromBlob() {
@@ -245,6 +272,7 @@ function moblob_f_removeFromBlob() {
 
 /// DELETE
 async function moblob_io_removeFromBlob(container, imgSrc) {
+    moblob_blinkIOActivity(true)
     var uri = _uri + "/" + container + "/" + imgSrc;
     await fetch(uri, {
         method: 'DELETE'
@@ -256,15 +284,25 @@ async function moblob_io_removeFromBlob(container, imgSrc) {
             // moblob_endPostItem(directoryfiles, container)//
             var status = response.status;
             if (status == 200) {
+
+                // build function to end removal
                 _(imgSrc).outerHTML = "";
                 var selectedImage = _(_blobSelectedImageId)
                 selectedImage.style = "";
                 selectedImage.removeAttribute("imgid");
                 selectedImage.classList.remove("loaded");
-              //  moblob_f_displayImgAttributes(null); // clear Details
+                //  moblob_f_displayImgAttributes(null); // clear Details
+                moblob_blinkIOActivity(false)
+                // Trigger toast/ Snackbar
+                moblob_f_showtoastOK('mo_msgtoast_ok','Item removido')
+
             }
         })
-        .catch(error => console.error('Unable to delete item.', error));
+        .catch(error => {
+            console.error('Unable to delete item.', error)
+            moblob_blinkIOActivity(false)
+            moblob_f_showtoastOK('mo_msgtoast_nok', 'erro ao remover')
+        });
 }
 
 
@@ -308,13 +346,17 @@ function moblob_endPostItem(directoryfiles, container) {
     }
     // console.log(imgHtml)
     document.getElementById("blob_images").innerHTML = imgHtml;
-
+    moblob_blinkIOActivity(false)
 }
 
 function moblob_f_showtoastOK(toastId, toastTitle, toastBody) {
+    if (toastTitle) {
+        _(toastId + "-title").innerHTML = toastTitle;
+    }
+    if (toastBody) {
+        _(toastId + "-body").innerHTML = toastBody;
+    }
 
-    _(toastId + "-title").innerHTML = toastTitle;
-    _(toastId + "-body").innerHTML = toastBody;
     var toastID = _(toastId);
     toastID = new bootstrap.Toast(toastID);
     toastID.show();

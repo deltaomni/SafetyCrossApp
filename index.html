@@ -19,7 +19,8 @@
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
-    <link rel="stylesheet" type="text/css" href="mapomega/mo500appstyle.css" />
+    <!-- MapOmega -->
+    <link href="mapomega/mo500_appstyle.css" rel="stylesheet" />
     <link rel="manifest" href="_manifest.json">
     <!--<link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">-->
     <link rel="apple-touch-icon" sizes="57x57" href="https://www.safetycross.app/app/icons/apple-icon-57x57.png">
@@ -49,6 +50,10 @@
 
         <div class="header header-fixed header-logo-left">
             <h2><a href="index.html" class="header-title mo-1">Safety Cross</a></h2>
+            <a href="#" class="spinner-grow text-warning header-icon header-icon-4 mo_blinkEl" role="status">
+                <i class="fas fa-circle"></i>
+            </a>
+
             <a href="#" class="header-icon icon-l header-icon-2 me-4 color-theme">
                 <!-- Alerts Header -->
                 <svg class="mo-ic" viewBox="0 0 24 24">
@@ -68,10 +73,13 @@
         <div class="header header-fixed header-logo-center header-auto-show">
             <h2><a href="index.html" class="header-title mo-1">Supra Ltda.</a></h2>
             <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-chevron-left"></i></a>
+
             <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
             <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-dark"><i class="fas fa-sun"></i></a>
             <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-light"><i class="fas fa-moon"></i></a>
-
+            <a href="#" class="spinner-grow text-warning header-icon header-icon-2 mo_blinkEl" role="status">
+                <i class="fas fa-circle"></i>
+            </a>
         </div>
 
         <div id="footer-bar" class="footer-bar-6">
@@ -135,14 +143,14 @@
                             <a href="#" data-menu="menu-cart" class="icon icon-xxl rounded-xl bg-highlight text-light">
                                 <i class="fa fa-hand-point-right"></i>
                                 <!--<span class="position-absolute top-0 end-0 badge rounded-pill bg-danger">
-        +
-        <span class="visually-hidden"></span>
-    </span>-->
+                                +
+                                <span class="visually-hidden"></span>
+                            </span>-->
                                 <span class="position-absolute start-0 top-0 ms-4 mt-4">
                                     <i class="fa fa-plus-circle color-red-light"></i>
                                 </span>
                             </a>
-                        
+
                         </div>
                     </div>
 
@@ -214,7 +222,7 @@
                     <div class="card-center p-3">
                         <h1 class="color-red-dark mb-n2 font-24 font-800">Emergência</h1>
                         <p class=" col-8 color-white opacity-100 font-16 mb-0">
-                        Aperte em caso de emergência neste local!
+                            Aperte em caso de emergência neste local!
                         </p>
                     </div>
                     <div class="card-overlay bg-whatsapp opacity-60"></div>
@@ -339,21 +347,14 @@
             </div>
         </div>
 
-        <!--Snackbars-->
-        <div id="moblob-snackbar-1" class="snackbar-toast color-white mb-4 bg-highlight color-white" data-bs-delay="3000" data-bs-autohide="false"><i class="fa fa-sync fa-spin me-3"></i>Processando...</div>
+        <!--Toasts-->
 
-
-        <!--Bootstrap Toast-->
-        <div id="moblob_toast-1" data-dismiss="moblob_toast-1" data-bs-delay="3000" data-bs-autohide="true" class="notification bg-green-dark shadow-xl opacity-95">
-
-            <div class="toast-body color-white p-3">
-                <h1 id="moblob_toast-1-title" class="ms-0 ps-0 pb-2 mt-0 color-white">All Good</h1>
-                <div id="moblob_toast-1-body">
-                    We always listen to your feedback, so we added Boostrap to our items. Just as fast as before, only now, with code you are familiar with slightly upgraded for maximum performance!
-                </div>
-            </div>
+        <div id="mo_msgtoast_ok" class="snackbar-toast color-white mb-4 bg-green-dark" data-bs-delay="3000" data-bs-autohide="true">
+            <i class="fa fa-check me-3"></i><span id="mo_msgtoast_ok-title">Confirmed</span>
         </div>
-
+        <div id="mo_msgtoast_nok" class="snackbar-toast color-white mb-4 bg-red-dark" data-bs-delay="3000" data-bs-autohide="true">
+        <i class="fa fa-times me-3"></i><span id="mo_msgtoast_nok-title">Erro</span>
+        </div>
 
         <!-- Main Menu-->
         <div id="menu-main" class="menu menu-box-left rounded-0" data-menu-load="menu-main.html" data-menu-width="280" data-menu-active="nav-pages"></div>
@@ -369,6 +370,12 @@
 
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="scripts/custom.js"></script>
-    <script type="text/javascript" src="mapomega/mo500_blob_putImage.js"></script>
+
+    <!-- MapOmega -->
+    <script src="mapomega/mo_mod/mo_blob_putimage/mo_js/mo500_blob_putImage.js"></script>
+    <script src="mapomega/mo_mod/mo_uix/mo_js/mo500_uix.js"></script>
+    <script src="mapomega/mo_io/moio500_app.js"></script>
+    <script src="mapomega/mo500_appstart.js"></script>
+
 
 </body>

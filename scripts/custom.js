@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         var storySlider = document.querySelectorAll('.story-slider');
         if (storySlider.length) {
-            console.log(storySlider);
+           
             //// MapOmega
             var moLoop = 'loop';
             if (['moheader-story-slider'].indexOf(storySlider[0].id) > -1) {
