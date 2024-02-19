@@ -59,11 +59,11 @@
                 <svg class="mo-ic" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M12,2L1,21H23M12,6L19.53,19H4.47M11,10V14H13V10M11,16V18H13V16" />
                 </svg>
-                <span class="position-absolute bottom-50 end-0 translate-end p-1 me-2 mb-1 bg-danger  rounded-circle">
+                <span class="position-absolute bottom-50 end-0 translate-end p-1 me-2 mb-1 bg-danger rounded-circle">
                     <span class="visually-hidden">New alerts</span>
                 </span>
             </a>
-            <a href="#" class="header-icon icon-l header-icon-1 me-3 color-theme">
+            <a href="#" data-menu="menu-share" class="header-icon icon-l header-icon-1 me-3 color-theme">
                 <!-- Share Header -->
                 <svg class="mo-ic-28" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M14,5V9C7,10 4,15 3,20C5.5,16.5 9,14.9 14,14.9V19L21,12L14,5M16,9.83L18.17,12L16,14.17V12.9H14C11.93,12.9 10.07,13.28 8.34,13.85C9.74,12.46 11.54,11.37 14.28,11L16,10.73V9.83Z" />
@@ -122,92 +122,83 @@
                 </div>
             </div>
 
-            <!--<div class="card card-style bg-6" data-card-height="450">-->
-            <div class="card card-style m-0 mb-4 mt-1 rounded-0 bg-transparent shadow-0 border-0" data-card-height="450">
-                <div class="card-top">
+            <div class="card card-style bg-transparent shadow-0 border-0 m-0 rounded-0">
+                <div class="content">
 
-
-                </div>
-                <div class="card-body img_safetycross m-0 p-4 pt-0">
-                    <img src="mapomega/img/sc_sample1.svg" />
-                </div>
-
-                <div class="card-bottom m-4 mb-2">
-                    <div class="d-flex flex-row mt-2">
-                        <div class="flex-fill">
-                            <p class="mb-0 font-14 font-700 color-highlight opacity-70"><i class="fa fa-map-marker me-2"></i>São Paulo, SP</p>
-                            <h1 class="color-theme font-30 font-800 mb-0">Supra Ltda.</h1>
+                    <div class="d-flex align-items-center">
+                        <div class="d-flex flex-column flex-fill">
+                            <p class="mb-n1 color-highlight opacity-100 font-600">
+                                <i class="fa fa-map-marker me-2"></i>São Paulo, SP
+                            </p>
+                            <h1 class="color-dark-dark">Supra Ltda.</h1>
                         </div>
-
-                        <div class="col-4 ms-auto text-center align-self-center">
+                        <div class="col-3 text-center align-self-center">
                             <a href="#" data-menu="menu-cart" class="icon icon-xxl rounded-xl bg-highlight text-light">
                                 <i class="fa fa-hand-point-right"></i>
-                                <!--<span class="position-absolute top-0 end-0 badge rounded-pill bg-danger">
-                                +
-                                <span class="visually-hidden"></span>
-                            </span>-->
                                 <span class="position-absolute start-0 top-0 ms-4 mt-4">
                                     <i class="fa fa-plus-circle color-red-light"></i>
                                 </span>
                             </a>
-
                         </div>
                     </div>
-
-
-
+                    <!-- SAFETY CROSS -->
+                    <img class="img-fluid" src="https://safetycross.blob.core.windows.net/blank/2024-1.png" />
                 </div>
-                <!--<div class="card-overlay bg-gradient"></div>-->
+            </div>
+
+            <!-- Dias sem Acidentes -->
+            <div class="card card-style">
+                <div class="content my-2">
+                    <p class="mb-n1 color-highlight font-600">Dias sem acidentes</p>
+                    <div class="d-flex flex-row mx-3">
+                        <div class="col-4 text-center align-self-center text-success">
+                            <svg class="mo-ic-32" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M18 2C17.1 2 16 3 16 4H8C8 3 6.9 2 6 2H2V11C2 12 3 13 4 13H6.2C6.6 15 7.9 16.7 11 17V19.08C8 19.54 8 22 8 22H16C16 22 16 19.54 13 19.08V17C16.1 16.7 17.4 15 17.8 13H20C21 13 22 12 22 11V2H18M6 11H4V4H6V11M16 11.5C16 13.43 15.42 15 12 15C8.59 15 8 13.43 8 11.5V6H16V11.5M20 11H18V4H20V11Z" />
+                            </svg>
+                            <div class="text-success mb-0 font-24 font-700">
+                                188
+                            </div>
+                            Recorde
+                        </div>
+                        <div class="col-4 text-center align-self-center text-secondary">
+                            <svg class="mo-ic-32" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M12,2L1,21H23M12,6L19.53,19H4.47M11,10V14H13V10M11,16V18H13V16" />
+                            </svg>
+                            <div class="mb-0 font-24 font-700">
+                                0
+                            </div>
+                            Último
+                        </div>
+                        <div class="col-4 text-center align-self-center text-danger">
+                            <svg class="mo-ic-40" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M6,3A1,1 0 0,1 7,4V4.88C8.06,4.44 9.5,4 11,4C14,4 14,6 16,6C19,6 20,4 20,4V12C20,12 19,14 16,14C13,14 13,12 11,12C8,12 7,14 7,14V21H5V4A1,1 0 0,1 6,3Z" />
+                            </svg>
+                            <div>Bandeira Vermelha</div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="card card-style">
                 <div class="content mb-0">
-                    <div class="d-flex flex-row mb-0 text-center">
-                        <!--Record-->
-                        <div class="col-2 ms-auto text-center align-self-center text-success">
-                            <svg class="mo-ic-32" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M18 2C17.1 2 16 3 16 4H8C8 3 6.9 2 6 2H2V11C2 12 3 13 4 13H6.2C6.6 15 7.9 16.7 11 17V19.08C8 19.54 8 22 8 22H16C16 22 16 19.54 13 19.08V17C16.1 16.7 17.4 15 17.8 13H20C21 13 22 12 22 11V2H18M6 11H4V4H6V11M16 11.5C16 13.43 15.42 15 12 15C8.59 15 8 13.43 8 11.5V6H16V11.5M20 11H18V4H20V11Z" />
-                            </svg>
-                            <h5 class="text-success mb-0">188 d</h5>
+                    <div class="d-flex">
+                        <div class="me-2">
+                            <img src="mapomega/img/logo_supra.svg" width="40" class="rounded-circle">
                         </div>
-
-                        <!--Days since last acc-->
-                        <div class="col-2 me-auto text-center align-self-center color-red-light">
-                            <svg class="mo-ic-32" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M12,2L1,21H23M12,6L19.53,19H4.47M11,10V14H13V10M11,16V18H13V16" />
-                            </svg>
-                            <h5 class="color-red-light mb-0">0 d</h5>
+                        <div>
+                            <h5>Seguir</h5>
+                            <p class="mb-0 mt-n2">Acidentes Consolidados</p>
                         </div>
-
-                        <div class="col-4">
-                            <h1 class="mb-n1">351</h1>
-                            <p class="font-10 mb-0 pb-0">Followers</p>
-                        </div>
-                        <div class="col-4">
-                            <h1 class="mb-n1">193</h1>
-                            <p class="font-10 mb-0 pb-0">Following</p>
-                        </div>
-                        <div class="col-4">
-                            <h1 class="mb-n1">615</h1>
-                            <p class="font-10 mb-0 pb-0">Posts</p>
+                        <div class="ms-auto">
+                            <a href="#" data-menu="menu-share" class="icon icon-l bg-theme  rounded-xl float-end"><i class="fa color-theme fa-filter"></i></a>
+                            <a href="#" data-menu="menu-heart" class="icon icon-l bg-theme  rounded-xl float-end me-2"><i class="fa color-theme fa-calendar"></i></a>
                         </div>
                     </div>
 
-                    <div class="divider mb-4 mt-3"></div>
+                    <div class="divider mb-2"></div>
 
-                    <div class="row mb-0 pb-4">
-                        <div class="col-6">
-                            <a href="#" class="btn btn-m btn-full rounded-s bg-highlight font-13 font-600">Follow</a>
-                        </div>
-                        <div class="col-6">
-                            <a href="#" class="btn btn-m btn-full rounded-s border-highlight color-highlight font-13 font-600">Message</a>
-                        </div>
-                    </div>
-
-                    <div class="divider mb-4"></div>
-
-                    <p class="color-highlight font-600 mb-n1 font-12">by Jane Louder</p>
-                    <h4>Recent Photos</h4>
+                    <p class="color-highlight font-600 mb-n1 font-12">Janeiro 2024</p>
+                    <h4>Apontamentos recentes</h4>
                     <div class="content m-0 p-0 mb-3">
                         <div id="blob_images" class="row text-center row-cols-3 m-0 p-0">
                             <!-- Blob Images -->
@@ -216,19 +207,26 @@
 
                 </div>
 
-                <a href="https://wa.me/5521996485172" class="default-link card card-style "
-                   style="background-image:url('mapomega/img/whatsapp.svg'); background-size:contain; background-repeat:no-repeat;background-position-x:right !important;"
-                   data-card-height="90">
-                    <div class="card-center p-3">
-                        <h1 class="color-red-dark mb-n2 font-24 font-800">Emergência</h1>
-                        <p class=" col-8 color-white opacity-100 font-16 mb-0">
-                            Aperte em caso de emergência neste local!
-                        </p>
-                    </div>
-                    <div class="card-overlay bg-whatsapp opacity-60"></div>
-                </a>
-
             </div>
+
+            <a href="https://wa.me/5521996485172?text=Emergência%20Safety%20Cross%20no%20Local%20L1234!"
+               class="default-link card card-style mobg-whatsapp"
+               data-card-height="100">
+                <div class="card-center p-2">
+                    <div class="content">
+                        <div class="d-flex flex-row">
+                            <div>
+                                <p class="color-dark opacity-100 mb-n2">
+                                    Linha direta
+                                </p>
+                                <h1 class="color-white font-27 mb-n2">Emergência</h1>
+                                <h6 class="color-dark-dark ">Aperte em caso de emergência</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-overlay bg-whatsapp opacity-60"></div>
+            </a>
 
 
             <div data-menu-load="menu-footer.html"></div>

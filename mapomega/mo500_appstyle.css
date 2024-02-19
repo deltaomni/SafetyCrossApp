@@ -137,3 +137,10 @@ input[type="file"] {
 }
 
 
+.mobg-whatsapp {
+    background-image: url(img/whatsapp.svg);
+    background-position: right center !important;
+    background-repeat: no-repeat;
+    background-size:30% 80%;
+}
+
