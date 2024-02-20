@@ -109,8 +109,8 @@ function moblob_f_displayImgAttributes(image) {
 function moblob_f_setSelectedImageId(imgId) {
     var image = _(_blobSelectedImageId);
     image.setAttribute("imgId", imgId);
-    _("moblob_name")
-        .innerHTML = _htmlin + "Name:" + _htmlout + imgId + _htmlend;
+   // _("moblob_name")
+    //    .innerHTML = _htmlin + "Name:" + _htmlout + imgId + _htmlend;
 
 }
 
@@ -140,12 +140,13 @@ function moblob_f_serialize_image(el, imgid) {
 
 function moblob_f_display_image(readXml, img, imgid) {
 
-    console.log(readXml, img, imgid)
+   // console.log(readXml, img, imgid)
     var _URL = window.URL || window.webkitURL;
 
     var image = _(imgid);
     image.classList.add("loaded");
-   // image.style = "background-image: url(" + readXml + ")";
+    image.style = "background-image: url(" + readXml + ");";
+
 
     img1 = new Image();
     if (img) {
@@ -156,8 +157,8 @@ function moblob_f_display_image(readXml, img, imgid) {
     img1.onload = function () {
         var vw = window.innerWidth - 50
         var vw1 = window.outerWidth;
-        console.log(vw,vw1);
-         var scalew = vw / this.width;
+       // console.log(vw,vw1);
+        var scalew = vw / this.width;
         var scaleh = scalew;
 
         var imgw = Math.round(this.width * scalew);
@@ -165,7 +166,6 @@ function moblob_f_display_image(readXml, img, imgid) {
 
         image.style.width = imgw + "px";
         image.style.height = imgh + "px";
-
         //var htmlin = "<strong><small>";
         //var htmlout = "</strong><br>";
         //var htmlend = "</small>";

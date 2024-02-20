@@ -36,12 +36,13 @@ input.form-control.mo-1 {
 }
 
 input.form-control.loaded {
-    width: unset;
-    height: unset;
-    background-size: 50%;
-    background-position:  left;
+    /*width: unset;*/
+    /*height: unset;*/
+    /*background-size: 100%;*/
+    background-position:  center;
     background-repeat: no-repeat;
-    z-index:-100;
+    background-size:contain;
+    
 }
 
 input[type="file"] {
