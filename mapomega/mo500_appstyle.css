@@ -39,7 +39,7 @@ input.form-control.loaded {
     width: 100px;
     height: unset;
     background-size: 100%;
-    background-position: center;
+    background-position:  left;
     background-repeat: no-repeat;
 }
 
