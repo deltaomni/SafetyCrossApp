@@ -145,7 +145,7 @@ function moblob_f_display_image(readXml, img, imgid) {
 
     var image = _(imgid);
     image.classList.add("loaded");
-    image.style = "background-image: url(" + readXml + ")";
+   // image.style = "background-image: url(" + readXml + ")";
 
     img1 = new Image();
     if (img) {
