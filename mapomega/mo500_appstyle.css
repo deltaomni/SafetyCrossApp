@@ -46,10 +46,10 @@ input.form-control.loaded {
 }
 
 input[type="file"] {
-    color: rgba(0,0,0,0);
+/*    color: rgba(0,0,0,0);
     font-size: 0px;
     text-indent: -999px;
-    border: 0;
+    border: 0;*/
 }
 
 .card.card-fixed.mo-1 {
