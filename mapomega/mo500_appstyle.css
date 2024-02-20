@@ -36,7 +36,7 @@ input.form-control.mo-1 {
 }
 
 input.form-control.loaded {
-    width: unset;
+    width: 100px;
     height: unset;
     background-size: 100%;
     background-position: center;
