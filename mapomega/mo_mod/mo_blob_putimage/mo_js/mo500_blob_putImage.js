@@ -40,34 +40,8 @@ function moio_setBlobEvents() {
     _("moblob_erase")
         .addEventListener("click", moblob_f_removeFromBlob);
 
-
-
 }
 
-/**
-* Blink element when I/O Operation is in progress
-* @param {bool} status - true: start blinking/ false: end blinking
-* @returns {id} - element id (Optional)
-*/
-function moblob_blinkIOActivity(status, id) {
-
-    if (id) {
-        var divTimer = id;
-    } else {
-        blinkel = "mo_blinkEl";
-    }
-    var blink = _cn(blinkel);
-    for (var i = 0; i < blink.length; i++) {
-        var list = blink[i].classList;
-        if (status === false) { // STOP PROCESS
-          list.add('d-none');
-        } else { // START PROCESS
-            list.remove('d-none')
-        }
-    }
-
-
-}
 
 /**
 * Get image attributes
@@ -205,7 +179,7 @@ function moblob_f_openimg() {
 }
 
 async function moblob_io_GETFromBlob() {
-    moblob_blinkIOActivity(true)
+    moio_blinkIOActivity(true)
     const response = await fetch(_uri);
     const data = await response.json();
     console.log(data);
@@ -216,7 +190,7 @@ async function moblob_io_GETFromBlob() {
 
 async function moblob_io_toblob() {
     console.log("POST to blob");
-    moblob_blinkIOActivity(true)
+    moio_blinkIOActivity(true)
    // var _uri = "/blobapi/Images";
 
     //var files = document.getElementById("inputGroupFile01").files;
@@ -241,17 +215,17 @@ async function moblob_io_toblob() {
             var directoryfiles = filenames.listnames;
             var container = filenames.container;
             moblob_endPostItem(directoryfiles, container)//
-            moblob_f_showtoastOK('mo_msgtoast_ok','Item salvo')
+            moblob_f_showtoastOK('ok','Item salvo')
         })
         .catch(error => {
             console.error('Unable to add item.', error)
-            moblob_blinkIOActivity(false)
+            moio_blinkIOActivity(false)
             // show no ok
-            moblob_f_showtoastOK('mo_msgtoast_nok','Erro ao salvar')
+            moblob_f_showtoastOK('nok','Erro ao salvar')
         });
 
 
-    moblob_blinkIOActivity(false)
+    moio_blinkIOActivity(false)
    
 }
 
@@ -272,7 +246,7 @@ function moblob_f_removeFromBlob() {
 
 /// DELETE
 async function moblob_io_removeFromBlob(container, imgSrc) {
-    moblob_blinkIOActivity(true)
+    moio_blinkIOActivity(true)
     var uri = _uri + "/" + container + "/" + imgSrc;
     await fetch(uri, {
         method: 'DELETE'
@@ -292,16 +266,16 @@ async function moblob_io_removeFromBlob(container, imgSrc) {
                 selectedImage.removeAttribute("imgid");
                 selectedImage.classList.remove("loaded");
                 //  moblob_f_displayImgAttributes(null); // clear Details
-                moblob_blinkIOActivity(false)
+                moio_blinkIOActivity(false)
                 // Trigger toast/ Snackbar
-                moblob_f_showtoastOK('mo_msgtoast_ok','Item removido')
+                moblob_f_showtoastOK('ok','Item removido')
 
             }
         })
         .catch(error => {
             console.error('Unable to delete item.', error)
-            moblob_blinkIOActivity(false)
-            moblob_f_showtoastOK('mo_msgtoast_nok', 'erro ao remover')
+            moio_blinkIOActivity(false)
+            moblob_f_showtoastOK('nok', 'erro ao remover')
         });
 }
 
@@ -346,21 +320,21 @@ function moblob_endPostItem(directoryfiles, container) {
     }
     // console.log(imgHtml)
     document.getElementById("blob_images").innerHTML = imgHtml;
-    moblob_blinkIOActivity(false)
+    moio_blinkIOActivity(false)
 }
 
-function moblob_f_showtoastOK(toastId, toastTitle, toastBody) {
-    if (toastTitle) {
-        _(toastId + "-title").innerHTML = toastTitle;
-    }
-    if (toastBody) {
-        _(toastId + "-body").innerHTML = toastBody;
-    }
+//function moblob_f_showtoastOK(toastId, toastTitle, toastBody) {
+//    if (toastTitle) {
+//        _(toastId + "-title").innerHTML = toastTitle;
+//    }
+//    if (toastBody) {
+//        _(toastId + "-body").innerHTML = toastBody;
+//    }
 
-    var toastID = _(toastId);
-    toastID = new bootstrap.Toast(toastID);
-    toastID.show();
-}
+//    var toastID = _(toastId);
+//    toastID = new bootstrap.Toast(toastID);
+//    toastID.show();
+//}
 
 function moblob_f_displaySelectedImage(ev, container) {
     if (!container) {

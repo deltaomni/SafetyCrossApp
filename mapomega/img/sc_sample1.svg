@@ -46,10 +46,12 @@
   .txt24s{font-size:24px; font-weight:600;}
   .txt28{font-size:28px; font-weight:800;}
   .txt28s{font-size:28px; font-weight:600;}
-    .txt30{font-size:30px; font-weight:800;}
+  .txt30{font-size:30px; font-weight:800;}
   .txt30s{font-size:30px; font-weight:600;}
   .txt32{font-size:32px; font-weight:800;}
   .txt32s{font-size:32px; font-weight:600;}
+  .txt36{font-size:36px; font-weight:800;}
+  .txt36s{font-size:36px; font-weight:600;}
   .txt40{font-size:40px; font-weight:600;}
   .txt60{font-size:60px; font-weight:800;}
   .txt70{font-size:70px; font-weight:800;}
@@ -140,7 +142,7 @@
 </defs>
 
 <g id="Frame_Master" display="block">
-	<rect id="Frame" x="-8" y="-8" class="st6 " width="620" height="800"/>
+	<rect fill="rgba(255,255,255,0)" id="Frame" x="-8" y="-8" class="st6 " width="620" height="800"/>
 </g>
 <g id="BackGround">
 	<polygon id="Green_Background" class="st0" points="602,242 377,242 377,2 227,2 227,242 2,242 2,362 227,362 227,602 377,602 
@@ -158,13 +160,13 @@
 		<g id="SC-OrgId">
 			<rect id="SC-Operation" x="377" y="2" class="st5" width="225" height="240"/>
 			<text id="SC-OpIdDesc" x="490" y="70" class="colortext st7 text txt32" >ACIDENTES</text>
-			<text id="SC-OpIdTitle" x="490" y="120" class="colortext st7 text txt28">CONSOLIDADO</text>
-			<text id="SC-OpIdState" x="490" y="170" class="colortext st7 text txt40">OBRAS</text>
+			<text id="SC-OpIdTitle" x="490" y="120" class="colortext st7 text txt24">CONSOLIDADO</text>
+			<text id="SC-OpIdState" x="490" y="170" class="colortext st7 text txt36">OBRAS</text>
 		</g>
 		<g id="SC-Date">
 			<rect id="Bottom-Left" x="2" y="362" class="st5" width="225" height="240"/>
-			<text id="SC-OpIdTitle" x="112" y="435" class="colortext st7 text txt70">jan</text>
-			<text id="SC-OpIdState" x="112" y="505" class="colortext st7 text txt70">2024</text>
+			<text id="SC-OpIdTitle" x="112" y="435" class="colortext st7 text txt70">set</text>
+			<text id="SC-OpIdState" x="112" y="505" class="colortext st7 text txt70">2023</text>
 		</g>
   </g>
 	<g id="SC-Legend">
@@ -846,8 +848,8 @@
 	</g>
 	<g id="tile_31" transform="matrix(1 0 0 1 227 542)">
           <g id="Blank-31">			
-		<rect id="Blank-31-bg" class="blank" width="150" height="60"/>			
-		<text id="Blanktxt-31" transform="translate(75, 32)" class="text st7 txt40 blanktxt">31</text>
+		<rect id="Blank-31-bg" class="off" width="150" height="60"/>			
+		<text id="Blanktxt-31" transform="translate(75, 32)" class="text st7 txt40 offtxt">31</text>
 	</g>
 	</g>
 	<polygon id="sc_frame" class="st2" points="602,242 377,242 377,2 227,2 227,242 2,242 2,362 227,362 227,602 377,602 377,362 602,362 	"/>

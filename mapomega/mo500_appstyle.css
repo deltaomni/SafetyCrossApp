@@ -147,3 +147,6 @@ input[type="file"] {
     background-size:30% 50%;
 }
 
+.mo-lh-unset{
+    line-height:26px !important;
+}

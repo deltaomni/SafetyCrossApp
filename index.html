@@ -142,9 +142,14 @@
                             </a>
                         </div>
                     </div>
-                
-                <!-- SAFETY CROSS -->
-               <img class="img-fluid" src="https://safetycross.blob.core.windows.net/blank/2024-1.png" />
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <!-- SAFETY CROSS -->
+                        <img class="img-fluid" src="mapomega/img/sc_sample1.svg" />
+                        <!--<img class="img-fluid" src="https://safetycross.blob.core.windows.net/blank/2024-1.png" />-->
+
+                    </div>
+                </div>
         </div>
     
 
@@ -184,22 +189,24 @@
 
                 <div class="card card-style">
                     <div class="content mb-0">
-                        <div class="d-flex mb-3">
-                            <div class="d-flex flex-fill">
-                                <div class="me-2 align-self-center">
-                                    <img src="mapomega/img/logo_supra.svg" width="40" class="rounded-circle">
-                                </div>
-                                <div>
-                                    <mark class="highlight ps-2 font-12 pe-2 bg-blue-dark">Seguindo</mark>
-                                    <!--<h5>Seguindo</h5>-->
-                                    <p class="my-n2 m-0 font-400">Acidentes</p>
-                                    <div class="my-n2 font-400">Consolidado Obras</div>
-                                </div>
+
+                        <div class="d-flex mb-3 ">
+                            <div id="mouix_SelectedItem" class="d-flex flex-row flex-fill">
+                               
+                                    <div class="me-2 align-self-center">
+                                        <img src="mapomega/img/logo_supra.svg" width="40" class="rounded-circle">
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <p class="badge mb-n1 bg-red-dark font-14 font-600">SEGUINDO</p>
+                                        <p class="mt-1 mb-0 font-12 font-400">Acidentes</p>
+                                        <p class="my-n2 font-12 font-400">Consolidado Obras</p>
+                                    </div>
+                              
                             </div>
                             <div class="col-4 d-flex flex-row align-items-center">
-                                <a href="#" class="position-relative" style="top:-15px;">
+                                <a id="mouix_setPin" href="#" class="position-relative text-secondary opacity-25" >
                                     
-                                        <svg class="mo-ic-32 text-warning" viewBox="0 0 24 24">
+                                        <svg class="mo-ic-40" viewBox="0 0 24 24">
                                             <path fill="currentColor" d="M16,12V4H17V2H7V4H8V12L6,14V16H11.2V22H12.8V16H18V14L16,12Z" />
                                         </svg>
                                    
@@ -218,9 +225,7 @@
                                 <!-- Blob Images -->
                             </div>
                         </div>
-
                     </div>
-
                 </div>
 
                 <a href="https://wa.me/5521996485172?text=*Emergência:*%20Safety%20Cross%20no%20Local%20L1234!"
@@ -367,8 +372,13 @@
 
     <!--Toasts-->
 
-    <div id="mo_msgtoast_ok" class="snackbar-toast color-white mb-4 bg-green-dark" data-bs-delay="3000" data-bs-autohide="true">
-        <i class="fa fa-check me-3"></i><span id="mo_msgtoast_ok-title">Confirmed</span>
+    <div id="mo_msgtoast_ok" class="snackbar-toast color-white mb-2 px-3 bg-green-dark" data-bs-delay="3000"
+         data-bs-autohide="true"
+         data-pin-in="Item FIXADO na Página de Entrada"
+         data-pin-off="Item REMOVIDO da Página de Entrada"
+         >
+        <i class="fa fa-check me-3"></i><span id="mo_msgtoast_ok-title" class="font-14">Confirmed</span>
+        <div id="mo_msgtoast_ok-body" class="d-flex mb-3 mo-lh-unset"></div>
     </div>
     <div id="mo_msgtoast_nok" class="snackbar-toast color-white mb-4 bg-red-dark" data-bs-delay="3000" data-bs-autohide="true">
         <i class="fa fa-times me-3"></i><span id="mo_msgtoast_nok-title">Erro</span>

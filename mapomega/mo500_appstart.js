@@ -24,6 +24,8 @@
 
 function mostart_init() {
     moio_setBlobEvents();
+    mouix_setUIXEvents();
+
     var getimages = moblob_io_GETFromBlob();
 
     return "ok";
@@ -80,6 +82,3 @@ function mostart_init() {
     }
 
 var start = mostart_init();
-
-
-//});

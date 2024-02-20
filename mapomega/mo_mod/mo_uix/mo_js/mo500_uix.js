@@ -15,11 +15,52 @@
  * 
  */
 
+function mouix_setUIXEvents() {
+    _('mouix_setPin').
+        addEventListener('click', mouix_PinToast)
+}
 
+function mouix_PinToast() {
+    console.log("open pin toast");
+    var node = _('mouix_SelectedItem')
+    const clone = node.cloneNode(true);
+    var pin = _('mouix_setPin').classList.contains('text-warning');
+    console.log(pin, _('mouix_setPin').classList);
+    if (pin) {
+        _('mouix_setPin').classList.remove('text-warning');
+        _('mouix_setPin').classList.add('text-secondary');
+        _('mouix_setPin').classList.add('opacity-25');
+        var toastTitle = 'pin-off'
+    } else {
+        
+        _('mouix_setPin').classList.remove('text-secondary');
+        _('mouix_setPin').classList.remove('opacity-25');
+        _('mouix_setPin').classList.add('text-warning');
+        toastTitle = 'pin-in'
+    }
 
-//function mouix_setToasts() {
-//    var option = { autohide: true, delay: 3000 };
-//    const toastElList = document.querySelectorAll('.toast')
-//    const toastList = [...toastElList].map(toastEl => new bootstrap.Toast(toastEl, option))
-//    console.log(toastElList);
-//}
+    moblob_f_showtoastOK('ok', toastTitle, clone.outerHTML)
+}
+
+function moblob_f_showtoastOK(toastId, toastTitle, toastBody) {
+    if (!toastId) {
+        return false
+    }
+   
+    toastId = 'mo_msgtoast_' + toastId;
+    if (toastTitle) {
+        if (toastTitle == 'pin-in' || toastTitle == 'pin-off') {
+            toastTitle = _(toastId).getAttribute('data-' + toastTitle);
+        }
+            _(toastId + "-title").innerHTML = toastTitle;
+    
+    }
+    if (toastBody) {
+        _(toastId + "-body").innerHTML = toastBody;
+    }
+
+    var toastID = _(toastId);
+    toastID = new bootstrap.Toast(toastID);
+    toastID.show();
+    console.log(toastBody)
+}

@@ -15,3 +15,25 @@
  * 
  */
 
+/**
+* Blink element when I/O Operation is in progress
+* @param {bool} status - true: start blinking/ false: end blinking
+* @returns {id} - element id (Optional)
+*/
+function moio_blinkIOActivity(status, id) {
+
+    if (id) {
+        var divTimer = id;
+    } else {
+        blinkel = "mo_blinkEl";
+    }
+    var blink = _cn(blinkel);
+    for (var i = 0; i < blink.length; i++) {
+        var list = blink[i].classList;
+        if (status === false) { // STOP PROCESS
+            list.add('d-none');
+        } else { // START PROCESS
+            list.remove('d-none')
+        }
+    }
+}
