@@ -41,6 +41,7 @@ input.form-control.loaded {
     background-size: 50%;
     background-position:  left;
     background-repeat: no-repeat;
+    z-index:1;
 }
 
 input[type="file"] {
