@@ -33,13 +33,14 @@ function moio_setBlobEvents() {
         .addEventListener("click", moblob_f_openimg);
     _("moblob_toblob")
         .addEventListener("click", moblob_io_toblob);
+    _("moblob_cancelblob")
+        .addEventListener("click", moblob_f_clearSelectedImage);
     _("moblob_input_image")
         .addEventListener("input", moblob_f_getMetaData);
     _("mo_blob_content")
         .addEventListener("click", moblob_f_displaySelectedImage);
     _("moblob_erase")
         .addEventListener("click", moblob_f_removeFromBlob);
-
 }
 
 
@@ -106,21 +107,27 @@ function moblob_f_serialize_image(el, imgid) {
         }
     }
 
+    moblob_f_clearSelectedImage(_blobSelectedImageId);
+
     if (img) {
         reader.readAsDataURL(img);
         return img;
     }
 }
 
+function moblob_f_clearSelectedImage() {
+
+    var selectedImage = _(_blobSelectedImageId)
+    selectedImage.style = "";
+}
+
 function moblob_f_display_image(readXml, img, imgid) {
 
-   // console.log(readXml, img, imgid)
     var _URL = window.URL || window.webkitURL;
 
     var image = _(imgid);
     image.classList.add("loaded");
     image.style = "background-image: url(" + readXml + ");";
-
 
     img1 = new Image();
     if (img) {
@@ -128,10 +135,11 @@ function moblob_f_display_image(readXml, img, imgid) {
     } else {
         objectUrl = readXml;
     }
+
     img1.onload = function () {
         var vw = window.innerWidth - 20
         var vw1 = window.outerWidth;
-       // console.log(vw,vw1);
+
         var scalew = vw / this.width;
         var scaleh = scalew;
 
@@ -140,12 +148,6 @@ function moblob_f_display_image(readXml, img, imgid) {
 
         image.style.width = imgw + "px";
         image.style.height = imgh + "px";
-        //var htmlin = "<strong><small>";
-        //var htmlout = "</strong><br>";
-        //var htmlend = "</small>";
-
-        //_("moblob_size")
-        //    .innerHTML = "<strong>Size: </strong><small>w:" + this.width + "px, h:" + this.height + "px</small>";
 
         _URL.revokeObjectURL(objectUrl);
     };
@@ -190,12 +192,14 @@ async function moblob_io_GETFromBlob() {
 
 async function moblob_io_toblob() {
     console.log("POST to blob");
-    moio_blinkIOActivity(true)
-   // var _uri = "/blobapi/Images";
 
-    //var files = document.getElementById("inputGroupFile01").files;
-    //moblob_input_image
     var files = document.getElementById("moblob_input_image").files;
+
+    if (!files.length) {
+        return false;
+    }
+
+    moio_blinkIOActivity(true)
 
     var battlePlans = new FormData();
     for (var i0 = 0; i0 < files.length; i0++) {
@@ -234,15 +238,11 @@ function moblob_f_removeFromBlob() {
     if (!container) {
         container = _defaultContainer;
     }
-    //var imgUrl = _("moblob_input_image").style.backgroundImage;
-    //var imgSrc = imgUrl.slice(4, -1).replace(/"/g, "");
-    //imgSrc = "093504c0-3cd9-4c89-9387-22cbfedbb75d.jpg";
+
     var imgSrc = _(_blobSelectedImageId).getAttribute("imgId")
     console.log(container, imgSrc);
     moblob_io_removeFromBlob(container, imgSrc)
 }
-
-
 
 /// DELETE
 async function moblob_io_removeFromBlob(container, imgSrc) {
@@ -252,31 +252,26 @@ async function moblob_io_removeFromBlob(container, imgSrc) {
         method: 'DELETE'
     })
         .then((response) => {
-            //var filenames = JSON.parse(response);
-           // var directoryfiles = filenames.listnames;
-           // var container = filenames.container;
-            // moblob_endPostItem(directoryfiles, container)//
+
             var status = response.status;
             if (status == 200) {
 
                 // build function to end removal
                 _(imgSrc).outerHTML = "";
-                var selectedImage = _(_blobSelectedImageId)
-                selectedImage.style = "";
+                moblob_f_clearSelectedImage();
                 selectedImage.removeAttribute("imgid");
                 selectedImage.classList.remove("loaded");
-                //  moblob_f_displayImgAttributes(null); // clear Details
                 moio_blinkIOActivity(false)
+
                 // Trigger toast/ Snackbar
-                mouix_showtoastOK('ok','Item removido')
+                mouix_showtoastOK('ok')
 
             }
         })
         .catch(error => {
             console.error('Unable to delete item.', error)
             moio_blinkIOActivity(false)
-           // moblob_f_showtoastOK('nok', 'erro ao remover')
-            mouix_showtoastOK('nok', 'erro ao remover')
+            mouix_showtoastOK('nok')
         });
 }
 
@@ -324,30 +319,18 @@ function moblob_endPostItem(directoryfiles, container) {
     moio_blinkIOActivity(false)
 }
 
-//function mouix_showtoastOK(toastId, toastTitle, toastBody) {
-//    if (toastTitle) {
-//        _(toastId + "-title").innerHTML = toastTitle;
-//    }
-//    if (toastBody) {
-//        _(toastId + "-body").innerHTML = toastBody;
-//    }
-
-//    var toastID = _(toastId);
-//    toastID = new bootstrap.Toast(toastID);
-//    toastID.show();
-//}
 
 function moblob_f_displaySelectedImage(ev, container) {
     if (!container) {
         container = _defaultContainer;
     }
-    var imgId = ev.target.id
+    var imgId = ev.target.id;
   
     var pathfile = _path + container + "/" + imgId ;
     //console.log(ev.target.id)
     //console.log(ev)
 
     var readXml = pathfile;
-    moblob_f_display_image(readXml, null, "moblob_input_image") 
-    moblob_f_setSelectedImageId(imgId)
+    moblob_f_display_image(readXml, null, "moblob_input_image");
+    moblob_f_setSelectedImageId(imgId);
 }
