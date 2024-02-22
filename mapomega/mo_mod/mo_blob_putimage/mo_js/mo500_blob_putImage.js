@@ -35,7 +35,7 @@ function moio_setBlobEvents() {
         .addEventListener("click", moblob_io_toblob);
     _("moblob_input_image")
         .addEventListener("input", moblob_f_getMetaData);
-    _("blob_images")
+    _("mo_blob_content")
         .addEventListener("click", moblob_f_displaySelectedImage);
     _("moblob_erase")
         .addEventListener("click", moblob_f_removeFromBlob);
@@ -320,7 +320,7 @@ function moblob_endPostItem(directoryfiles, container) {
         }
     }
     // console.log(imgHtml)
-    document.getElementById("blob_images").innerHTML = imgHtml;
+    document.getElementById("mo_blob_content").innerHTML = imgHtml;
     moio_blinkIOActivity(false)
 }
 
