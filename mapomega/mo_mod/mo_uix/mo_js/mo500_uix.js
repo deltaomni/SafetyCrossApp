@@ -18,6 +18,8 @@
 function mouix_setUIXEvents() {
     _('mouix_setPin').
         addEventListener('click', mouix_PinToast)
+    _('mo-swich-images').
+        addEventListener('click', mouix_swichContent)
 }
 
 function mouix_PinToast() {
@@ -84,6 +86,21 @@ function mouix_showtoastOK(toastStatus, toastTitle, toastBody) {
     // console.log(toastBody)
 }
 
+function mouix_swichContent() {
+    var blobc = _cn('mo_blob_content');
+    mouix_toggleClass(blobc, 'd-none') 
 
+    var cardc = _cn('mo_card_content');
+    mouix_toggleClass(cardc, 'd-none') 
+  
+}
+
+function mouix_toggleClass(coll, tclass) {
+    console.log(coll)
+
+    for (var i = 0; i < coll.length; i++) {
+        coll[i].classList.toggle(tclass);
+    }
+}
 
 
