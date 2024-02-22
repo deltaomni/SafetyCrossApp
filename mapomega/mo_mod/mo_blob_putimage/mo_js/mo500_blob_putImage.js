@@ -215,13 +215,13 @@ async function moblob_io_toblob() {
             var directoryfiles = filenames.listnames;
             var container = filenames.container;
             moblob_endPostItem(directoryfiles, container)//
-            moblob_f_showtoastOK('ok','Item salvo')
+            mouix_showtoastOK('ok','Item salvo')
         })
         .catch(error => {
             console.error('Unable to add item.', error)
             moio_blinkIOActivity(false)
             // show no ok
-            moblob_f_showtoastOK('nok','Erro ao salvar')
+            mouix_showtoastOK('nok','Erro ao salvar')
         });
 
 
@@ -268,14 +268,15 @@ async function moblob_io_removeFromBlob(container, imgSrc) {
                 //  moblob_f_displayImgAttributes(null); // clear Details
                 moio_blinkIOActivity(false)
                 // Trigger toast/ Snackbar
-                moblob_f_showtoastOK('ok','Item removido')
+                mouix_showtoastOK('ok','Item removido')
 
             }
         })
         .catch(error => {
             console.error('Unable to delete item.', error)
             moio_blinkIOActivity(false)
-            moblob_f_showtoastOK('nok', 'erro ao remover')
+           // moblob_f_showtoastOK('nok', 'erro ao remover')
+            mouix_showtoastOK('nok', 'erro ao remover')
         });
 }
 
@@ -323,7 +324,7 @@ function moblob_endPostItem(directoryfiles, container) {
     moio_blinkIOActivity(false)
 }
 
-//function moblob_f_showtoastOK(toastId, toastTitle, toastBody) {
+//function mouix_showtoastOK(toastId, toastTitle, toastBody) {
 //    if (toastTitle) {
 //        _(toastId + "-title").innerHTML = toastTitle;
 //    }

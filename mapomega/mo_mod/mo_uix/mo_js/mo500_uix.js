@@ -21,40 +21,41 @@ function mouix_setUIXEvents() {
 }
 
 function mouix_PinToast() {
-    console.log("open pin toast");
-    var node = _('mouix_SelectedItem')
-    const clone = node.cloneNode(true);
+   // console.log("open pin toast");
+
     var pin = _('mouix_setPin').classList.contains('text-warning');
-    console.log(pin, _('mouix_setPin').classList);
     if (pin) {
         _('mouix_setPin').classList.remove('text-warning');
-        _('mouix_setPin').classList.add('text-secondary');
+        _('mouix_setPin').classList.add('color-theme');
         _('mouix_setPin').classList.add('opacity-25');
-        var toastTitle = 'pin-off'
+        var eventTitle = 'pin-off'
     } else {
         
-        _('mouix_setPin').classList.remove('text-secondary');
+        _('mouix_setPin').classList.remove('color-theme');
         _('mouix_setPin').classList.remove('opacity-25');
         _('mouix_setPin').classList.add('text-warning');
-        toastTitle = 'pin-in'
+        eventTitle = 'pin-in'
     }
-
-    moblob_f_showtoastOK('ok', toastTitle, clone.outerHTML)
+    var node = _('mouix_SelectedItem')
+    const clone = node.cloneNode(true);
+    mouix_f_showPintoast('ok', eventTitle, clone.innerHTML)
 }
 
-function moblob_f_showtoastOK(toastId, toastTitle, toastBody) {
+function mouix_f_showPintoast(toastId, toastTitle, toastBody) {
     if (!toastId) {
         return false
     }
+    if (!_('mo-pin-fixed')) { return false }
    
-    toastId = 'mo_msgtoast_' + toastId;
-    if (toastTitle) {
-        if (toastTitle == 'pin-in' || toastTitle == 'pin-off') {
-            toastTitle = _(toastId).getAttribute('data-' + toastTitle);
-        }
-            _(toastId + "-title").innerHTML = toastTitle;
-    
+    toastId = 'mo_pintoast_' + toastId;
+    if (toastTitle == 'pin-in') {
+        _('mo-pin-fixed').classList.remove('d-none')
+        _('mo-pin-removed').classList.add('d-none')
+    } else {
+        _('mo-pin-removed').classList.remove('d-none')
+        _('mo-pin-fixed').classList.add('d-none')
     }
+    
     if (toastBody) {
         _(toastId + "-body").innerHTML = toastBody;
     }
@@ -62,5 +63,27 @@ function moblob_f_showtoastOK(toastId, toastTitle, toastBody) {
     var toastID = _(toastId);
     toastID = new bootstrap.Toast(toastID);
     toastID.show();
-    console.log(toastBody)
+   // console.log(toastBody)
 }
+
+function mouix_showtoastOK(toastStatus, toastTitle, toastBody) {
+
+    var toastStatus = 'mo_msgtoast_' + toastStatus;
+
+    if (toastTitle) {
+        _(toastStatus+'-title').innerHTML = toastTitle;
+    } 
+
+    if (toastBody) {
+        _(toastStatus+'-body').innerHTML = toastBody;
+    }
+
+    var toast= _(toastStatus);
+    toast = new bootstrap.Toast(toast);
+    toast.show();
+    // console.log(toastBody)
+}
+
+
+
+
