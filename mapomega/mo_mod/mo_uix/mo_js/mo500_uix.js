@@ -16,6 +16,9 @@
  */
 
 function mouix_setUIXEvents() {
+    // mo_event_pointer
+    _('mo_event_pointer').
+        addEventListener('click', mouix_clearNewEvent)
     _('mouix_setPin').
         addEventListener('click', mouix_PinToast)
     _('mo-swich-images').
@@ -72,18 +75,17 @@ function mouix_showtoastOK(toastStatus, toastTitle, toastBody) {
 
     var toastStatus = 'mo_msgtoast_' + toastStatus;
 
-    if (toastTitle) {
-        _(toastStatus+'-title').innerHTML = toastTitle;
-    } 
+    //if (toastTitle) {
+    //    _(toastStatus + '-title').innerHTML = toastTitle;      
+    //} 
 
-    if (toastBody) {
-        _(toastStatus+'-body').innerHTML = toastBody;
-    }
+    //if (toastBody) {
+    //    _(toastStatus+'-body').innerHTML = toastBody;
+    //}
 
     var toast= _(toastStatus);
     toast = new bootstrap.Toast(toast);
     toast.show();
-    // console.log(toastBody)
 }
 
 function mouix_swichContent() {
@@ -96,11 +98,23 @@ function mouix_swichContent() {
 }
 
 function mouix_toggleClass(coll, tclass) {
-    console.log(coll)
+    // console.log(coll)
 
     for (var i = 0; i < coll.length; i++) {
         coll[i].classList.toggle(tclass);
     }
 }
 
+function mouix_clearNewEvent() {
+    moblob_f_clearSelectedImage(_blobSelectedImageId);
+
+    //var visitor = _('mo_event_visitor').checked;
+    //var incognito = _('mo_event_incognito').checked;
+
+    _('mo_event_visitor').checked = false;
+    _('mo_event_incognito').checked = false;
+
+
+   // console.log(visitor, incognito);
+}
 
