@@ -129,7 +129,7 @@ function moblob_f_display_image(readXml, img, imgid) {
         objectUrl = readXml;
     }
     img1.onload = function () {
-        var vw = window.innerWidth - 50
+        var vw = window.innerWidth - 20
         var vw1 = window.outerWidth;
        // console.log(vw,vw1);
         var scalew = vw / this.width;
