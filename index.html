@@ -457,16 +457,20 @@
                     <input id="moblob_input_image_2" type="file"
                            multiple accept=".gif,.jpg,.jpeg,.png,.svg"
                            class="form-control bg-transparent cover_image_blank_input">
-
                 </div>
             </div>
 
-
         </div>
         <div class="card-body">
+            <div class="d-flex flex-row flex-wrap moimg-options justify-content-center">
+                <p class="color-highlight font-16 font-400 p-0 m-0">Clique acima para carregar imagens.</p>
+            </div>
+
+        </div>
+
+        <div class="card card-style card-full-right bg-transparent moimg-options d-none" style="margin-top:-25px; margin-bottom:-10px; z-index:1">
             <ul class="list-group">
                 <li class="list-group-item border-0 p-0 m-0">
-
                     <div class="btn-group w-100" role="group">
                         <a href="#" id="moblob_copyimg" class="btn btn-primary">
                             <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -491,23 +495,22 @@
                     </div>
                 </li>
             </ul>
-        </div>
-
-        <div class="card card-style card-full-right bg-transparent" style="margin-top:-25px; margin-bottom:-10px; z-index:1">
-            <div class="content py-3 me-0">
+            <div class="py-3 me-0">
                 <div id="moblob_img_collection" class="d-flex flex-row m-0 flex-wrap">
-                    <!--<p class="color-highlight font-16 font-400">Clique acima para carregar imagens</p>-->
+                    <!-- Uploads  -->
+
                 </div>
             </div>
         </div>
 
-
         <div class="content">
+
+            <!-- Potenciais de Impacto -->
             <div class="card card-style m-0 rounded-0 bg-transparent shadow-0">
                 <div class="content p-0 m-0">
                     <p class="mb-n1 color-highlight font-16 font-600">Informe os potenciais de</p>
                     <h1>Impacto</h1>
-                    <div class="d-flex flex-row justify-content-between flex-wrap ">
+                    <div class="d-flex flex-row justify-content-center flex-wrap ">
                         <div class="form-check interest-check pe-0 me-0">
                             <input class="form-check-input" type="checkbox" value="" id="mo-event-impact-check1">
                             <label class="form-check-label shadow-l rounded-xl font-16" for="mo-event-impact-check1">Pessoal</label>
@@ -532,33 +535,16 @@
                 </div>
             </div>
 
-        </div>
 
-        <div class="content text-start">
-            <div class="input-style no-borders no-icon mb-4">
-                <input  id="sc_event_data" type="datetime-local"
-                       value="2024-02-28" max="2030-01-01" min="2021-01-01"
-                       class="form-control validate-text font-20">
-                <label for="sc_event_data" class="color-highlight font-16">Selecione a data</label>
-                <i class="fa fa-check disabled valid me-4 pe-3 font-12 color-green-dark"></i>
-                <i class="fa fa-check disabled invalid me-4 pe-3 font-12 color-red-dark"></i>
-            </div>
+            <!-- Natureza -->
 
-            <div class="input-style no-borders no-icon mb-4 p-3 font-16">
-                <textarea id="sc_event_desc" class="font-14" placeholder="Descreva o evento"></textarea>
-                <label for="sc_event_desc" class="color-highlight font-16">Descrição:</label>
-                <em class="mt-n3 font-16">(requerido)</em>
-            </div>
-        </div>
-
-        <div class="content">
-            <div class="card card-style ms-0 me-0 rounded-0 bg-transparent shadow-0">
+            <div class="card card-style m-0 rounded-0 bg-transparent shadow-0">
                 <div class="content p-0 m-0">
                     <p class="mb-n1 color-highlight font-600 font-16">Informe a</p>
                     <h1>Natureza</h1>
                     <div class="d-flex flex-row justify-content-center flex-wrap ">
                         <div class="form-check interest-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="" id="mo-event-nature-check4" checked>
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="" id="mo-event-nature-check4">
                             <label class="form-check-label shadow-xl rounded-xl" for="mo-event-nature-check4">Perigo</label>
                             <i class="fa fa-check-circle color-white font-16"></i>
                             <i class="fa fa-flag font-17 color-yellow-dark"></i>
@@ -589,6 +575,52 @@
 
         </div>
 
+        <div class="divider mb-2 "></div>
+
+        <div class="content text-start">
+            <div class="input-style no-borders no-icon mb-4">
+                <!-- Data/ Hora -->
+                <p class="mb-n1 color-highlight font-600 font-16">Informe a</p>
+                <h1>Data/ Hora</h1>
+                <input id="sc_event_data" type="datetime-local"
+                       placeholder="Informe a data, a hora"
+                       value="2024-02-28" max="2030-01-01" min="2021-01-01"
+                       class="form-control validate-text font-20">
+                <!--<label for="sc_event_data" class="color-highlight font-16">Data/ Hora</label>-->
+                <i class="fa fa-check disabled valid me-4 pe-3 font-16 color-green-dark"></i>
+                <i class="fa fa-check disabled invalid me-4 pe-3 font-16 color-red-dark"></i>
+            </div>
+            <!-- Descrição -->
+            <div class="input-style no-borders no-icon">
+                <!--<p class="mb-n1 color-highlight font-600 font-16">Informe a</p>-->
+                <h1>Descrição</h1>
+                <div class="input-style no-borders no-icon">
+                    <textarea id="sc_event_desc" class="font-16 p-3 rounded-3"
+                              placeholder="Descreva o evento"
+                              style="height:50px;"></textarea>
+                    <!--<label for="sc_event_desc" class="color-highlight font-16">Descrição:</label>-->
+                    <!--<em class="mt-n3 font-16">(requerido)</em>-->
+                </div>
+            </div>
+        </div>
+
+        <div class="divider mb-2 "></div>
+
+        <div class="card card-style">
+            <div class="content mb-0">
+                <h4>Localizar no mapa</h4>
+                <p class="m-0 p-0 font-16">Clique para apontar o evento no seu local atual...</p>
+                <a href="#" class="get-location btn btn-full btn-m bg-red-dark rounded-sm text-uppercase shadow-l font-900 mb-4">Meu Local Atual</a>
+                <p class="m-0 pb-2 font-16">... ou selecione no mapa abaixo:</p>
+
+            </div>
+            <div class="responsive-iframe add-iframe card-style">
+                <iframe class="location-map" src='https://www.google.com/maps/embed/v1/view?key=AIzaSyC8F1bVIGsP_nHBaOBgBpDCsRd-LYeFUsA&center=-33.8569,151.2152&zoom=16&maptype=satellite'></iframe>
+            </div>
+            <a href="https://maps.google.com" target="_blank" class="location-button btn btn-full btn-m bg-red-dark rounded-0 text-uppercase shadow-l font-900 disabled">Ver no Google Maps</a>
+            <p class="location-support text-center"></p>
+            <p class="location-coordinates"></p>
+        </div>
         <div class="content">
 
             <div class="list-group list-custom-large mb-4 pb-3">
@@ -602,7 +634,7 @@
                                 </svg>
                             </i>
                             <span>Estou visitando o local</span>
-                            <strong class="font-12">Visitas externas tem mais peso</strong>
+                            <strong class="font-14">Visitas externas tem mais peso</strong>
                         </div>
                     </div>
                     <div class="custom-control scale-switch ios-switch">
@@ -620,44 +652,20 @@
                                 </svg>
                             </i>
                             <span>Reincidência</span>
-                            <strong class="font-12">Já aconteceu antes?</strong>
+                            <strong class="font-14">Já aconteceu antes?</strong>
                         </div>
                     </div>
                     <div class="custom-control scale-switch ios-switch">
                         <input id="mo_event_reccurent" type="checkbox" class="ios-input">
                         <label class="custom-control-label" for="mo_event_reccurent"></label>
                     </div>
-
                 </a>
-
-
             </div>
-        </div>
-        <div class="card card-style">
-            <div class="content mb-0">
-                <h4>Localizar no mapa</h4>
-                <p class="mb-0 pb-4">Localize o apontamento no seu local atual, ou selecione o local no mapa.</p>
 
-                <p class="location-support"></p>
-                <p class="location-coordinates"></p>
+            <div class="divider mb-2 "></div>
 
-                <a href="#" class="get-location btn btn-full btn-m bg-red-dark rounded-sm text-uppercase shadow-l font-900 mb-4">Meu local Atual</a>
-            </div>
-        <!--</div>
-        <div class="card card-style">-->
-            <!--<div class="content">
-                <h4 class="pt-2">Apontar no mapa</h4>
-                <p class="mb-3">
-                    Tap the "Get My Location" button above and this map will automatically update with your new location. It's that simple.
-                </p>
-            </div>-->
-            <div class="responsive-iframe add-iframe card-style">
-                <iframe class="location-map" src='https://www.google.com/maps/embed/v1/view?key=AIzaSyC8F1bVIGsP_nHBaOBgBpDCsRd-LYeFUsA&center=-33.8569,151.2152&zoom=16&maptype=satellite'></iframe>
-            </div>
-            <a href="https://maps.google.com" target="_blank" class="location-button btn btn-full btn-m bg-red-dark rounded-0 text-uppercase shadow-l font-900 disabled">Ver no Google Maps</a>
-        </div>
-
-        <div class="content">
+            <!--</div>
+    <div class="content">-->
             <!-- INCOGNITO -->
             <div class="list-group list-custom-large mb-4 pb-3">
                 <a data-trigger-switch="mo_event_incognito" class="border-0" href="#">
@@ -678,30 +686,30 @@
                     </div>
                 </a>
             </div>
-                <div class="d-flex mb-4">
-                    <div class="me-2"><img src="images/pictures/faces/1s.png" width="50" class="rounded-s"></div>
-                    <div>
-                        <h5>Jack Louder</h5>
-                        <p class="mb-0 mt-n2">22/2/2024, 11:45:07 AM</p>
-                    </div>
-                    <div class="ms-auto">
-                        <a id="moblob_toblob" href="#" class="close-menu btn btn-full rounded-s gradient-green font-16 font-600 p-3 float-end">
-                            Apontar
-                        </a>
-                    </div>
+            <div class="d-flex mb-4">
+                <div class="me-2"><img src="images/pictures/faces/1s.png" width="50" class="rounded-s"></div>
+                <div>
+                    <h5>Jack Louder</h5>
+                    <p class="mb-0 mt-n2">22/2/2024, 11:45:07 AM</p>
                 </div>
+                <div class="ms-auto">
+                    <a id="moblob_toblob" href="#" class="close-menu btn btn-full rounded-s gradient-green font-16 font-600 p-3 float-end">
+                        Apontar
+                    </a>
+                </div>
+            </div>
 
-                <div class="row">
-                    <div class="col-12">
-                        <a id="moblob_cancelblob" href="#" class="close-menu btn btn-full gradient-red font-12 btn-m font-600 mt-3 rounded-s">Cancelar</a>
-                    </div>
-
+            <div class="row">
+                <div class="col-12">
+                    <a id="moblob_cancelblob" href="#" class="close-menu btn btn-full gradient-red font-12 btn-m font-600 mt-3 rounded-s">Cancelar</a>
                 </div>
 
             </div>
 
-
         </div>
+
+
+    </div>
 
 
 
