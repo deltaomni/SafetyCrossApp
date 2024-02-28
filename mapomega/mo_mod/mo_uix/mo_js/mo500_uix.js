@@ -15,14 +15,20 @@
  * 
  */
 
-function mouix_setUIXEvents() {
-    // mo_event_pointer
+function mouix_f_setUIXEvents() {
     _('mo_event_pointer').
-        addEventListener('click', mouix_clearNewEvent)
+        addEventListener('click', function () {
+            scevent_f_clearNewEvent()
+        })
+
     _('mouix_setPin').
         addEventListener('click', mouix_PinToast)
-    _('mo-swich-images').
-        addEventListener('click', mouix_swichContent)
+
+    _('mo-switch-images').
+        addEventListener('click', function () {
+            console.log('hey')
+            mouix_f_toggleTagName('mo_blob_content')
+        })
 }
 
 function mouix_PinToast() {
@@ -88,16 +94,15 @@ function mouix_showtoastOK(toastStatus, toastTitle, toastBody) {
     toast.show();
 }
 
-function mouix_swichContent() {
+function mouix_f_swichContent(content) {
     var blobc = _cn('mo_blob_content');
-    mouix_toggleClass(blobc, 'd-none') 
+    mouix_f_toggleClass(blobc, 'd-none') 
 
     var cardc = _cn('mo_card_content');
-    mouix_toggleClass(cardc, 'd-none') 
-  
+    mouix_f_toggleClass(cardc, 'd-none') 
 }
 
-function mouix_toggleClass(coll, tclass) {
+function mouix_f_toggleClass(coll, tclass) {
     // console.log(coll)
 
     for (var i = 0; i < coll.length; i++) {
@@ -105,16 +110,12 @@ function mouix_toggleClass(coll, tclass) {
     }
 }
 
-function mouix_clearNewEvent() {
-    moblob_f_clearSelectedImage(_blobSelectedImageId);
 
-    //var visitor = _('mo_event_visitor').checked;
-    //var incognito = _('mo_event_incognito').checked;
-
-    _('mo_event_visitor').checked = false;
-    _('mo_event_incognito').checked = false;
-
-
-   // console.log(visitor, incognito);
+function mouix_f_toggleTagName(content) {
+    var coll = _qsa("[sccontent-toggle='" + content + "']");
+    console.log(coll)
+    if (coll.length == 0) { return false }
+    for (var i = 0; i < coll.length; i++) {
+        coll[i].classList.toggle('d-none');
+    }
 }
-

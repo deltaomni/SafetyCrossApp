@@ -162,14 +162,11 @@ input[type="file"] {
     background-size: auto;
     background-position: center;
     background-repeat: no-repeat;
-
-
 }
 
 .cover_image_blank_input {
     width: 100vw;
     height: 240px;
-
 }
 
 .cover_image_selected {

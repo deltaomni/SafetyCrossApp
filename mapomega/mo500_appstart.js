@@ -24,7 +24,7 @@
 
 function mostart_init() {
     moio_setBlobEvents();
-    mouix_setUIXEvents();
+    mouix_f_setUIXEvents();
 
     var getimages = moblob_io_GETFromBlob();
 

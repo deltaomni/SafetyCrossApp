@@ -16,7 +16,7 @@
  */
 
 var collection = [];
-var loadedColledtion = [];
+var _loadedCollection = [];
 var _selectedCover = null;
 var _prefix = "";
 _prefix += "https://mapsailor32620240201174338.azurewebsites.net/";
@@ -29,6 +29,8 @@ var _mo_blob_content = "mo_blob_content";
 var _htmlin = "<strong><small>";
 var _htmlout = "</strong>";
 var _htmlend = "</small>";
+
+
 
 
 function moio_setBlobEvents() {
@@ -330,6 +332,7 @@ function moblob_endPostItem(directoryfiles, container) {
             var imgUrl = pathfile + directory[i];
             var thumb = '<div id="' + directory[i] + '" class="center-cropped" style="background-image: url(' + imgUrl + '); "></div>'
             imgHtml += thumb;
+            _loadedCollection.push(imgUrl)
         }
     }
     // console.log(imgHtml)
@@ -377,6 +380,7 @@ async function moblob_f_captureInputFile(e) {
 
     console.log(collection)
     moblob_f_buildImageCollection(collection);
+    mouix_f_toggleTagName('moimg_options')
 }
 
 function moblob_f_createImage(src) {
@@ -428,13 +432,12 @@ function moblob_f_buildImageCollection(collection) {
             } else {
                 dstyle += " height:" + imgh + "px; width:" + imgw + "px";
             }
-
             ci.style = dstyle;
             ci.classList.add('cover_image_selected')
             ci.classList.remove('cover_image_blank')
 
         })
-       
+
         coll.append(div);
     }
 }    

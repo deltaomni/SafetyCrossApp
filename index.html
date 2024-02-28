@@ -98,13 +98,11 @@
             <a href="index.html" class="mo_1 circle-nav">
                 <i><img width="54" src="mapomega/img/SC_523_Short_24x24.svg" /></i>
             </a>
-            <a data-menu="mo-new-event-2" href="#"><i class="fa fa-filter"></i><span>Legenda</span></a>
+            <a data-menu="mo-new-event" href="#"><i class="fa fa-filter"></i><span>Legenda</span></a>
             <a href="#" data-menu="menu-main"><i class="fa fa-bars"></i></a>
         </div>
 
-
         <div class="page-title-clear"></div>
-
 
         <div class="page-content">
             <div class="splide story-slider slider-no-dots  mb-0" id="moheader-story-slider">
@@ -147,7 +145,7 @@
 
                         <!-- Pointer -->
                         <div class="col-3 text-center align-self-center">
-                            <a id="mo_event_pointer" href="#" data-menu="mo-new-event-2"
+                            <a id="mo_event_pointer" href="#" data-menu="mo-new-event"
                                class="icon icon-xxl rounded-xl bg-highlight text-light border border-highlight border-s">
                                 <!--<a href="#" data-menu="menu-cart" class="icon icon-xxl rounded-xl bg-highlight text-light">-->
                                 <i class="fa fa-hand-point-right"></i>
@@ -238,17 +236,17 @@
                                 <h4>Últimos Apontamentos</h4>
                             </div>
                             <div class="flex-fill text-end align-self-center">
-                                <a id="mo-swich-images" href="#" class="icon icon-xxl color-theme">
+                                <a id="mo-switch-images"  href="#" class="icon icon-xxl color-theme">
                                     <i class="fa fa-th-list"></i>
                                 </a>
                             </div>
                         </div>
 
                         <div class="content m-0 p-0 mb-3">
-                            <div id="mo_blob_content" class="mo_blob_content d-flex flex-row flex-wrap justify-content-center">
+                            <div id="mo_blob_content" sccontent-toggle="mo_blob_content" class="mo_blob_content d-flex flex-row flex-wrap justify-content-center">
                                 <!-- Blob Images -->
                             </div>
-                            <div id="mo_card_content" class="mo_card_content d-flex flex-row flex-wrap justify-content-center d-none">
+                            <div id="mo_card_content" sccontent-toggle="mo_blob_content" class="mo_card_content d-flex flex-row flex-wrap justify-content-center d-none">
                                 <!-- Blob content -->
                                 <div class="mt-n3 ">
                                     <div class="content">
@@ -435,7 +433,7 @@
 
     <!-- Instants -->
 
-    <div id="mo-new-event-2"
+    <div id="mo-new-event"
          class="menu menu-box-modal rounded-0"
          data-menu-height="cover"
          data-menu-width="cover">
@@ -443,6 +441,7 @@
         <div class="card-top pt-4 ps-3 pe-3">
             <a href="#" class="float-end close-menu icon icon-s rounded-l bg-theme "><i class="fa fa-times color-red-dark"></i></a>
         </div>
+
         <div class="header-clear-small"></div>
 
         <div class="menu-title">
@@ -461,14 +460,14 @@
             </div>
 
         </div>
-        <div class="card-body">
-            <div class="d-flex flex-row flex-wrap moimg-options justify-content-center">
+        <div sccontent-toggle="moimg_options" class="card-body">
+            <div class="d-flex flex-row flex-wrap justify-content-center">
                 <p class="color-highlight font-16 font-400 p-0 m-0">Clique acima para carregar imagens.</p>
             </div>
 
         </div>
 
-        <div class="card card-style card-full-right bg-transparent moimg-options d-none" style="margin-top:-25px; margin-bottom:-10px; z-index:1">
+        <div sccontent-toggle="moimg_options" class="card card-style card-full-right bg-transparent d-none" style="margin-top:-25px; margin-bottom:-10px; z-index:1">
             <ul class="list-group">
                 <li class="list-group-item border-0 p-0 m-0">
                     <div class="btn-group w-100" role="group">
@@ -495,7 +494,7 @@
                     </div>
                 </li>
             </ul>
-            <div class="py-3 me-0">
+            <div class="pb-3 me-0">
                 <div id="moblob_img_collection" class="d-flex flex-row m-0 flex-wrap">
                     <!-- Uploads  -->
 
@@ -537,7 +536,6 @@
 
 
             <!-- Natureza -->
-
             <div class="card card-style m-0 rounded-0 bg-transparent shadow-0">
                 <div class="content p-0 m-0">
                     <p class="mb-n1 color-highlight font-600 font-16">Informe a</p>
@@ -595,9 +593,10 @@
                 <!--<p class="mb-n1 color-highlight font-600 font-16">Informe a</p>-->
                 <h1>Descrição</h1>
                 <div class="input-style no-borders no-icon">
-                    <textarea id="sc_event_desc" class="font-16 p-3 rounded-3"
-                              placeholder="Descreva o evento"
-                              style="height:50px;"></textarea>
+                    <textarea id="sc_event_desc"
+                              class="font-16 px-3 rounded-3 bg-theme color-theme"
+                              rows="2" 
+                              placeholder="Descreva o evento"></textarea>
                     <!--<label for="sc_event_desc" class="color-highlight font-16">Descrição:</label>-->
                     <!--<em class="mt-n3 font-16">(requerido)</em>-->
                 </div>
@@ -728,6 +727,7 @@
 
         <!-- MapOmega -->
         <script src="mapomega/mo_mod/mo_blob_putimage/mo_js/mo500_blob_putImage.js"></script>
+        <script src="mapomega/mo_mod/mo_sc_events/mo_js/mo500_sc_content.js"></script>
         <script src="mapomega/mo_mod/mo_uix/mo_js/mo500_uix.js"></script>
         <script src="mapomega/mo_io/moio500_app.js"></script>
         <script src="mapomega/mo500_appstart.js"></script>
