@@ -159,7 +159,7 @@ input[type="file"] {
 
 .cover_image_blank {
     background-image: url('img/camera-plus.svg');
-    background-size: 40%;
+    background-size: auto;
     background-position: center;
     background-repeat: no-repeat;
 
