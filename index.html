@@ -505,26 +505,26 @@
         <div class="content">
             <div class="card card-style m-0 rounded-0 bg-transparent shadow-0">
                 <div class="content p-0 m-0">
-                    <p class="mb-n1 color-highlight font-600">Informe o potencial de</p>
-                    <h1>Impacto(s)</h1>
+                    <p class="mb-n1 color-highlight font-16 font-600">Informe os potenciais de</p>
+                    <h1>Impacto</h1>
                     <div class="d-flex flex-row justify-content-between flex-wrap ">
                         <div class="form-check interest-check pe-0 me-0">
                             <input class="form-check-input" type="checkbox" value="" id="mo-event-impact-check1">
-                            <label class="form-check-label shadow-l rounded-xl font-12" for="mo-event-impact-check1">Pessoal</label>
-                            <i class="fa fa-check-circle color-white font-18"></i>
-                            <i class="fa fa-user font-17 color-blue-dark"></i>
+                            <label class="form-check-label shadow-l rounded-xl font-16" for="mo-event-impact-check1">Pessoal</label>
+                            <i class="fa fa-check-circle color-white font-16"></i>
+                            <i class="fa fa-user font-16 color-blue-dark"></i>
                         </div>
                         <div class="form-check interest-check pe-0 me-0">
                             <input class="form-check-input" type="checkbox" value="" id="mo-event-impact-check2">
-                            <label class="form-check-label shadow-l rounded-xl font-12" for="mo-event-impact-check2">Ambiental</label>
-                            <i class="fa fa-check-circle color-white font-18"></i>
-                            <i class="fa fa-leaf font-17 color-green-dark"></i>
+                            <label class="form-check-label shadow-l rounded-xl font-16" for="mo-event-impact-check2">Ambiental</label>
+                            <i class="fa fa-check-circle color-white font-16"></i>
+                            <i class="fa fa-leaf font-16 color-green-dark"></i>
                         </div>
                         <div class="form-check interest-check pe-0 me-0">
                             <input class="form-check-input" type="checkbox" value="" id="mo-event-impact-check3">
-                            <label class="form-check-label shadow-l rounded-xl font-12" for="mo-event-impact-check3">Material</label>
-                            <i class="fa fa-check-circle color-white font-18"></i>
-                            <i class="fa fa-tags font-17 color-gray-dark"></i>
+                            <label class="form-check-label shadow-l rounded-xl font-16" for="mo-event-impact-check3">Material</label>
+                            <i class="fa fa-check-circle color-white font-16"></i>
+                            <i class="fa fa-tags font-16 color-gray-dark"></i>
                         </div>
 
                     </div>
@@ -534,49 +534,51 @@
 
         </div>
 
-        <div class="content">
+        <div class="content text-start">
             <div class="input-style no-borders no-icon mb-4">
-                <input type="date" value="2030-12-31" max="2030-01-01" min="2021-01-01" class="form-control validate-text" id="form6a" placeholder="Phone">
-                <label for="form6a" class="color-highlight">Selecione a data</label>
+                <input  id="sc_event_data" type="datetime-local"
+                       value="2024-02-28" max="2030-01-01" min="2021-01-01"
+                       class="form-control validate-text font-20">
+                <label for="sc_event_data" class="color-highlight font-16">Selecione a data</label>
                 <i class="fa fa-check disabled valid me-4 pe-3 font-12 color-green-dark"></i>
                 <i class="fa fa-check disabled invalid me-4 pe-3 font-12 color-red-dark"></i>
             </div>
 
-            <div class="input-style no-borders no-icon mb-4">
-                <textarea id="form7a" placeholder="Enter your message"></textarea>
-                <label for="form7a" class="color-highlight">Escreva seu apontamento</label>
-                <em class="mt-n3">(requerido)</em>
+            <div class="input-style no-borders no-icon mb-4 p-3 font-16">
+                <textarea id="sc_event_desc" class="font-14" placeholder="Descreva o evento"></textarea>
+                <label for="sc_event_desc" class="color-highlight font-16">Descrição:</label>
+                <em class="mt-n3 font-16">(requerido)</em>
             </div>
         </div>
 
         <div class="content">
             <div class="card card-style ms-0 me-0 rounded-0 bg-transparent shadow-0">
                 <div class="content p-0 m-0">
-                    <p class="mb-n1 color-highlight font-600">Informe a</p>
+                    <p class="mb-n1 color-highlight font-600 font-16">Informe a</p>
                     <h1>Natureza</h1>
                     <div class="d-flex flex-row justify-content-center flex-wrap ">
                         <div class="form-check interest-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="" id="mo-event-nature-check4">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="" id="mo-event-nature-check4" checked>
                             <label class="form-check-label shadow-xl rounded-xl" for="mo-event-nature-check4">Perigo</label>
-                            <i class="fa fa-check-circle color-white font-18"></i>
+                            <i class="fa fa-check-circle color-white font-16"></i>
                             <i class="fa fa-flag font-17 color-yellow-dark"></i>
                         </div>
                         <div class="form-check interest-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault" value="" id="mo-event-nature-check5">
                             <label class="form-check-label shadow-xl rounded-xl" for="mo-event-nature-check5">Risco</label>
-                            <i class="fa fa-check-circle color-white font-18"></i>
+                            <i class="fa fa-check-circle color-white font-16"></i>
                             <i class="fa fa-percent font-17 color-blue-dark"></i>
                         </div>
                         <div class="form-check interest-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault" value="" id="mo-event-nature-check6">
                             <label class="form-check-label shadow-xl rounded-xl" for="mo-event-nature-check6">Quase Acidente</label>
-                            <i class="fa fa-check-circle color-white font-18"></i>
+                            <i class="fa fa-check-circle color-white font-16"></i>
                             <i class="fa fa-exclamation font-17 color-orange-dark"></i>
                         </div>
                         <div class="form-check interest-check float-end">
                             <input class="form-check-input" type="radio" name="flexRadioDefault" value="" id="mo-event-nature-check7">
                             <label class="form-check-label shadow-xl rounded-xl" for="mo-event-nature-check7">Acidente</label>
-                            <i class="fa fa-check-circle color-white font-18"></i>
+                            <i class="fa fa-check-circle color-white font-16"></i>
                             <i class="fa fa-warning font-17 color-red-dark"></i>
                         </div>
 
@@ -628,24 +630,7 @@
 
                 </a>
 
-                <!-- INCOGNITO -->
-                <a data-trigger-switch="mo_event_incognito" class="border-0" href="#">
-                    <div class="d-flex">
-                        <div>
-                            <i class="font-16 bg-transparent color-theme">
-                                <svg viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="M17.06 13C15.2 13 13.64 14.33 13.24 16.1C12.29 15.69 11.42 15.8 10.76 16.09C10.35 14.31 8.79 13 6.94 13C4.77 13 3 14.79 3 17C3 19.21 4.77 21 6.94 21C9 21 10.68 19.38 10.84 17.32C11.18 17.08 12.07 16.63 13.16 17.34C13.34 19.39 15 21 17.06 21C19.23 21 21 19.21 21 17C21 14.79 19.23 13 17.06 13M6.94 19.86C5.38 19.86 4.13 18.58 4.13 17S5.39 14.14 6.94 14.14C8.5 14.14 9.75 15.42 9.75 17S8.5 19.86 6.94 19.86M17.06 19.86C15.5 19.86 14.25 18.58 14.25 17S15.5 14.14 17.06 14.14C18.62 14.14 19.88 15.42 19.88 17S18.61 19.86 17.06 19.86M22 10.5H2V12H22V10.5M15.53 2.63C15.31 2.14 14.75 1.88 14.22 2.05L12 2.79L9.77 2.05L9.72 2.04C9.19 1.89 8.63 2.17 8.43 2.68L6 9H18L15.56 2.68L15.53 2.63Z" />
-                                </svg>
-                            </i>
-                            <span>Modo Incógnito</span>
-                            <strong class="font-12">Sua ID não é registrada.</strong>
-                        </div>
-                    </div>
-                    <div class="custom-control scale-switch ios-switch">
-                        <input id="mo_event_incognito" type="checkbox" class="ios-input">
-                        <label class="custom-control-label" for="mo_event_incognito"></label>
-                    </div>
-                </a>
+
             </div>
         </div>
         <div class="card card-style">
@@ -673,31 +658,50 @@
         </div>
 
         <div class="content">
+            <!-- INCOGNITO -->
+            <div class="list-group list-custom-large mb-4 pb-3">
+                <a data-trigger-switch="mo_event_incognito" class="border-0" href="#">
+                    <div class="d-flex">
+                        <div>
+                            <i class="font-16 bg-transparent color-theme">
+                                <svg viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M17.06 13C15.2 13 13.64 14.33 13.24 16.1C12.29 15.69 11.42 15.8 10.76 16.09C10.35 14.31 8.79 13 6.94 13C4.77 13 3 14.79 3 17C3 19.21 4.77 21 6.94 21C9 21 10.68 19.38 10.84 17.32C11.18 17.08 12.07 16.63 13.16 17.34C13.34 19.39 15 21 17.06 21C19.23 21 21 19.21 21 17C21 14.79 19.23 13 17.06 13M6.94 19.86C5.38 19.86 4.13 18.58 4.13 17S5.39 14.14 6.94 14.14C8.5 14.14 9.75 15.42 9.75 17S8.5 19.86 6.94 19.86M17.06 19.86C15.5 19.86 14.25 18.58 14.25 17S15.5 14.14 17.06 14.14C18.62 14.14 19.88 15.42 19.88 17S18.61 19.86 17.06 19.86M22 10.5H2V12H22V10.5M15.53 2.63C15.31 2.14 14.75 1.88 14.22 2.05L12 2.79L9.77 2.05L9.72 2.04C9.19 1.89 8.63 2.17 8.43 2.68L6 9H18L15.56 2.68L15.53 2.63Z" />
+                                </svg>
+                            </i>
+                            <span>Modo Incógnito</span>
+                            <strong class="font-12">Sua ID não é registrada.</strong>
+                        </div>
+                    </div>
+                    <div class="custom-control scale-switch ios-switch">
+                        <input id="mo_event_incognito" type="checkbox" class="ios-input">
+                        <label class="custom-control-label" for="mo_event_incognito"></label>
+                    </div>
+                </a>
+            </div>
+                <div class="d-flex mb-4">
+                    <div class="me-2"><img src="images/pictures/faces/1s.png" width="50" class="rounded-s"></div>
+                    <div>
+                        <h5>Jack Louder</h5>
+                        <p class="mb-0 mt-n2">22/2/2024, 11:45:07 AM</p>
+                    </div>
+                    <div class="ms-auto">
+                        <a id="moblob_toblob" href="#" class="close-menu btn btn-full rounded-s gradient-green font-16 font-600 p-3 float-end">
+                            Apontar
+                        </a>
+                    </div>
+                </div>
 
-            <div class="d-flex mb-4">
-                <div class="me-2"><img src="images/pictures/faces/1s.png" width="50" class="rounded-s"></div>
-                <div>
-                    <h5>Jack Louder</h5>
-                    <p class="mb-0 mt-n2">22/2/2024, 11:45:07 AM</p>
+                <div class="row">
+                    <div class="col-12">
+                        <a id="moblob_cancelblob" href="#" class="close-menu btn btn-full gradient-red font-12 btn-m font-600 mt-3 rounded-s">Cancelar</a>
+                    </div>
+
                 </div>
-                <div class="ms-auto">
-                    <a id="moblob_toblob" href="#" class="close-menu btn btn-full rounded-s gradient-green font-16 font-600 p-3 float-end">
-                        Apontar
-                    </a>
-                </div>
+
             </div>
 
-            <div class="row">
-                <div class="col-12">
-                    <a id="moblob_cancelblob" href="#" class="close-menu btn btn-full gradient-red font-12 btn-m font-600 mt-3 rounded-s">Cancelar</a>
-                </div>
-
-            </div>
 
         </div>
-
-
-    </div>
 
 
 
