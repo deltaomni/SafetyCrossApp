@@ -15,12 +15,17 @@
  * 
  */
 
+var collection = [];
+var loadedColledtion = [];
+var _selectedCover = null;
 var _prefix = "";
 _prefix += "https://mapsailor32620240201174338.azurewebsites.net/";
 var _uri = _prefix + "/blobapi/MVP500BlobPutImage";
 var _path = "https://safetycross.blob.core.windows.net/";
 var _defaultContainer = "scapp";
-var _blobSelectedImageId = "moblob_input_image"
+var _blobSelectedImageId = "moblob_input_image_2";
+var _mo_blob_content = "mo_blob_content";
+
 var _htmlin = "<strong><small>";
 var _htmlout = "</strong>";
 var _htmlend = "</small>";
@@ -35,12 +40,17 @@ function moio_setBlobEvents() {
         .addEventListener("click", moblob_io_toblob);
     _("moblob_cancelblob")
         .addEventListener("click", moblob_f_clearSelectedImage);
-    _("moblob_input_image")
-        .addEventListener("input", moblob_f_getMetaData);
+    //_("moblob_input_image")
+    //    .addEventListener("input", moblob_f_input_image);
+    _('moblob_input_image_2')
+        .addEventListener('input', moblob_f_captureInputFile);
     _("mo_blob_content")
         .addEventListener("click", moblob_f_displaySelectedImage);
-    _("moblob_erase")
-        .addEventListener("click", moblob_f_removeFromBlob);
+//    _("moblob_erase")
+    //        .addEventListener("click", moblob_f_removeFromBlob);
+    _("moblob_clear")
+        .addEventListener("click", moblob_f_clearFromSelected);
+
 }
 
 
@@ -49,7 +59,7 @@ function moio_setBlobEvents() {
 * @param {string} el - input element
 * @returns {} - nothing
 */
-async function moblob_f_getMetaData(el) {
+async function moblob_f_input_image(el) {
     var image = await moblob_f_serialize_image(el.target, _blobSelectedImageId);
     _(_blobSelectedImageId).removeAttribute("imgId")
    // moblob_f_displayImgAttributes(image);
@@ -84,19 +94,16 @@ function moblob_f_displayImgAttributes(image) {
 function moblob_f_setSelectedImageId(imgId) {
     var image = _(_blobSelectedImageId);
     image.setAttribute("imgId", imgId);
-   // _("moblob_name")
-    //    .innerHTML = _htmlin + "Name:" + _htmlout + imgId + _htmlend;
-
 }
 
-function moblob_f_serialize_image(el, imgid) {
+async function moblob_f_serialize_image(el, imgid) {
     var readXml = null;
     var img = el.files[0];
-
+    console.log(el.files);
     event.preventDefault();
 
     var reader = new FileReader();
-    reader.onload = function (e) {
+    reader.onload = await function (e) {
         //console.log(e.target);
         //console.log(e.target.result);
         //console.log(img);
@@ -107,27 +114,25 @@ function moblob_f_serialize_image(el, imgid) {
         }
     }
 
-    moblob_f_clearSelectedImage(_blobSelectedImageId);
+    //moblob_f_clearSelectedImage();
 
     if (img) {
         reader.readAsDataURL(img);
-        return img;
+      //  return img;
     }
+
+    // clear files
+    el.files = null;
 }
 
-function moblob_f_clearSelectedImage() {
-
-    var selectedImage = _(_blobSelectedImageId)
-    selectedImage.style = "";
-}
-
-function moblob_f_display_image(readXml, img, imgid) {
+async function moblob_f_display_image(readXml, img, imgid) {
+    console.log(img);
 
     var _URL = window.URL || window.webkitURL;
 
     var image = _(imgid);
     image.classList.add("loaded");
-    image.style = "background-image: url(" + readXml + ");";
+    //image.style = "background-image: url(" + readXml + ");";
 
     img1 = new Image();
     if (img) {
@@ -136,9 +141,9 @@ function moblob_f_display_image(readXml, img, imgid) {
         objectUrl = readXml;
     }
 
-    img1.onload = function () {
-        var vw = window.innerWidth - 20
-        var vw1 = window.outerWidth;
+    img1.onload = await function () {
+        var vw = window.innerWidth - 0; // side left)
+        //  var vw1 = window.outerWidth;
 
         var scalew = vw / this.width;
         var scaleh = scalew;
@@ -153,8 +158,20 @@ function moblob_f_display_image(readXml, img, imgid) {
     };
 
     img1.src = objectUrl;
+    //  console.log(img1)
+    //  _('mo_upload_content').innerHTML = img1.outerHTML
+    image.style = "background-image: url(" + objectUrl + ");";
+
 
 }
+
+function moblob_f_clearSelectedImage() {
+
+    var selectedImage = _(_blobSelectedImageId)
+
+    selectedImage.style = "";
+}
+
 
 function moblob_f_copyimg() {
     var img = _(_blobSelectedImageId)
@@ -193,7 +210,7 @@ async function moblob_io_GETFromBlob() {
 async function moblob_io_toblob() {
     console.log("POST to blob");
 
-    var files = document.getElementById("moblob_input_image").files;
+    var files = _(_blobSelectedImageId).files;
 
     if (!files.length) {
         return false;
@@ -246,6 +263,7 @@ function moblob_f_removeFromBlob() {
 
 /// DELETE
 async function moblob_io_removeFromBlob(container, imgSrc) {
+    var selectedImage = _(_blobSelectedImageId)
     moio_blinkIOActivity(true)
     var uri = _uri + "/" + container + "/" + imgSrc;
     await fetch(uri, {
@@ -315,7 +333,7 @@ function moblob_endPostItem(directoryfiles, container) {
         }
     }
     // console.log(imgHtml)
-    document.getElementById("mo_blob_content").innerHTML = imgHtml;
+    _(_mo_blob_content).innerHTML = imgHtml;
     moio_blinkIOActivity(false)
 }
 
@@ -331,6 +349,98 @@ function moblob_f_displaySelectedImage(ev, container) {
     //console.log(ev)
 
     var readXml = pathfile;
-    moblob_f_display_image(readXml, null, "moblob_input_image");
+    moblob_f_display_image(readXml, null, _blobSelectedImageId);
     moblob_f_setSelectedImageId(imgId);
+}
+
+
+async function moblob_f_captureInputFile(e) {
+
+    var files = e.target.files;
+
+    for (var i = 0; i < files.length; i++) {
+        // We need to represent the image as a file,
+        var file = files[i]
+        var blob = file;
+        // and use a URL or webkitURL (whichever is available to the browser)
+        // to create a temporary URL to the object
+        var URLObj = window.URL || window.webkitURL;
+        var source = URLObj.createObjectURL(blob);
+
+        var img = await moblob_f_createImage(source)
+        //var h = img.height;
+        //var w = img.width;
+        //var check = h < w;
+
+        collection.push(img);
+    }
+
+    console.log(collection)
+    moblob_f_buildImageCollection(collection);
+}
+
+function moblob_f_createImage(src) {
+    return new Promise((resolve, reject) => {
+        let img = new Image()
+        img.onload = () => resolve(img)
+        img.onerror = reject
+        img.src = src
+    })
+}
+
+function moblob_f_buildImageCollection(collection) {
+    var coll = _('moblob_img_collection')
+    coll.innerHTML = "";
+
+    var l = collection.length;
+
+    for (var i = 0; i < l; i++) {
+        var div = document.createElement('div')
+        div.classList.add('thumbs-center-cropped');
+        div.id = 'blobimg-' + i;
+        var dstyle = "background-image: url(" + collection[i].src + "); ";
+        div.style = dstyle;
+        var ci = _('moblob_cover_image')
+
+        div.addEventListener('click', function () {
+            var id = this.id.split('-')[1]
+
+            var dstyle = "background-image: " + this.style.backgroundImage + ";";
+
+            var img = collection[id];
+
+            var vw = window.innerWidth - 0; // side left)
+
+            var scalew = vw / img.width;
+            var scaleh = scalew;
+
+            var imgw = Math.round(img.width * scalew);
+            var imgh = Math.round(img.height * scaleh);
+
+            //  console.log(check, vw, scalew, scaleh, imgw, imgh);
+
+            if (imgh <= 240) {
+                imgh = 240;
+                imgw = Math.round(img.width * (240 / imgh));
+            } // min height
+            if (imgw < imgh) {
+                dstyle += " height:" + imgh + "px; width:" + vw + "px; ";
+            } else {
+                dstyle += " height:" + imgh + "px; width:" + imgw + "px";
+            }
+
+            ci.style = dstyle;
+            ci.classList.add('cover_image_selected')
+            ci.classList.remove('cover_image_blank')
+
+        })
+       
+        coll.append(div);
+    }
+}    
+
+function moblob_f_clearFromSelected(ev) {
+    //moblob_f_clearSelectedImage();
+    //selectedImage.removeAttribute("imgid");
+    //selectedImage.classList.remove("loaded");
 }

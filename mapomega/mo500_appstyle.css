@@ -138,6 +138,46 @@ input[type="file"] {
     margin: 1px;
 }
 
+.center-cropped-load {
+    width: calc(20vw - 10px);
+    height: calc(20vw - 10px);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 1px;
+}
+
+/*Events*/
+.thumbs-center-cropped {
+    width: calc(22vw - 2px);
+    height: calc(22vw - 2px);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 1px;
+}
+
+.cover_image_blank {
+    background-image: url('img/camera-plus.svg');
+    background-size: 40%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+}
+
+.cover_image_blank_input {
+    width: 100vw;
+    height: 240px;
+
+}
+
+.cover_image_selected {
+    /*background-size: 100%;*/
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/*Events End*/
 
 .mobg-whatsapp {
     
