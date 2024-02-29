@@ -118,11 +118,17 @@ input[type="file"] {
 */}
 
 .mo-ic-40 {
-    width: 40px;
-    height: 40px;
+    width: 40px !important;
+    height: 40px !important;
 /*    margin-left: 10px;
     margin-right: 10px;
 */}
+
+.mo-ic-50 {
+    width: 50px !important;
+    height: 50px !important;
+
+}
 
 .cropped-image-clip-rectangle {
     height: 20%;
@@ -164,6 +170,8 @@ input[type="file"] {
     background-repeat: no-repeat;
 }
 
+
+
 .cover_image_blank_input {
     width: 100vw;
     height: 240px;
@@ -174,6 +182,13 @@ input[type="file"] {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+.cover_image_toggle {
+    background-size: contain !important;
+
+}
+
+
 /*Events End*/
 
 .mobg-whatsapp {

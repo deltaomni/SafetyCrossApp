@@ -98,16 +98,26 @@ function scevent_clearAllFormEvent() {
 
 // show/hide moblob_img_collection when collection is null/not
 function scevent_toggleCollectionClass(collection) {
-    var img_off = _('moimg_uploads_off')
-    var img_on = _('moimg_uploads_on')
 
-    if (!collection.length) {
-        img_off.classList.remove('d-none')
-        img_on.classList.add('d-none')
-    } else {
-        img_off.classList.add('d-none')
-        img_on.classList.remove('d-none')
+    console.log(collection)
+    var cncoll = _cn('moimg_uploads')
+    
+    for (var i = 0; i < cncoll.length; i++) {
+        var check = cncoll[i].getAttribute('data-uploads')
+        if (check=='on' && collection.length) {
+            cncoll[i].classList.remove('d-none');
+        }
+        if (check=='off' && collection.length) {
+            cncoll[i].classList.add('d-none');
+        }
+        if (check=='on' && !collection.length) {
+            cncoll[i].classList.add('d-none');
+        }
+        if (check=='off' && !collection.length) {
+            cncoll[i].classList.remove('d-none');
+        }
     }
+
 }
 
 function scevent_f_showSelectedUpload(e, imgid) {
@@ -119,7 +129,7 @@ function scevent_f_showSelectedUpload(e, imgid) {
         id = imgid;
     }
 
-    console.log(id)
+   // console.log(id)
     var ci = _('moblob_cover_image')
     if (!collection.length) {
         ci.style = '';
@@ -139,9 +149,13 @@ function scevent_f_showSelectedUpload(e, imgid) {
     var imgw = Math.round(img.width * scalew);
     var imgh = Math.round(img.height * scaleh);
 
-    if (imgh <= 240) {
-        imgh = 240;
-        imgw = Math.round(img.width * (240 / imgh));
+    //if (imgh <= 240) {
+    //    imgh = 240;
+    //    imgw = Math.round(img.width * (240 / imgh));
+    //} // min height
+    if (imgh <= vw) {
+        imgh = vw;
+        imgw = Math.round(img.width * (vw / imgh));
     } // min height
     if (imgw < imgh) {
         dstyle += " height:" + imgh + "px; width:" + vw + "px; ";
@@ -154,6 +168,7 @@ function scevent_f_showSelectedUpload(e, imgid) {
 
     // Identify Cover Image
     _selectedCover = id;
+    console.log(_selectedCover)
 }
 
 function scevent_f_clearImageInput() {
@@ -184,10 +199,23 @@ function scevent_f_moveimg(value) {
     }
 
     if (value == 'end' && _selectedCover != (collection.length - 1)) {
-         img = collection.splice(_selectedCover,1)
-        collection.splice(_selectedCover+1, 0, img[0])
         _selectedCover++
+        var img1 = collection.splice(_selectedCover, 1)
+        collection.splice(_selectedCover-1, 0, img1[0])
+       
     }
 
     scevent_f_clearCollection(collection, _selectedCover)
 }
+
+function scevent_f_toggleBackgdSize() {
+    var bg = _('moblob_cover_image').classList.toggle('cover_image_toggle');
+
+}
+
+function scevent_f_toggleIncognito() {
+    var incognito = _cn('mo-event-userid')
+    for (var i = 0; i < incognito.length; i++) {
+        incognito[i].classList.toggle('d-none');
+    }
+} 
