@@ -119,8 +119,14 @@ function scevent_f_showSelectedUpload(e, imgid) {
         id = imgid;
     }
 
-   // console.log(id)
+    console.log(id)
     var ci = _('moblob_cover_image')
+    if (!collection.length) {
+        ci.style = '';
+        ci.classList.remove('cover_image_selected')
+        ci.classList.add('cover_image_blank')
+        return false;
+    }
     var dstyle = "background-image: url('" + collection[id].src + "');";
 
     var img = collection[id];
@@ -153,4 +159,35 @@ function scevent_f_showSelectedUpload(e, imgid) {
 function scevent_f_clearImageInput() {
     var selectedImage = _(_blobSelectedImageId)
     selectedImage.value = null;
+}
+
+function scevent_f_clearCollection(collection, imgid) {
+    moblob_f_buildImageCollection(collection);
+    scevent_toggleCollectionClass(collection);
+
+    imgid = imgid || 0
+    // select First Image in collection
+    scevent_f_showSelectedUpload(null, imgid)
+
+    // clear Input Image
+    scevent_f_clearImageInput()
+
+}
+
+function scevent_f_moveimg(value) {
+    console.log(value, _selectedCover)
+
+    if (value == 'start' && _selectedCover) {
+        var img = collection.splice(_selectedCover, 1)
+        collection.splice(_selectedCover - 1, 0, img[0])
+        _selectedCover--
+    }
+
+    if (value == 'end' && _selectedCover != (collection.length - 1)) {
+         img = collection.splice(_selectedCover,1)
+        collection.splice(_selectedCover+1, 0, img[0])
+        _selectedCover++
+    }
+
+    scevent_f_clearCollection(collection, _selectedCover)
 }

@@ -35,10 +35,14 @@ var _htmlend = "</small>";
 
 
 function moio_setBlobEvents() {
-    _("moblob_copyimg")
-        .addEventListener("click", moblob_f_copyimg);
-    _("moblob_openimg")
-        .addEventListener("click", moblob_f_openimg);
+    _("moblob_tostart")
+        .addEventListener("click", function () { scevent_f_moveimg('start') });
+    _("moblob_toend")
+        .addEventListener("click", function () { scevent_f_moveimg('end') });
+    //_("moblob_copyimg")
+    //    .addEventListener("click", moblob_f_copyimg);
+    //_("moblob_openimg")
+    //    .addEventListener("click", moblob_f_openimg);
     _("moblob_toblob")
         .addEventListener("click", moblob_io_toblob);
     _("moblob_cancelblob")
@@ -312,11 +316,11 @@ function moblob_endPostItem(directoryfiles, container) {
     if (!container) {
         container = _defaultContainer;
     }
-   // console.log(directoryfiles)
+
+    // console.log(directoryfiles)
 
     var pathfile = _path + container + "/";
     var directory = []
-
 
     if (!directoryfiles) {
         console.log(null)
@@ -377,15 +381,16 @@ async function moblob_f_captureInputFile(e) {
     }
 
     console.log(collection)
+    scevent_f_clearCollection(collection)
 
-    moblob_f_buildImageCollection(collection);
-    scevent_toggleCollectionClass(collection);
+    //moblob_f_buildImageCollection(collection);
+    //scevent_toggleCollectionClass(collection);
 
-    // select First Image in collection
-    scevent_f_showSelectedUpload(null, 0)
+    //// select First Image in collection
+    //scevent_f_showSelectedUpload(null, 0)
 
-    // clear Input Image
-    scevent_f_clearImageInput()
+    //// clear Input Image
+    //scevent_f_clearImageInput()
 
 }
 
@@ -412,7 +417,6 @@ function moblob_f_buildImageCollection(collection) {
         var dstyle = "background-image: url(" + collection[i].src + "); ";
         div.style = dstyle;
      
-
         div.addEventListener('click', function () {
             scevent_f_showSelectedUpload(this)
 
@@ -422,10 +426,9 @@ function moblob_f_buildImageCollection(collection) {
     }
 }    
 
-
-
 function moblob_f_clearFromSelected(ev) {
-    //moblob_f_clearSelectedImage();
-    //selectedImage.removeAttribute("imgid");
-    //selectedImage.classList.remove("loaded");
+
+    //console.log(_selectedCover)
+    collection.splice(_selectedCover, 1);
+    scevent_f_clearCollection(collection)
 }

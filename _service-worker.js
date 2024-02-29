@@ -3,7 +3,7 @@
 // var APP_NAME = 'AppKit';
 //var APP_VER = '2.3L';
 var APP_NAME = 'Safety Cross';
-var APP_VER = '4.11';
+var APP_VER = '4.12';
 var CACHE_NAME = APP_NAME + '-' + APP_VER;
 
 // Files required to make this app work offline.
