@@ -28,6 +28,7 @@ function mostart_init() {
 
     var getimages = moblob_io_GETFromBlob();
 
+    //scevent_clearAllFormEvent();
     return "ok";
 }
 

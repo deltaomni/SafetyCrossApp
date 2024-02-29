@@ -25,6 +25,7 @@ var _path = "https://safetycross.blob.core.windows.net/";
 var _defaultContainer = "scapp";
 var _blobSelectedImageId = "moblob_input_image_2";
 var _mo_blob_content = "mo_blob_content";
+var _moblob_img_collection = "moblob_img_collection";
 
 var _htmlin = "<strong><small>";
 var _htmlout = "</strong>";
@@ -93,10 +94,10 @@ function moblob_f_displayImgAttributes(image) {
         .innerHTML = _htmlin + "Modified:" + _htmlout + _date + _htmlend;
 }
 
-function moblob_f_setSelectedImageId(imgId) {
-    var image = _(_blobSelectedImageId);
-    image.setAttribute("imgId", imgId);
-}
+//function moblob_f_setSelectedImageId(imgId) {
+//    var image = _(_blobSelectedImageId);
+//    image.setAttribute("imgId", imgId);
+//}
 
 async function moblob_f_serialize_image(el, imgid) {
     var readXml = null;
@@ -203,7 +204,7 @@ async function moblob_io_GETFromBlob() {
     moio_blinkIOActivity(true)
     const response = await fetch(_uri);
     const data = await response.json();
-    console.log(data);
+  //  console.log(data);
     var directoryfiles = data.listnames;
     var container = data.container;
     moblob_endPostItem(directoryfiles, container)//
@@ -311,7 +312,7 @@ function moblob_endPostItem(directoryfiles, container) {
     if (!container) {
         container = _defaultContainer;
     }
-    console.log(directoryfiles)
+   // console.log(directoryfiles)
 
     var pathfile = _path + container + "/";
     var directory = []
@@ -348,12 +349,12 @@ function moblob_f_displaySelectedImage(ev, container) {
     var imgId = ev.target.id;
   
     var pathfile = _path + container + "/" + imgId ;
-    //console.log(ev.target.id)
-    //console.log(ev)
+    console.log(ev.target.id)
+    console.log(ev)
 
     var readXml = pathfile;
     moblob_f_display_image(readXml, null, _blobSelectedImageId);
-    moblob_f_setSelectedImageId(imgId);
+   // moblob_f_setSelectedImageId(imgId);
 }
 
 
@@ -371,16 +372,21 @@ async function moblob_f_captureInputFile(e) {
         var source = URLObj.createObjectURL(blob);
 
         var img = await moblob_f_createImage(source)
-        //var h = img.height;
-        //var w = img.width;
-        //var check = h < w;
 
         collection.push(img);
     }
 
     console.log(collection)
+
     moblob_f_buildImageCollection(collection);
-    mouix_f_toggleTagName('moimg_options')
+    scevent_toggleCollectionClass(collection);
+
+    // select First Image in collection
+    scevent_f_showSelectedUpload(null, 0)
+
+    // clear Input Image
+    scevent_f_clearImageInput()
+
 }
 
 function moblob_f_createImage(src) {
@@ -393,10 +399,11 @@ function moblob_f_createImage(src) {
 }
 
 function moblob_f_buildImageCollection(collection) {
-    var coll = _('moblob_img_collection')
+    var coll = _(_moblob_img_collection)
     coll.innerHTML = "";
 
     var l = collection.length;
+    var ci = _('moblob_cover_image')
 
     for (var i = 0; i < l; i++) {
         var div = document.createElement('div')
@@ -404,43 +411,18 @@ function moblob_f_buildImageCollection(collection) {
         div.id = 'blobimg-' + i;
         var dstyle = "background-image: url(" + collection[i].src + "); ";
         div.style = dstyle;
-        var ci = _('moblob_cover_image')
+     
 
         div.addEventListener('click', function () {
-            var id = this.id.split('-')[1]
-
-            var dstyle = "background-image: " + this.style.backgroundImage + ";";
-
-            var img = collection[id];
-
-            var vw = window.innerWidth - 0; // side left)
-
-            var scalew = vw / img.width;
-            var scaleh = scalew;
-
-            var imgw = Math.round(img.width * scalew);
-            var imgh = Math.round(img.height * scaleh);
-
-            //  console.log(check, vw, scalew, scaleh, imgw, imgh);
-
-            if (imgh <= 240) {
-                imgh = 240;
-                imgw = Math.round(img.width * (240 / imgh));
-            } // min height
-            if (imgw < imgh) {
-                dstyle += " height:" + imgh + "px; width:" + vw + "px; ";
-            } else {
-                dstyle += " height:" + imgh + "px; width:" + imgw + "px";
-            }
-            ci.style = dstyle;
-            ci.classList.add('cover_image_selected')
-            ci.classList.remove('cover_image_blank')
+            scevent_f_showSelectedUpload(this)
 
         })
 
         coll.append(div);
     }
 }    
+
+
 
 function moblob_f_clearFromSelected(ev) {
     //moblob_f_clearSelectedImage();

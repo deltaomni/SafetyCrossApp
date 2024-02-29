@@ -149,8 +149,8 @@ input[type="file"] {
 
 /*Events*/
 .thumbs-center-cropped {
-    width: calc(22vw - 2px);
-    height: calc(22vw - 2px);
+    width: calc(33.333% - 2px);
+    height: calc(33.333vw - 2px);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

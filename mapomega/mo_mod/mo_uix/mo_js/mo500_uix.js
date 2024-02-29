@@ -18,7 +18,7 @@
 function mouix_f_setUIXEvents() {
     _('mo_event_pointer').
         addEventListener('click', function () {
-            scevent_f_clearNewEvent()
+           // scevent_clearAllFormEvent()
         })
 
     _('mouix_setPin').
@@ -110,7 +110,6 @@ function mouix_f_toggleClass(coll, tclass) {
     }
 }
 
-
 function mouix_f_toggleTagName(content) {
     var coll = _qsa("[sccontent-toggle='" + content + "']");
     console.log(coll)
@@ -119,3 +118,5 @@ function mouix_f_toggleTagName(content) {
         coll[i].classList.toggle('d-none');
     }
 }
+
+
