@@ -42,10 +42,10 @@ function scevent_f_setNewEventEvents() {
         .addEventListener("click", scevent_f_toggleIncognito);
 
     // Cancel/close Events
-    _("moevent_close")
-        .addEventListener("click", scevent_clearAllFormEvent);
-    _("moevent_cancel")
-        .addEventListener("click", scevent_clearAllFormEvent);
+    //_("moevent_close")
+    //    .addEventListener("click", scevent_clearAllFormEvent);
+    //_("moevent_cancel")
+    //    .addEventListener("click", scevent_clearAllFormEvent);
 
     // Post Event
     _("moevent_POST")
@@ -201,9 +201,9 @@ function scevent_f_showSelectedUpload(e, imgid) {
         return false;
     }
 
-    var dstyle = "background-image: url('" + _collection[id].src + "');";
+    var dstyle = "background-image: url('" + _collection[id][0].src + "');";
 
-    var img = _collection[id];
+    var img = _collection[id][0];
 
     var vw = window.innerWidth - 0; // side left)
 

@@ -17,6 +17,8 @@
 
 function mouix_f_setUIXEvents() {
 
+    //_('mouix_dashboard').
+    //    addEventListener('click', modash_start)
 
     _('mouix_setPin').
         addEventListener('click', mouix_PinToast)
