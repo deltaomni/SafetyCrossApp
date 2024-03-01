@@ -23,12 +23,14 @@
     /// To Be completed
 
 function mostart_init() {
-    moio_setBlobEvents();
-    mouix_f_setUIXEvents();
+
 
     var getimages = moblob_io_GETFromBlob();
 
-    //scevent_clearAllFormEvent();
+    //moio_setBlobEvents();
+    mouix_f_setUIXEvents();
+    //scevent_f_setNewEventEvents();
+
     return "ok";
 }
 

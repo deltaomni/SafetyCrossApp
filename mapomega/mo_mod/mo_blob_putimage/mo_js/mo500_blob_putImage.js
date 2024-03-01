@@ -15,7 +15,7 @@
  * 
  */
 
-var collection = [];
+var _collection = [];
 var _loadedCollection = [];
 var _selectedCover = null;
 var _prefix = "";
@@ -34,36 +34,25 @@ var _htmlend = "</small>";
 
 
 
-function moio_setBlobEvents() {
-    _("moblob_tostart")
-        .addEventListener("click", function () { scevent_f_moveimg('start') });
-    _("moblob_toend")
-        .addEventListener("click", function () { scevent_f_moveimg('end') });
-    //_("moblob_copyimg")
-    //    .addEventListener("click", moblob_f_copyimg);
-    //_("moblob_openimg")
-    //    .addEventListener("click", moblob_f_openimg);
-    _("moblob_toblob")
-        .addEventListener("click", moblob_io_toblob);
-    _("moblob_cancelblob")
-        .addEventListener("click", moblob_f_clearSelectedImage);
-    //_("moblob_input_image")
-    //    .addEventListener("input", moblob_f_input_image);
-    _('moblob_input_image_2')
-        .addEventListener('input', moblob_f_captureInputFile);
-    _("mo_blob_content")
-        .addEventListener("click", moblob_f_displaySelectedImage);
-//    _("moblob_erase")
-    //        .addEventListener("click", moblob_f_removeFromBlob);
-    _("moblob_clear")
-        .addEventListener("click", moblob_f_clearFromSelected);
-    //
-    _("moblob_toggle_cover_bg")
-        .addEventListener("click", scevent_f_toggleBackgdSize);
+//function moio_setBlobEvents() {
+//    //_("moblob_copyimg")
+//    //    .addEventListener("click", moblob_f_copyimg);
+//    //_("moblob_openimg")
+//    //    .addEventListener("click", moblob_f_openimg);
+//    //_("moblob_input_image")
+//    //    .addEventListener("input", moblob_f_input_image);
+//    _('moblob_input_image_2')
+//        .addEventListener('input', moblob_f_captureInputFile);
+//    _("mo_blob_content")
+//        .addEventListener("click", moblob_f_displaySelectedImage);
+////    _("moblob_erase")
+//    //        .addEventListener("click", moblob_f_removeFromBlob);
+//    //
+//    _("moblob_toggle_cover_bg")
+//        .addEventListener("click", scevent_f_toggleBackgdSize);
 
-    _("mo-event-userid")
-        .addEventListener("click", scevent_f_toggleIncognito);
-}
+
+//}
 
 
 /**
@@ -78,7 +67,7 @@ function moio_setBlobEvents() {
 //}
 
 function moblob_f_displayImgAttributes(image) {
-    console.log(image);
+  //  console.log(image);
     var img = image;
 
     if (image) {
@@ -103,81 +92,7 @@ function moblob_f_displayImgAttributes(image) {
         .innerHTML = _htmlin + "Modified:" + _htmlout + _date + _htmlend;
 }
 
-//function moblob_f_setSelectedImageId(imgId) {
-//    var image = _(_blobSelectedImageId);
-//    image.setAttribute("imgId", imgId);
-//}
-
-//async function moblob_f_serialize_image(el, imgid) {
-//    var readXml = null;
-//    var img = el.files[0];
-//    console.log(el.files);
-//    event.preventDefault();
-
-//    var reader = new FileReader();
-//    reader.onload = await function (e) {
-//        //console.log(e.target);
-//        //console.log(e.target.result);
-//        //console.log(img);
-
-//        readXml = e.target.result;
-//        if (imgid) {
-//            moblob_f_display_image(readXml, img, imgid);
-//        }
-//    }
-
-//    //moblob_f_clearSelectedImage();
-
-//    if (img) {
-//        reader.readAsDataURL(img);
-//      //  return img;
-//    }
-
-//    // clear files
-//    el.files = null;
-//}
-
-//async function moblob_f_display_image(readXml, img, imgid) {
-//    console.log(img);
-
-//    var _URL = window.URL || window.webkitURL;
-
-//    var image = _(imgid);
-//    image.classList.add("loaded");
-//    //image.style = "background-image: url(" + readXml + ");";
-
-//    img1 = new Image();
-//    if (img) {
-//        var objectUrl = _URL.createObjectURL(img);
-//    } else {
-//        objectUrl = readXml;
-//    }
-
-//    img1.onload = await function () {
-//        var vw = window.innerWidth - 0; // side left)
-//        //  var vw1 = window.outerWidth;
-
-//        var scalew = vw / this.width;
-//        var scaleh = scalew;
-
-//        var imgw = Math.round(this.width * scalew);
-//        var imgh = Math.round(this.height * scaleh);
-
-//        image.style.width = imgw + "px";
-//        image.style.height = imgh + "px";
-
-//        _URL.revokeObjectURL(objectUrl);
-//    };
-
-//    img1.src = objectUrl;
-//    //  console.log(img1)
-//    //  _('mo_upload_content').innerHTML = img1.outerHTML
-//    image.style = "background-image: url(" + objectUrl + ");";
-
-
-//}
-
-function moblob_f_clearSelectedImage() {
+function scevent_f_clearSelectedImage() {
 
     var selectedImage = _(_blobSelectedImageId)
 
@@ -196,7 +111,7 @@ function moblob_f_copyimg() {
 }
 
 function moblob_f_openimg() {
-    console.log("open");
+   // console.log("open");
     var img = _(_blobSelectedImageId)
     var bi = moblob_f_getimageurl(img);
     // console.log(bi);
@@ -269,7 +184,7 @@ function moblob_f_removeFromBlob() {
     }
 
     var imgSrc = _(_blobSelectedImageId).getAttribute("imgId")
-    console.log(container, imgSrc);
+  //  console.log(container, imgSrc);
     moblob_io_removeFromBlob(container, imgSrc)
 }
 
@@ -288,7 +203,7 @@ async function moblob_io_removeFromBlob(container, imgSrc) {
 
                 // build function to end removal
                 _(imgSrc).outerHTML = "";
-                moblob_f_clearSelectedImage();
+                scevent_f_clearSelectedImage();
                 selectedImage.removeAttribute("imgid");
                 selectedImage.classList.remove("loaded");
                 moio_blinkIOActivity(false)
@@ -353,18 +268,6 @@ function moblob_endPostItem(directoryfiles, container) {
 
 function moblob_f_displaySelectedImage(ev, container) {
     console.log("display image")
-//    if (!container) {
-//        container = _defaultContainer;
-//    }
-//    var imgId = ev.target.id;
-  
-//    var pathfile = _path + container + "/" + imgId ;
-//    console.log(ev.target.id)
-//    console.log(ev)
-
-//    var readXml = pathfile;
-//    moblob_f_display_image(readXml, null, _blobSelectedImageId);
-//   
 }
 
 
@@ -383,21 +286,10 @@ async function moblob_f_captureInputFile(e) {
 
         var img = await moblob_f_createImage(source)
 
-        collection.push(img);
+        _collection.push(img);
     }
 
-    console.log(collection)
-    scevent_f_clearCollection(collection)
-
-    //moblob_f_buildImageCollection(collection);
-    //scevent_toggleCollectionClass(collection);
-
-    //// select First Image in collection
-    //scevent_f_showSelectedUpload(null, 0)
-
-    //// clear Input Image
-    //scevent_f_clearImageInput()
-
+    scevent_f_clearCollection(_collection)
 }
 
 function moblob_f_createImage(src) {
@@ -409,36 +301,38 @@ function moblob_f_createImage(src) {
     })
 }
 
-function moblob_f_buildImageCollection(collection) {
+function moblob_f_buildImageCollection(_collection) {
     var coll = _(_moblob_img_collection)
     coll.innerHTML = "";
 
-    var l = collection.length;
+    var l = _collection.length;
     var ci = _('moblob_cover_image')
 
     for (var i = 0; i < l; i++) {
         var div = document.createElement('div')
         div.classList.add('thumbs-center-cropped');
-        div.id = 'blobimg-' + i;
-        var dstyle = "background-image: url(" + collection[i].src + "); ";
-        console.log(i == _selectedCover, _selectedCover)
+
         if (i == _selectedCover) {
-            dstyle += " border: 2px blue;"
+            div.classList.add('border');
+            div.classList.add('border-4');
+            div.classList.add('border-yellow-light');
         }
+
+        div.id = 'blobimg-' + i;
+        var dstyle = "background-image: url(" + _collection[i].src + "); ";
+      //  console.log(i == _selectedCover, _selectedCover)
+
         div.style = dstyle;
      
         div.addEventListener('click', function () {
-            scevent_f_showSelectedUpload(this)
-
+            var imgid = this.id.split('-')[1];
+            scevent_f_clearCollection(_collection, imgid);
+         
+            //scevent_f_showSelectedUpload(this)
         })
 
         coll.append(div);
     }
 }    
 
-function moblob_f_clearFromSelected(ev) {
 
-    //console.log(_selectedCover)
-    collection.splice(_selectedCover, 1);
-    scevent_f_clearCollection(collection)
-}

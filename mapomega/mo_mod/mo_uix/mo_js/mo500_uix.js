@@ -16,10 +16,7 @@
  */
 
 function mouix_f_setUIXEvents() {
-    _('mo_event_pointer').
-        addEventListener('click', function () {
-           // scevent_clearAllFormEvent()
-        })
+
 
     _('mouix_setPin').
         addEventListener('click', mouix_PinToast)
