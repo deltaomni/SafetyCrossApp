@@ -40,6 +40,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+
 </head>
 
 <body class="theme-light">
@@ -50,7 +51,7 @@
 
         <div class="header header-fixed header-logo-left">
             <h2><a href="index.html" class="header-title mo-1">Safety Cross</a></h2>
-            <a href="#" class="spinner-grow text-warning header-icon header-icon-4 mo_blinkEl" role="status">
+            <a href="#" class="spinner-grow text-warning header-icon header-icon-4 mo_blinkEl d-none" role="status">
                 <i class="fas fa-circle"></i>
             </a>
 
@@ -77,7 +78,7 @@
             <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
             <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-dark"><i class="fas fa-sun"></i></a>
             <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-light"><i class="fas fa-moon"></i></a>
-            <a href="#" class="spinner-grow text-warning header-icon header-icon-2 mo_blinkEl" role="status">
+            <a href="#" class="spinner-grow text-warning header-icon header-icon-2 mo_blinkEl d-none" role="status">
                 <i class="fas fa-circle"></i>
             </a>
         </div>
@@ -169,7 +170,7 @@
                     <div class="content my-2">
                         <p class="mb-2 color-highlight font-600">Dias sem acidentes</p>
                         <div class="d-flex">
-                            <a href="/App_web/SafetyCrossApp/mapomega/mo_local/pt-BR/mo_dashboard.html" id="mouix_dashboard" class="d-flex flex-fill">
+                            <a href="/App_web/SafetyCrossApp/appptbr-dashboard.html" id="mouix_dashboard" class="d-flex flex-fill">
                                 <div class="d-flex flex-row flex-fill">
                                     <div class="flex-fill text-center align-self-center text-success">
                                         <svg class="mo-ic-32" viewBox="0 0 24 24">
@@ -247,7 +248,9 @@
                         </div>
 
                         <div class="content m-0 p-0 mb-3">
-                            <div id="mo_blob_content" sccontent-toggle="mo_blob_content" class="mo_blob_content d-flex flex-row flex-wrap justify-content-center">
+                            <div id="mo_blob_content"
+                                 sccontent-toggle="mo_blob_content"
+                                 class="mo_blob_content d-flex flex-row flex-wrap justify-content-center">
                                 <!-- Blob Images -->
                             </div>
                             <div id="mo_card_content" sccontent-toggle="mo_blob_content" class="mo_card_content d-flex flex-row flex-wrap justify-content-center d-none">
@@ -759,4 +762,19 @@
     <script src="mapomega/mo_io/moio500_app.js"></script>
     <script src="mapomega/mo_start/mo500_appstart.js"></script>
 
+    <script>
+        function detectbroswer() {
+
+            window.onpopstate = function (event) {
+                var dd = Date.now();
+               var crtLocation = 
+                    window.location.protocol + "//" +
+                    window.location.host +
+                    window.location.pathname + "?=" + dd;
+                console.log(crtLocation)
+                window.location = crtLocation;
+            }
+        }
+        detectbroswer()
+    </script>
 </body>
