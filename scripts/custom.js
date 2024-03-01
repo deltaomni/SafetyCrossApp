@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'use strict'
 
     //Global Variables
-    let isPWA = true;  // Enables or disables the service worker and PWA
+    let isPWA = false;  // Enables or disables the service worker and PWA
     let isAJAX = true; // AJAX transitions. Requires local server or server
     //var pwaName = "Appkit"; //Local Storage Names for PWA
     var pwaName = "Safety Cross"; //Local Storage Names for PWA
@@ -1635,6 +1635,33 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             const swup = new Swup(options);
             document.addEventListener('swup:pageView',(e) => { init_template(); })
+        }
+    }
+
+    //MapOmega Fetch
+    //Build new Event form
+    //_('mo_event_pointer').
+    //    addEventListener('click', scevent_f_fetchHtmlNewEventForm)
+
+    async function scevent_f_fetchHtmlNewEventForm() {
+        var html = await mosc_fetch_file("mo500_scevent.html")
+        console.log(html)
+        _('mo500_scevent_body').innerHTML = html;
+        scevent_f_setNewEventEvents()
+        init_template();
+    }
+
+    async function mosc_fetch_file(uri) {
+       // "C:\Users\mapomega_01\source\repos\MO500_FS\SC23MVP500\wwwroot\App_web\SafetyCrossApp\mapomega\app_html\pt-BR\mo500_scevent.html"
+        var _uri = "mapomega/app_html/pt-BR/" + uri;
+        var response = await fetch(_uri);
+        var txtStr = await response.text();
+
+        //console.log(response.status);
+        if (response.status != 200) {
+            return false;
+        } else {
+            return txtStr;
         }
     }
 

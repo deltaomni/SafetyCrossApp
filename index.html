@@ -98,7 +98,7 @@
             <a href="index.html" class="mo_1 circle-nav">
                 <i><img width="54" src="mapomega/img/SC_523_Short_24x24.svg" /></i>
             </a>
-            <a data-menu="mo-new-event" href="#"><i class="fa fa-filter"></i><span>Legenda</span></a>
+            <a data-menu="mo500_scevent" href="#"><i class="fa fa-filter"></i><span>Legenda</span></a>
             <a href="#" data-menu="menu-main"><i class="fa fa-bars"></i></a>
         </div>
 
@@ -145,7 +145,7 @@
 
                         <!-- Pointer -->
                         <div class="col-3 text-center align-self-center">
-                            <a id="mo_event_pointer" href="#" data-menu="mo-new-event"
+                            <a id="mo_event_pointer" href="#" data-menu="mo500_scevent"
                                class="icon icon-xxl rounded-xl bg-highlight text-light border border-highlight border-s">
                                 <!--<a href="#" data-menu="menu-cart" class="icon icon-xxl rounded-xl bg-highlight text-light">-->
                                 <i class="fa fa-hand-point-right"></i>
@@ -236,7 +236,7 @@
                                 <h4>Últimos Apontamentos</h4>
                             </div>
                             <div class="flex-fill text-end align-self-center">
-                                <a id="mo-switch-images"  href="#" class="icon icon-xxl color-theme">
+                                <a id="mo-switch-images" href="#" class="icon icon-xxl color-theme">
                                     <i class="fa fa-th-list"></i>
                                 </a>
                             </div>
@@ -432,143 +432,154 @@
     </div>
 
     <!-- Instants -->
-    <div id="mo-new-event"
+    <div id="mo500_scevent"
          class="menu menu-box-modal rounded-0"
          data-menu-height="cover"
          data-menu-width="cover">
-        <div id="moblob_toggle_cover_bg" data-uploads="on" class="moimg_uploads d-none">
-            <div class="card-top pt-4 ps-3 pe-3">
-                <a href="#" class="float-end icon icon-s rounded-l bg-theme "><i class="fa fa-arrows-left-right"></i></a>
-            </div>
-        </div>
-        <div data-uploads="off" class="moimg_uploads">
-            <div class="card-top pt-4 ps-3 pe-3">
-                <a href="#" class="float-end close-menu icon icon-s rounded-l bg-theme "><i class="fa fa-times color-red-dark"></i></a>
-            </div>
-
-            <div class="header-clear-small"></div>
-
-            <div class="menu-title">
-                <p class="color-highlight font-14 font-700 ">Novo</p>
-                <h1 class="font-25 font-800">Apontamento Individual</h1>
-            </div>
-        </div>
-        <div id="moblob_cover_image" class="sc_form_style card rounded-0 cover_image_blank cover_image_blank_input w-100 bg-transparent p-0 m-0">
-            <div class="card-bottom text-end">
-                <div class="mb-3 me-3 color-white">
-
-                    <input id="moblob_input_image_2" type="file"
-                           multiple accept=".gif,.jpg,.jpeg,.png,.svg"
-                           class="sc_form_input form-control bg-transparent cover_image_blank_input">
+        <div id="mo500_scevent_body">
+            <div id="moblob_toggle_cover_bg" data-uploads="on" class="moimg_uploads d-none">
+                <div class="card-top pt-4 ps-3 pe-3">
+                    <a id="" href="#" class="float-end icon icon-s rounded-l bg-theme "><i class="fa fa-arrows-left-right"></i></a>
                 </div>
             </div>
-        </div>
-        <div data-uploads="off" class="moimg_uploads card-body">
-            <div class="d-flex flex-row flex-wrap justify-content-center">
-                <p class="color-highlight font-16 font-400 p-0 m-0">Clique acima para carregar imagens.</p>
+            <div data-uploads="off" class="moimg_uploads">
+                <div class="card-top pt-4 ps-3 pe-3">
+                    <a id="moevent_close" href="#" class="float-end close-menu icon icon-s rounded-l bg-theme "><i class="fa fa-times color-red-dark"></i></a>
+                </div>
+
+                <div class="header-clear-small"></div>
+
+                <div class="menu-title">
+                    <p class="color-highlight font-14 font-700 ">Novo</p>
+                    <h1 class="font-25 font-800">Apontamento Individual</h1>
+                </div>
             </div>
+            <div id="moblob_cover_image" class="sc_form_style card rounded-0 cover_image_blank cover_image_blank_input w-100 bg-transparent p-0 m-0">
+                <div class="card-bottom text-end">
+                    <div class="mb-3 me-3 color-white">
 
-        </div>
-
-        <div data-uploads="on" class="moimg_uploads card card-style card-full-right bg-transparent d-none" style="margin-top:-25px; margin-bottom:-10px; z-index:1">
-            <ul class="list-group">
-                <li class="list-group-item border-0 p-0 m-0">
-                    <div class="btn-group w-100" role="group">
-                        <a href="#" id="moblob_tostart" class="p-0 icon icon-l sc_form_btn btn btn-primary">
-                            <i class="fa fa-caret-left"></i>
-                        </a>
-                        <a href="#" id="moblob_toend" class="p-0 icon icon-l sc_form_btn btn btn-primary">
-                            <i class="fa fa-caret-right"></i>
-                        </a>
-                        <a href="#" id="moblob_clear" class="p-0 icon icon-l sc_form_btn btn btn-danger">
-                            <i class="fa fa-trash"></i>
-                        </a>
+                        <input id="moblob_input_image_2" type="file"
+                               multiple accept=".gif,.jpg,.jpeg,.png,.svg"
+                               class="sc_form_input form-control bg-transparent cover_image_blank_input">
                     </div>
-                </li>
-            </ul>
-            <div class="pb-3 me-0">
-                <!-- Uploads  -->
-                <div id="moblob_img_collection" class="sc_form_html d-flex flex-row m-0 flex-wrap">
-
                 </div>
             </div>
-        </div>
+            <div data-uploads="off" class="moimg_uploads card-body">
+                <div class="d-flex flex-row flex-wrap justify-content-center">
+                    <p class="color-highlight font-16 font-400 p-0 m-0">Clique acima para carregar imagens.</p>
+                </div>
 
-        <div class="card card-style bg-transparent">
-            <div class="content">
+            </div>
 
-                <!-- Potenciais de Impacto -->
-                <div class="card card-style m-0 rounded-0 bg-transparent shadow-0">
-                    <div class="content p-0 m-0">
-                        <p class="mb-n1 color-highlight font-16 font-600">Informe o potencial de</p>
-                        <h1>Impacto</h1>
-                        <div class="d-flex flex-row justify-content-center flex-wrap ">
-                            <div class="form-check interest-check pe-0 me-0">
-                                <input class="sc_form_check form-check-input" type="checkbox" value="" id="mo-event-impact-check1">
-                                <label class="form-check-label shadow-l rounded-xl font-16" for="mo-event-impact-check1">Pessoal</label>
-                                <i class="fa fa-check-circle color-white font-16"></i>
-                                <i class="fa fa-user font-16 color-blue-dark"></i>
-                            </div>
-                            <div class="form-check interest-check pe-0 me-0">
-                                <input class="sc_form_check form-check-input" type="checkbox" value="" id="mo-event-impact-check2">
-                                <label class="form-check-label shadow-l rounded-xl font-16" for="mo-event-impact-check2">Ambiental</label>
-                                <i class="fa fa-check-circle color-white font-16"></i>
-                                <i class="fa fa-leaf font-16 color-green-dark"></i>
-                            </div>
-                            <div class="form-check interest-check pe-0 me-0">
-                                <input class="sc_form_check form-check-input" type="checkbox" value="" id="mo-event-impact-check3">
-                                <label class="form-check-label shadow-l rounded-xl font-16" for="mo-event-impact-check3">Material</label>
-                                <i class="fa fa-check-circle color-white font-16"></i>
-                                <i class="fa fa-tags font-16 color-gray-dark"></i>
+            <div data-uploads="on" class="moimg_uploads card card-style card-full-right bg-transparent d-none" style="margin-top:-25px; margin-bottom:-10px; z-index:1">
+                <ul class="list-group">
+                    <li class="list-group-item border-0 p-0 m-0">
+                        <div class="btn-group w-100" role="group">
+                            <a href="#" id="moimg_tostart" class="p-0 icon icon-l sc_form_btn btn btn-primary">
+                                <i class="fa fa-caret-left"></i>
+                            </a>
+                            <a href="#" id="moimg_toend" class="p-0 icon icon-l sc_form_btn btn btn-primary">
+                                <i class="fa fa-caret-right"></i>
+                            </a>
+                            <a href="#" id="moimg_remove" class="p-0 icon icon-l sc_form_btn btn btn-danger">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="pb-3 me-0">
+                    <!-- Uploads  -->
+                    <div id="moblob_img_collection" class="sc_form_html d-flex flex-row m-0 flex-wrap">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-style bg-transparent">
+                <div class="content">
+
+                    <!-- Potenciais de Impacto -->
+                    <div class="card card-style m-0 rounded-0 bg-transparent shadow-0">
+                        <div class="content p-0 m-0">
+                            <p class="mb-n1 color-highlight font-600">Informe o potencial de</p>
+                            <h1>Impacto</h1>
+                            <div class="d-flex flex-row justify-content-center flex-wrap ">
+                                <div class="form-check interest-check pe-0 me-2">
+                                    <input class="sc_form_check form-check-input" type="checkbox" value="" id="mo-event-impact-check1">
+                                    <label class="form-check-label shadow-l rounded-xl font-16" for="mo-event-impact-check1">Pessoal</label>
+                                    <i class="fa fa-check-circle color-white font-16"></i>
+                                    <i class="fa fa-user font-16 color-blue-dark"></i>
+                                </div>
+                                <div class="form-check interest-check pe-0 me-2">
+                                    <input class="sc_form_check form-check-input" type="checkbox" value="" id="mo-event-impact-check2">
+                                    <label class="form-check-label shadow-l rounded-xl font-16" for="mo-event-impact-check2">Ambiental</label>
+                                    <i class="fa fa-check-circle color-white font-16"></i>
+                                    <i class="fa fa-leaf font-16 color-green-dark"></i>
+                                </div>
+                                <div class="form-check interest-check pe-0 me-0">
+                                    <input class="sc_form_check form-check-input" type="checkbox" value="" id="mo-event-impact-check3">
+                                    <label class="form-check-label shadow-l rounded-xl font-16" for="mo-event-impact-check3">Material</label>
+                                    <i class="fa fa-check-circle color-white font-16"></i>
+                                    <i class="fa fa-tags font-16 color-gray-dark"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
+            </div>
 
+            <div class="card card-style bg-transparent">
+                <div class="content">
 
-                <!-- Natureza -->
-                <div class="card card-style m-0 rounded-0 bg-transparent shadow-0">
-                    <div class="content p-0 m-0">
-                        <p class="mb-n1 color-highlight font-600 font-16">Informe a</p>
-                        <h1>Natureza</h1>
-                        <div class="d-flex flex-row justify-content-center flex-wrap ">
-                            <div class="form-check interest-check">
-                                <input class="sc_form_radio form-check-input" type="radio" name="flexRadioDefault" value="" id="mo-event-nature-check4">
-                                <label class="form-check-label shadow-xl rounded-xl font-16" for="mo-event-nature-check4">Perigo</label>
-                                <i class="fa fa-check-circle color-white font-16"></i>
-                                <i class="fa fa-flag font-16 color-yellow-dark"></i>
-                            </div>
-                            <div class="form-check interest-check">
-                                <input class="sc_form_radio form-check-input" type="radio" name="flexRadioDefault" value="" id="mo-event-nature-check5">
-                                <label class="form-check-label shadow-xl rounded-xl font-16" for="mo-event-nature-check5">Risco</label>
-                                <i class="fa fa-check-circle color-white font-16"></i>
-                                <i class="fa fa-percent font-16 color-blue-dark"></i>
-                            </div>
-                            <div class="form-check interest-check">
-                                <input class="sc_form_radio form-check-input" type="radio" name="flexRadioDefault" value="" id="mo-event-nature-check6">
-                                <label class="form-check-label shadow-xl rounded-xl font-16" for="mo-event-nature-check6">Quase Acidente</label>
-                                <i class="fa fa-check-circle color-white font-16"></i>
-                                <i class="fa fa-exclamation font-16 color-orange-dark"></i>
-                            </div>
-                            <div class="form-check interest-check float-end">
-                                <input class="sc_form_radio form-check-input" type="radio" name="flexRadioDefault" value="" id="mo-event-nature-check7">
-                                <label class="form-check-label shadow-xl rounded-xl font-16" for="mo-event-nature-check7">Acidente</label>
-                                <i class="fa fa-check-circle color-white font-16"></i>
-                                <i class="fa fa-warning font-16 color-red-dark"></i>
+                    <!-- Natureza -->
+                    <div class="card card-style m-0 rounded-0 bg-transparent shadow-0">
+                        <div class="content p-0 m-0">
+                            <p class="mb-n1 color-highlight font-600">Informe a</p>
+                            <h1>Natureza</h1>
+                            <div class="d-flex flex-row justify-content-center flex-wrap ">
+                                <div class="form-check interest-check">
+                                    <input class="sc_form_radio form-check-input" type="radio" name="flexRadioDefault" value="" id="mo-event-nature-check4">
+                                    <label class="form-check-label shadow-xl rounded-xl font-16" for="mo-event-nature-check4">Perigo</label>
+                                    <i class="fa fa-check-circle color-white font-16"></i>
+                                    <i class="fa fa-flag font-16 color-yellow-dark"></i>
+                                </div>
+                                <div class="form-check interest-check">
+                                    <input class="sc_form_radio form-check-input" type="radio" name="flexRadioDefault" value="" id="mo-event-nature-check5">
+                                    <label class="form-check-label shadow-xl rounded-xl font-16" for="mo-event-nature-check5">Risco</label>
+                                    <i class="fa fa-check-circle color-white font-16"></i>
+                                    <i class="fa fa-percent font-16 color-blue-dark"></i>
+                                </div>
+                                <div class="form-check interest-check">
+                                    <input class="sc_form_radio form-check-input" type="radio" name="flexRadioDefault" value="" id="mo-event-nature-check6">
+                                    <label class="form-check-label shadow-xl rounded-xl font-16" for="mo-event-nature-check6">Quase Acidente</label>
+                                    <i class="fa fa-check-circle color-white font-16"></i>
+                                    <i class="fa fa-exclamation font-16 color-orange-dark"></i>
+                                </div>
+                                <div class="form-check interest-check float-end">
+                                    <input class="sc_form_radio form-check-input" type="radio" name="flexRadioDefault" value="" id="mo-event-nature-check7">
+                                    <label class="form-check-label shadow-xl rounded-xl font-16" for="mo-event-nature-check7">Acidente</label>
+                                    <i class="fa fa-check-circle color-white font-16"></i>
+                                    <i class="fa fa-warning font-16 color-red-dark"></i>
+                                </div>
+                                <div class="form-check interest-check float-end">
+                                    <input class="sc_form_radio form-check-input" type="radio" name="flexRadioDefault" value="" id="mo-event-nature-check8">
+                                    <label class="form-check-label shadow-xl rounded-xl font-16" for="mo-event-nature-check8">N/A</label>
+                                    <i class="fa fa-check-circle color-white font-16"></i>
+                                    <i class="fa fa-check font-16 color-red-dark"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
-        </div>
 
-            <!--<div class="divider mb-2 "></div>-->
-
-            <div class="card card-style bg-transparent my-0">
+            <div class="card card-style bg-transparent">
                 <div class="content text-start">
                     <div class="input-style no-borders no-icon mb-4">
                         <!-- Data/ Hora -->
-                        <p class="mb-n1 color-highlight font-600 font-16">Informe a</p>
+                        <p class="mb-n1 color-highlight font-600">Informe a</p>
                         <h1>Data/ Hora</h1>
                         <input id="sc_event_data" type="datetime-local"
                                placeholder="Informe a data, a hora"
@@ -578,9 +589,15 @@
                         <i class="fa fa-check disabled valid me-4 pe-3 font-16 color-green-dark"></i>
                         <i class="fa fa-check disabled invalid me-4 pe-3 font-16 color-red-dark"></i>
                     </div>
+
+                </div>
+            </div>
+
+            <div class="card card-style bg-transparent">
+                <div class="content">
                     <!-- Descrição -->
                     <div class="input-style no-borders no-icon my-0">
-                        <p class="mb-n1 color-highlight font-600 font-16">Escreva uma breve</p>
+                        <p class="mb-n1 color-highlight font-600">Escreva uma breve</p>
                         <h1>Descrição</h1>
                         <div class="input-style no-borders no-icon">
                             <textarea id="sc_event_desc"
@@ -593,27 +610,32 @@
                     </div>
                 </div>
             </div>
-            <!--<div class="divider mb-2 "></div>-->
 
-            <!--<div class="card card-style">
-        <div class="content mb-0">
-            <h4>Localizar no mapa</h4>
-            <p class="m-0 p-0 font-16">Clique para apontar o evento no seu local atual...</p>
-            <a href="#" class="get-location btn btn-full btn-m bg-red-dark rounded-sm text-uppercase shadow-l font-900 mb-4">Meu Local Atual</a>
-            <p class="m-0 pb-2 font-16">... ou selecione no mapa abaixo:</p>
+            <div class="card card-style bg-transparent">
+                <div class="content">
+                    <p class="mb-n1 color-highlight font-600">Identificação Opcional</p>
+                    <h1>Localização</h1>
 
-        </div>
-        <div class="responsive-iframe add-iframe card-style">
-            <iframe class="location-map" src='https://www.google.com/maps/embed/v1/view?key=AIzaSyC8F1bVIGsP_nHBaOBgBpDCsRd-LYeFUsA&center=-33.8569,151.2152&zoom=16&maptype=satellite'></iframe>
-        </div>
-        <a href="https://maps.google.com" target="_blank" class="location-button btn btn-full btn-m bg-red-dark rounded-0 text-uppercase shadow-l font-900 disabled">Ver no Google Maps</a>
-        <p class="location-support text-center"></p>-->
-            <!--<p class="location-coordinates"></p>-->
-            <!--</div>-->
-            <div class="card card-style bg-transparent my-0">
-                <div class="content my-0">
+                    <a data-bs-toggle="collapse" href="#collapse-8" class="btn btn-m btn-full rounded-sm bg-highlight font-600 shadow-xl font-16 mb-2">
+                        clique para abrir o mapa
+                    </a>
+                    <div class="collapse" id="collapse-8">
+                        <p class="mb-1 pt-3">
+                            <div class="card card-style ms-0 me-0 rounded-4 bg-transparent shadow-0" data-card-height="400">
+                                <div class="content border border-theme shadow-0 rounded-4 h-100 m-0 rounded-4">
 
-                    <div class="list-group list-custom-large">
+
+                                </div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-style bg-transparent">
+                <div class="content  mt-0 mb-3 pt-0 pb-3">
+
+                    <div class="list-group list-custom-large p-0 m-0">
                         <!-- VISITOR -->
                         <a data-trigger-switch="mo_event_visitor" class="border-0" href="#">
                             <div class="d-flex">
@@ -632,36 +654,35 @@
                                 <label class="custom-control-label" for="mo_event_visitor"></label>
                             </div>
                         </a>
+
                         <!-- RECORRENTE -->
                         <!--<a data-trigger-switch="mo_event_reccurent" class="border-0" href="#">
-                        <div class="d-flex">
-                            <div>
-                                <i class="font-16 bg-transparent color-theme">
-                                    <svg viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M12,5V1L7,6L12,11V7A6,6 0 0,1 18,13A6,6 0 0,1 12,19A6,6 0 0,1 6,13H4A8,8 0 0,0 12,21A8,8 0 0,0 20,13A8,8 0 0,0 12,5Z" />
-                                    </svg>
-                                </i>
-                                <span>Reincidência</span>
-                                <strong class="font-14">Já aconteceu antes?</strong>
-                            </div>
+                    <div class="d-flex">
+                        <div>
+                            <i class="font-16 bg-transparent color-theme">
+                                <svg viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M12,5V1L7,6L12,11V7A6,6 0 0,1 18,13A6,6 0 0,1 12,19A6,6 0 0,1 6,13H4A8,8 0 0,0 12,21A8,8 0 0,0 20,13A8,8 0 0,0 12,5Z" />
+                                </svg>
+                            </i>
+                            <span>Reincidência</span>
+                            <strong class="font-14">Já aconteceu antes?</strong>
                         </div>
-                        <div class="custom-control scale-switch ios-switch">
-                            <input id="mo_event_reccurent" type="checkbox" class="ios-input">
-                            <label class="custom-control-label" for="mo_event_reccurent"></label>
-                        </div>
-                    </a>-->
+                    </div>
+                    <div class="custom-control scale-switch ios-switch">
+                        <input id="mo_event_reccurent" type="checkbox" class="ios-input">
+                        <label class="custom-control-label" for="mo_event_reccurent"></label>
+                    </div>
+                </a>-->
                     </div>
 
                 </div>
             </div>
 
-            <!--<div class="divider mb-2 "></div>-->
-
             <div class="card card-style bg-transparent">
                 <div class="content">
                     <div class="d-flex flex-row justify-content-between align-content-center">
                         <div class="d-flex flex-column ">
-                            <div class="d-flex mo-event-userid">
+                            <div class="d-flex mouser_id">
                                 <div>
                                     <img src="images/pictures/faces/1s.png" class="me-3 rounded-circle shadow-l" width="40">
                                 </div>
@@ -670,7 +691,7 @@
                                     <p class="font-12 mt-n1 color-highlight">28/02/2024 17:00:00</p>
                                 </div>
                             </div>
-                            <div class="d-flex mo-event-userid d-none">
+                            <div class="d-flex mouser_id d-none">
                                 <div>
                                     <svg xmlns="http://www.w3.org/2000/svg" class="me-3 rounded-circle shadow-0 color-theme"
                                          width="40"
@@ -687,8 +708,8 @@
                         </div>
 
                         <div class="form-check interest-check pe-0 me-0 text-center">
-                            <input class="sc_form_check form-check-input" type="checkbox" value="" id="mo-event-userid">
-                            <label class="form-check-label shadow-0 rounded-xl color-blue-dark" for="mo-event-userid">
+                            <input id="mouser_id" class="sc_form_check form-check-input" type="checkbox" value="">
+                            <label class="form-check-label shadow-0 rounded-xl color-blue-dark" for="mouser_id">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="shadow-0 rounded-xl" width="24" viewBox="0 0 24 24">
                                     <path fill="currentColor" d="M17.06 13C15.2 13 13.64 14.33 13.24 16.1C12.29 15.69 11.42 15.8 10.76 16.09C10.35 14.31 8.79 13 6.94 13C4.77 13 3 14.79 3 17C3 19.21 4.77 21 6.94 21C9 21 10.68 19.38 10.84 17.32C11.18 17.08 12.07 16.63 13.16 17.34C13.34 19.39 15 21 17.06 21C19.23 21 21 19.21 21 17C21 14.79 19.23 13 17.06 13M6.94 19.86C5.38 19.86 4.13 18.58 4.13 17S5.39 14.14 6.94 14.14C8.5 14.14 9.75 15.42 9.75 17S8.5 19.86 6.94 19.86M17.06 19.86C15.5 19.86 14.25 18.58 14.25 17S15.5 14.14 17.06 14.14C18.62 14.14 19.88 15.42 19.88 17S18.61 19.86 17.06 19.86M22 10.5H2V12H22V10.5M15.53 2.63C15.31 2.14 14.75 1.88 14.22 2.05L12 2.79L9.77 2.05L9.72 2.04C9.19 1.89 8.63 2.17 8.43 2.68L6 9H18L15.56 2.68L15.53 2.63Z" />
                                 </svg>
@@ -704,44 +725,39 @@
 
             <div class="card card-style bg-transparent">
                 <div class="content">
-
                     <div class="row">
                         <div class="col-6">
-                            <a id="moblob_cancelblob" href="#" class="close-menu btn btn-full gradient-red font-12 btn-m font-600 mt-3 rounded-s">Cancelar</a>
+                            <a id="moevent_cancel" href="#" class="close-menu btn btn-full gradient-red font-12 btn-m font-600 mt-3 rounded-s">Cancelar</a>
                         </div>
                         <div class="ms-auto col-6">
-                            <a id="moblob_toblob" href="#" class="close-menu btn btn-full gradient-green font-12 btn-m font-600 mt-3 rounded-s">
+                            <a id="moevent_POST" href="#" class="close-menu btn btn-full gradient-green font-12 btn-m font-600 mt-3 rounded-s">
                                 Apontar
                             </a>
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </div>
+    </div>
+
+    <!-- Main Menu-->
+    <div id="menu-main" class="menu menu-box-left rounded-0" data-menu-load="menu-main.html" data-menu-width="280" data-menu-active="nav-pages"></div>
+
+    <!-- Share Menu-->
+    <div id="menu-share" class="menu menu-box-bottom rounded-m" data-menu-load="menu-share.html" data-menu-height="370"></div>
+
+    <!-- Colors Menu-->
+    <div id="menu-colors" class="menu menu-box-bottom rounded-m" data-menu-load="menu-colors.html" data-menu-height="480"></div>
 
 
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/custom.js"></script>
 
-        <!-- Main Menu-->
-        <div id="menu-main" class="menu menu-box-left rounded-0" data-menu-load="menu-main.html" data-menu-width="280" data-menu-active="nav-pages"></div>
-
-        <!-- Share Menu-->
-        <div id="menu-share" class="menu menu-box-bottom rounded-m" data-menu-load="menu-share.html" data-menu-height="370"></div>
-
-        <!-- Colors Menu-->
-        <div id="menu-colors" class="menu menu-box-bottom rounded-m" data-menu-load="menu-colors.html" data-menu-height="480"></div>
-
-
-        <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
-        <script type="text/javascript" src="scripts/custom.js"></script>
-
-        <!-- MapOmega -->
-        <script src="mapomega/mo_mod/mo_blob_putimage/mo_js/mo500_blob_putImage.js"></script>
-        <script src="mapomega/mo_mod/mo_sc_events/mo_js/mo500_sc_content.js"></script>
-        <script src="mapomega/mo_mod/mo_uix/mo_js/mo500_uix.js"></script>
-        <script src="mapomega/mo_io/moio500_app.js"></script>
-        <script src="mapomega/mo500_appstart.js"></script>
+    <!-- MapOmega -->
+    <script src="mapomega/mo_mod/mo_blob_putimage/mo_js/mo500_blob_putImage.js"></script>
+    <script src="mapomega/mo_mod/mo_sc_events/mo_js/mo500_sc_content.js"></script>
+    <script src="mapomega/mo_mod/mo_uix/mo_js/mo500_uix.js"></script>
+    <script src="mapomega/mo_io/moio500_app.js"></script>
+    <script src="mapomega/mo500_appstart.js"></script>
 
 </body>
-
