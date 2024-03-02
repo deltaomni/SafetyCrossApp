@@ -1645,38 +1645,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // MapOmega
+    //// MapOmega
 
-    //MapOmega Fetch
-    //Build new Event form
-    _('mo_event_pointer').
-        addEventListener('click', scevent_f_fetchHtmlNewEventForm)
+    ////MapOmega Fetch
+    ////Build new Event form
+    //_('mo_event_pointer').
+    //    addEventListener('click', scevent_f_fetchHtmlNewEventForm)
 
-    async function scevent_f_fetchHtmlNewEventForm() {
-        var html = await mosc_fetch_file("appptbr-menunewevent.html")
-        console.log(html.length)
-        _('mo-menunewevent-body').innerHTML = html;
+    //async function scevent_f_fetchHtmlNewEventForm() {
+    //    var html = await mosc_fetch_file("appptbr-menunewevent.html")
+    //    console.log(html.length)
+    //    _('mo-menunewevent-body').innerHTML = html;
 
-        moio_setBlobEvents();
-        scevent_f_setNewEventEvents();
-        init_template();
-    }
+    //    moio_setBlobEvents();
+    //    scevent_f_setNewEventEvents();
+    //    init_template();
+    //}
 
-    async function mosc_fetch_file(uri) {
-       // "C:\Users\mapomega_01\source\repos\MO500_FS\SC23MVP500\wwwroot\App_web\SafetyCrossApp\mapomega\app_html\pt-BR\mo500_scevent.html"
-        //var _uri = "mapomega/app_html/pt-BR/";
-        var _uri = "";
-        _uri += uri;
-        var response = await fetch(_uri);
-        var txtStr = await response.text();
+    //async function mosc_fetch_file(uri) {
+    //   // "C:\Users\mapomega_01\source\repos\MO500_FS\SC23MVP500\wwwroot\App_web\SafetyCrossApp\mapomega\app_html\pt-BR\mo500_scevent.html"
+    //    //var _uri = "mapomega/app_html/pt-BR/";
+    //    var _uri = "";
+    //    _uri += uri;
+    //    var response = await fetch(_uri);
+    //    var txtStr = await response.text();
 
-        //console.log(response.status);
-        if (response.status != 200) {
-            return false;
-        } else {
-            return txtStr;
-        }
-    }
+    //    //console.log(response.status);
+    //    if (response.status != 200) {
+    //        return false;
+    //    } else {
+    //        return txtStr;
+    //    }
+    //}
 
     //var menunewevent = document.getElementById('mo-menunewevent');
     //const eventMenuLoaded = new CustomEvent("momenuloaded", {

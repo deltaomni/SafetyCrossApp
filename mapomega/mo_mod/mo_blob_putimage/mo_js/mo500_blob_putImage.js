@@ -137,6 +137,7 @@ async function moblob_io_GETFromBlob() {
 
 async function moblob_io_toblob() {
     console.log("POST to blob");
+    return false;
 
     var files = _collection;
 

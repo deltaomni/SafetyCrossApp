@@ -29,6 +29,7 @@ var _sc_new_event =
 
 function scevent_f_setNewEventEvents() {
 
+
     // Image Operations
     _("moimg_tostart")
         .addEventListener("click", function () { scevent_f_moveimg('start') });
@@ -38,7 +39,7 @@ function scevent_f_setNewEventEvents() {
         .addEventListener("click", scevent_f_removeImgFromCollection);
 
     // toggle User/ Incognito 
-    _("mouser_id")
+    _("sc_event_user")
         .addEventListener("click", scevent_f_toggleIncognito);
 
     // Cancel/close Events
@@ -47,9 +48,12 @@ function scevent_f_setNewEventEvents() {
     //_("moevent_cancel")
     //    .addEventListener("click", scevent_clearAllFormEvent);
 
-    // Post Event
-    _("moevent_POST")
-        .addEventListener("click", moblob_io_toblob);
+    // Submit/ POST Event
+    const form = document.querySelector('form');
+    form.addEventListener('submit', scevent_f_handleSubmit);
+
+    //_("moevent_submitForm")
+    //    .addEventListener("click", moblob_io_toblob);
 
 
 //    // Blob
@@ -70,8 +74,6 @@ function scevent_f_setNewEventEvents() {
 //        .addEventListener("click", scevent_f_toggleBackgdSize);
 }
 
-
-
 function scevent_f_removeImgFromCollection(ev) {
 
     //console.log(_selectedCover)
@@ -88,65 +90,82 @@ function scevent_f_removeImgFromCollection(ev) {
 // sc_form_textarea
 // sc_form_img
 // sc_form_style
-function scevent_f_clearEvent(type, value) {
+//function scevent_f_clearEvent(type, value) {
 
-    var coll_ = _cn(type);
-    for (var i = 0; i < coll_.length; i++) {
-        var ci = coll_[i]
-        switch (type) {
-            case 'sc_form_input':
-                console.log(type, ci.id, "value:", ci.value)
-                break;
-            case 'sc_form_btn':
-                console.log(type, ci.id, "class:", ci.classList)
-                break;
-            case 'sc_form_html':
-                console.log(type, ci.id, "Html:", ci.innerHTML)
-                break;
-            case 'sc_form_check':
-                console.log(type, ci.id, "Checked:", ci.checked)
-                break;
-            case 'sc_form_radio':
-                console.log(type, ci.id, "Radio:", ci.checked)
-                break;
-            case 'sc_form_date':
-                console.log(type, ci.id, "Date:", ci.value)
-                break;
-            case 'sc_form_textarea':
-                console.log(type, ci.id, "TextArea:", ci.value)
-                break;
-            case 'sc_form_img':
-                console.log(type, ci.id, "Img:", ci.src)
-                break;
-            case 'sc_form_style':
-                console.log(type, ci.id, "Style:", ci.style)
-                break;
-            default:
-                break;
-        }
-    }
+//    var coll_ = _cn(type);
+//    for (var i = 0; i < coll_.length; i++) {
+//        var ci = coll_[i]
+//        switch (type) {
+//            case 'sc_form_input':
+//                console.log(type, ci.id, "value:", ci.value)
+//                break;
+//            case 'sc_form_btn':
+//                console.log(type, ci.id, "class:", ci.classList)
+//                break;
+//            case 'sc_form_html':
+//                console.log(type, ci.id, "Html:", ci.innerHTML)
+//                break;
+//            case 'sc_form_check':
+//                console.log(type, ci.id, "Checked:", ci.checked)
+//                break;
+//            case 'sc_form_radio':
+//                console.log(type, ci.id, "Radio:", ci.checked)
+//                break;
+//            case 'sc_form_date':
+//                console.log(type, ci.id, "Date:", ci.value)
+//                break;
+//            case 'sc_form_textarea':
+//                console.log(type, ci.id, "TextArea:", ci.value)
+//                break;
+//            case 'sc_form_img':
+//                console.log(type, ci.id, "Img:", ci.src)
+//                break;
+//            case 'sc_form_style':
+//                console.log(type, ci.id, "Style:", ci.style)
+//                break;
+//            default:
+//                break;
+//        }
+//    }
+//}
+
+//function scevent_clearAllFormEvent() {
+//    // sc_form_input
+//    scevent_f_clearEvent("sc_form_input", null)
+//    // sc_form_btn
+//    scevent_f_clearEvent("sc_form_btn", null)
+//    // sc_form_html
+//    scevent_f_clearEvent("sc_form_html", null)
+//    // sc_form_check
+//    scevent_f_clearEvent("sc_form_check", null)
+//    // sc_form_radio
+//    scevent_f_clearEvent("sc_form_radio", null)
+//    // sc_form_date
+//    scevent_f_clearEvent("sc_form_date", null)
+//    // sc_form_textarea
+//    scevent_f_clearEvent("sc_form_textarea", null)
+//    // sc_form_img
+//    scevent_f_clearEvent("sc_form_img", null)
+//    // sc_form_style
+//    scevent_f_clearEvent("sc_form_style", null)
+//}
+
+function scevent_f_handleSubmit(event) {
+    event.preventDefault();
+
+    const data = new FormData(event.target);
+
+    // Do a bit of work to convert the entries to a plain JS object
+    const value = Object.fromEntries(data.entries());
+    value.Impact = data.getAll("Impact");
+    value["files"] = _collection;
+
+    //console.log({value });
+    console.log(value);
+
 }
 
-function scevent_clearAllFormEvent() {
-    // sc_form_input
-    scevent_f_clearEvent("sc_form_input", null)
-    // sc_form_btn
-    scevent_f_clearEvent("sc_form_btn", null)
-    // sc_form_html
-    scevent_f_clearEvent("sc_form_html", null)
-    // sc_form_check
-    scevent_f_clearEvent("sc_form_check", null)
-    // sc_form_radio
-    scevent_f_clearEvent("sc_form_radio", null)
-    // sc_form_date
-    scevent_f_clearEvent("sc_form_date", null)
-    // sc_form_textarea
-    scevent_f_clearEvent("sc_form_textarea", null)
-    // sc_form_img
-    scevent_f_clearEvent("sc_form_img", null)
-    // sc_form_style
-    scevent_f_clearEvent("sc_form_style", null)
-}
+
 
 function scevent_f_clearSelectedImage() {
 
