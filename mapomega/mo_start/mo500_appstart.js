@@ -25,13 +25,12 @@ function mostart_init() {
     console.log('ok');
     var getimages = moblob_io_GETFromBlob();
 
-    moio_setBlobEvents();
     mouix_f_setUIXEvents();
-    scevent_f_setNewEventEvents();
+    // moio_setBlobEvents();
+    // scevent_f_setNewEventEvents();
 
     return "ok";
 }
-
 
 
     /**
