@@ -1656,8 +1656,7 @@ document.addEventListener('DOMContentLoaded', () => {
         var html = await mosc_fetch_file("appptbr-menunewevent.html")
         console.log(html.length)
         _('mo-menunewevent-body').innerHTML = html;
-        //scevent_f_setNewEventEvents()
-        //init_template();
+
         moio_setBlobEvents();
         scevent_f_setNewEventEvents();
         init_template();
