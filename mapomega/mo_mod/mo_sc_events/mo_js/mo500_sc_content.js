@@ -227,7 +227,7 @@ function scevent_f_showSelectedUpload(e, imgid) {
     ci.classList.remove('cover_image_blank')
 
     // scroll to top
-    _("mo500_scevent").scrollTo({
+    _("mo-menunewevent").scrollTo({
         top: 0,
         left: 0,
         behavior: "smooth",

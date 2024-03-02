@@ -45,11 +45,11 @@ function moio_setBlobEvents() {
         .addEventListener('input', moblob_f_captureInputFile);
     _("mo_blob_content")
         .addEventListener("click", moblob_f_displaySelectedImage);
-//    _("moblob_erase")
-    //        .addEventListener("click", moblob_f_removeFromBlob);
-    //
     _("moblob_toggle_cover_bg")
         .addEventListener("click", scevent_f_toggleBackgdSize);
+    //    _("moblob_erase")
+    //        .addEventListener("click", moblob_f_removeFromBlob);
+    //
 
 
 }
