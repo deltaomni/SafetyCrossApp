@@ -16,15 +16,13 @@
  */
 
 
-//document.addEventListener('DOMContentLoaded', () => {
-    'use strict'
-    
     // Global Variables
     /// To Be completed
 
+'use strict'
+
 function mostart_init() {
-
-
+    console.log('ok');
     var getimages = moblob_io_GETFromBlob();
 
     moio_setBlobEvents();
@@ -33,6 +31,8 @@ function mostart_init() {
 
     return "ok";
 }
+
+
 
     /**
     * Get element by Id
