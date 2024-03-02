@@ -466,7 +466,7 @@
                 <div id="moblob_cover_image" class="sc_form_style card rounded-0 cover_image_blank cover_image_blank_input w-100 bg-transparent p-0 m-0">
                     <div class="card-bottom text-end">
                         <div class="mb-3 me-3 color-white">
-
+                            <!-- Images -->
                             <input id="moblob_input_image_2" type="file"
                                    multiple accept=".gif,.jpg,.jpeg,.png,.svg"
                                    class="sc_form_input form-control bg-transparent cover_image_blank_input">
@@ -515,7 +515,7 @@
                                 <div class="d-flex flex-row justify-content-center flex-wrap ">
                                     <div class="form-check interest-check pe-0 me-2">
                                         <input class="sc_form_check form-check-input" type="checkbox"
-                                               name="Impact"
+                                               name="scimpact"
                                                value="Personal"
                                                id="moevent-Impact-Personal">
                                         <label class="form-check-label shadow-l rounded-xl font-16" for="moevent-Impact-Personal">Pessoal</label>
@@ -524,7 +524,7 @@
                                     </div>
                                     <div class="form-check interest-check pe-0 me-2">
                                         <input class="sc_form_check form-check-input" type="checkbox"
-                                               name="Impact"
+                                               name="scimpact"
                                                value="Environmental" id="moevent-Impact-Environmental">
                                         <label class="form-check-label shadow-l rounded-xl font-16" for="moevent-Impact-Environmental">Ambiental</label>
                                         <i class="fa fa-check-circle color-white font-16"></i>
@@ -532,7 +532,7 @@
                                     </div>
                                     <div class="form-check interest-check pe-0 me-0">
                                         <input class="sc_form_check form-check-input" type="checkbox"
-                                               name="Impact"
+                                               name="scimpact"
                                                value="Property" id="moevent-Impact-Property">
                                         <label class="form-check-label shadow-l rounded-xl font-16" for="moevent-Impact-Property">Patrimônio</label>
                                         <i class="fa fa-check-circle color-white font-16"></i>
@@ -556,7 +556,7 @@
                                 <div class="d-flex flex-row justify-content-center flex-wrap ">
                                     <div class="form-check interest-check">
                                         <input class="sc_form_radio form-check-input" type="radio"
-                                               name="Nature"
+                                               name="scnature"
                                                value="Danger" id="moevent-nature-check1">
                                         <label class="form-check-label shadow-xl rounded-xl font-16" for="moevent-nature-check1">Perigo</label>
                                         <i class="fa fa-check-circle color-white font-16"></i>
@@ -564,7 +564,7 @@
                                     </div>
                                     <div class="form-check interest-check">
                                         <input class="sc_form_radio form-check-input" type="radio"
-                                               name="Nature"
+                                               name="scnature"
                                                value="Risk" id="moevent-nature-check2">
                                         <label class="form-check-label shadow-xl rounded-xl font-16" for="moevent-nature-check2">Risco</label>
                                         <i class="fa fa-check-circle color-white font-16"></i>
@@ -572,7 +572,7 @@
                                     </div>
                                     <div class="form-check interest-check">
                                         <input class="sc_form_radio form-check-input" type="radio"
-                                               name="Nature"
+                                               name="scnature"
                                                value="Near-Miss" id="moevent-nature-check3">
                                         <label class="form-check-label shadow-xl rounded-xl font-16" for="moevent-nature-check3">Quase Acidente</label>
                                         <i class="fa fa-check-circle color-white font-16"></i>
@@ -580,7 +580,7 @@
                                     </div>
                                     <div class="form-check interest-check float-end">
                                         <input class="sc_form_radio form-check-input" type="radio"
-                                               name="Nature"
+                                               name="scnature"
                                                value="Accident" id="moevent-nature-check4">
                                         <label class="form-check-label shadow-xl rounded-xl font-16" for="moevent-nature-check4">Acidente</label>
                                         <i class="fa fa-check-circle color-white font-16"></i>
@@ -588,7 +588,7 @@
                                     </div>
                                     <div class="form-check interest-check float-end">
                                         <input class="sc_form_radio form-check-input" type="radio"
-                                               name="Nature"
+                                               name="scnature"
                                                value="Idea" id="moevent-nature-check5">
                                         <label class="form-check-label shadow-xl rounded-xl font-16" for="moevent-nature-check5">Sugestão</label>
                                         <i class="fa fa-check-circle color-white font-16"></i>
@@ -596,7 +596,7 @@
                                     </div>
                                     <div class="form-check interest-check float-end">
                                         <input class="sc_form_radio form-check-input" type="radio"
-                                               name="Nature"
+                                               name="scnature"
                                                value="Improvement" id="moevent-nature-check6">
                                         <label class="form-check-label shadow-xl rounded-xl font-16" for="moevent-nature-check6">Melhoria</label>
                                         <i class="fa fa-check-circle color-white font-16"></i>
@@ -604,7 +604,7 @@
                                     </div>
                                     <div class="form-check interest-check float-end">
                                         <input class="sc_form_radio form-check-input" type="radio"
-                                               name="Nature"
+                                               name="scnature"
                                                value="NA" id="moevent-nature-check7">
                                         <label class="form-check-label shadow-xl rounded-xl font-16" for="moevent-nature-check7">N/A</label>
                                         <i class="fa fa-check-circle color-white font-16"></i>
@@ -625,7 +625,7 @@
                             <h1>Data/ Hora</h1>
                             <input id="sc_event_data" type="datetime-local"
                                    placeholder="Informe a data, a hora"
-                                   name="Datetime"
+                                   name="scdatetime"
                                    value="2024-02-28" max="2030-01-01" min="2021-01-01"
                                    class="sc_form_date form-control validate-text font-20">
                             <!--<label for="sc_event_data" class="color-highlight font-16">Data/ Hora</label>-->
@@ -645,7 +645,7 @@
                             <div class="input-style no-borders no-icon">
                                 <textarea id="sc_event_desc"
                                           class="sc_form_textarea font-16 px-3 rounded-3 bg-theme color-theme"
-                                          name="Description"
+                                          name="scdescription"
                                           rows="2"
                                           placeholder="Descreva o evento"></textarea>
                                 <!--<label for="sc_event_desc" class="color-highlight font-16">Descrição:</label>-->
@@ -672,7 +672,7 @@
                                     </div>
                                 </div>
                             </p>
-                            <input id="sc_event_geo" type="text" class="form-control d-none" name="Geolocation" value="0,0">
+                            <input id="sc_event_geo" type="text" class="form-control d-none" name="scgeolocation" value="0,0">
                         </div>
                     </div>
                 </div>
@@ -695,7 +695,7 @@
                                     </div>
                                 </div>
                                 <div class="custom-control scale-switch ios-switch">
-                                    <input id="sc_event_visitor" type="checkbox" nmae="Visitor" class="ios-input">
+                                    <input id="sc_event_visitor" type="checkbox" name="scoptions" value="Visitor" class="ios-input">
                                     <label class="custom-control-label" for="mo_event_visitor"></label>
                                 </div>
                             </a>
@@ -736,7 +736,7 @@
                             </div>
 
                             <div class="form-check interest-check pe-0 me-0 text-center">
-                                <input id="sc_event_user" class="sc_form_check form-check-input" name="User" type="checkbox" value="Jack Louder">
+                                <input id="sc_event_user" class="sc_form_check form-check-input" name="scuser" type="checkbox" value="Jack Louder">
                                 <label class="form-check-label shadow-0 rounded-xl color-blue-dark" for="sc_event_user">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="shadow-0 rounded-xl" width="24" viewBox="0 0 24 24">
                                         <path fill="currentColor" d="M17.06 13C15.2 13 13.64 14.33 13.24 16.1C12.29 15.69 11.42 15.8 10.76 16.09C10.35 14.31 8.79 13 6.94 13C4.77 13 3 14.79 3 17C3 19.21 4.77 21 6.94 21C9 21 10.68 19.38 10.84 17.32C11.18 17.08 12.07 16.63 13.16 17.34C13.34 19.39 15 21 17.06 21C19.23 21 21 19.21 21 17C21 14.79 19.23 13 17.06 13M6.94 19.86C5.38 19.86 4.13 18.58 4.13 17S5.39 14.14 6.94 14.14C8.5 14.14 9.75 15.42 9.75 17S8.5 19.86 6.94 19.86M17.06 19.86C15.5 19.86 14.25 18.58 14.25 17S15.5 14.14 17.06 14.14C18.62 14.14 19.88 15.42 19.88 17S18.61 19.86 17.06 19.86M22 10.5H2V12H22V10.5M15.53 2.63C15.31 2.14 14.75 1.88 14.22 2.05L12 2.79L9.77 2.05L9.72 2.04C9.19 1.89 8.63 2.17 8.43 2.68L6 9H18L15.56 2.68L15.53 2.63Z" />
@@ -745,7 +745,7 @@
                                 <i class="fa fa-check-circle color-white font-24"></i>
                                 <i class="fa fa-user-secret d-none"></i>
                             </div>
-                            <input id="sc_event_formdate" type="datetime" class="form-control d-none" name="FormDatetime" value="28/02/2024 17:00:00">
+                            <input id="sc_event_formdate" type="datetime" class="form-control d-none" name="scformdatetime" value="28/02/2024 17:00:00">
 
 
                         </div>

@@ -17,14 +17,15 @@
 
 var _sc_new_event =
 {
-    "scpics": [],
+    "scimages": [],
     "scimpact": [],
     "scnature": null,
     "scdatetime": null,
     "scdescription": null,
     "scgeolocation": null,
     "scoptions": [],
-    "scuser": null
+    "scuser": null,
+    "scformdatetime":null
 }
 
 function scevent_f_setNewEventEvents() {
@@ -157,8 +158,9 @@ function scevent_f_handleSubmit(event) {
 
     // Do a bit of work to convert the entries to a plain JS object
     const value = Object.fromEntries(data.entries());
-    value.Impact = data.getAll("Impact");
-    value["files"] = _collection;
+    value.scimpact = data.getAll("scimpact");
+    value.scoptions = data.getAll("scoptions");
+    value["scimages"] = _collection;
 
     //console.log({value });
     console.log(value);
