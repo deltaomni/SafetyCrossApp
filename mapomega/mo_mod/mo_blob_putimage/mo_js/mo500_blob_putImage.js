@@ -179,48 +179,6 @@ async function moblob_io_toblob() {
 }
 
 
-//async function moblob_io_toblob() {
-//    console.log("POST to blob");
-
-//    var files = _(_blobSelectedImageId).files;
-
-//    if (!files.length) {
-//        return false;
-//    }
-
-//    moio_blinkIOActivity(true)
-
-//    var battlePlans = new FormData();
-//    for (var i0 = 0; i0 < files.length; i0++) {
-//        battlePlans.append("battlePlans", files[i0]);
-//    }
-
-//    console.log(files);
-//    console.log(battlePlans);
-
-//    await fetch(_uri, {
-//        method: 'POST',
-//        body: battlePlans
-//    })
-//        .then(response => response.text())
-//        .then((response) => {
-//            var filenames = JSON.parse(response);
-//            var directoryfiles = filenames.listnames;
-//            var container = filenames.container;
-//            moblob_endPostItem(directoryfiles, container)//
-//            mouix_showtoastOK('ok','Item salvo')
-//        })
-//        .catch(error => {
-//            console.error('Unable to add item.', error)
-//            moio_blinkIOActivity(false)
-//            // show no ok
-//            mouix_showtoastOK('nok','Erro ao salvar')
-//        });
-
-
-//    moio_blinkIOActivity(false)
-   
-//}
 
 function moblob_f_removeFromBlob() {
     var container = null;
@@ -372,7 +330,8 @@ function moblob_f_buildImageCollection(_collection) {
         div.addEventListener('click', function () {
             var imgid = this.id.split('-')[1];
             scevent_f_clearCollection(_collection, imgid);
-         
+            
+
             //scevent_f_showSelectedUpload(this)
         })
 

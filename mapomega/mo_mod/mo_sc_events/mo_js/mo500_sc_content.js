@@ -213,11 +213,6 @@ function scevent_f_showSelectedUpload(e, imgid) {
     var imgw = Math.round(img.width * scalew);
     var imgh = Math.round(img.height * scaleh);
 
-    //if (imgh <= 240) {
-    //    imgh = 240;
-    //    imgw = Math.round(img.width * (240 / imgh));
-    //} // min height
-
     if (imgh <= vw) {
         imgh = vw;
         imgw = Math.round(img.width * (vw / imgh));
@@ -231,8 +226,12 @@ function scevent_f_showSelectedUpload(e, imgid) {
     ci.classList.add('cover_image_selected')
     ci.classList.remove('cover_image_blank')
 
-
-  //  console.log(_selectedCover)
+    // scroll to top
+    _("mo500_scevent").scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+    });
 }
 
 
