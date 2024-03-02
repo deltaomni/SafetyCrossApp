@@ -125,10 +125,11 @@ function moblob_f_openimg() {
 }
 
 async function moblob_io_GETFromBlob() {
+
     moio_blinkIOActivity(true)
     const response = await fetch(_uri);
     const data = await response.json();
-  //  console.log(data);
+    console.log(data);
     var directoryfiles = data.listnames;
     var container = data.container;
     moblob_endPostItem(directoryfiles, container)//
