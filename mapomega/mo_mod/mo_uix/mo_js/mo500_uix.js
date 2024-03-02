@@ -25,7 +25,6 @@ function mouix_f_setUIXEvents() {
 
     _('mo-switch-images').
         addEventListener('click', function () {
-            console.log('hey')
             mouix_f_toggleTagName('mo_blob_content')
         })
 }
