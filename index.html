@@ -95,11 +95,11 @@
 
         <div id="footer-bar" class="footer-bar-6">
             <a href="index-components.html"><i class="fa fa-cog"></i></a>
-            <a href="index-pages.html" class="active-nav"><i class="fa fa-calendar"></i><span>Período</span></a>
+            <a data-menu="menu-calendar" href="#" class="active-nav"><i class="fa fa-calendar"></i><span>Calendário</span></a>
             <a href="index.html" class="mo_1 circle-nav">
                 <i><img width="54" src="mapomega/img/SC_523_Short_24x24.svg" /></i>
             </a>
-            <a data-menu="mo-menunewevent" href="#"><i class="fa fa-filter"></i><span>Legenda</span></a>
+            <a data-menu="menu-filter" href="#"><i class="fa fa-filter"></i><span>Legenda</span></a>
             <a href="#" data-menu="menu-main"><i class="fa fa-bars"></i></a>
         </div>
 
@@ -147,8 +147,8 @@
                         <!-- Pointer -->
                         <div class="col-3 text-center align-self-center">
                             <a id="mo_event_pointer" href="#"
-                            data-menu="mo-menunewevent"
-                            class="icon icon-xxl rounded-xl bg-highlight border border-3 border-highlight-light icon-border text-light">
+                               data-menu="mo-menunewevent"
+                               class="icon icon-xxl rounded-xl bg-highlight border border-3 border-highlight-light icon-border text-light">
 
                                 <i class="fa fa-hand-point-right"></i>
                                 <span class="position-absolute start-50 top-0 me-4 mt-4 icon-l">
@@ -772,7 +772,18 @@
         </div>
     </div>
 
-        <!-- -->
+    <!-- Calendar Menu-->
+    <div id="menu-calendar" class="menu menu-box-bottom rounded-m" data-menu-load="menu-ptbr-mocalendar.html" data-menu-height="450"></div>
+
+    <!-- Legend Menu-->
+    <div id="menu-filter" class="menu menu-box-bottom rounded-m" data-menu-load="menu-ptbr-mofilter.html" data-menu-height="480"></div>
+    <!--<div id="menu-filter"
+         class="menu menu-box-modal rounded-0"
+         data-menu-height="cover"
+         data-menu-width="cover"
+         data-menu-load="appptbr-menulfilter.html"
+         ></div>-->
+
         <!-- Main Menu-->
         <div id="menu-main" class="menu menu-box-left rounded-0" data-menu-load="menu-main.html" data-menu-width="280" data-menu-active="nav-pages"></div>
 
