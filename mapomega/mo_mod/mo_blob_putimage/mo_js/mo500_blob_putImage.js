@@ -14,7 +14,8 @@
  * Last modified    : 2024-02-10 12:00:0
  * 
  */
-
+var _user = ["Jack_Louder", "Jack Louder"]
+var _locale = "pt-BR";
 var _collection = [];
 var _loadedCollection = [];
 var _selectedCover = null;
@@ -41,12 +42,12 @@ function moio_setBlobEvents() {
     //    .addEventListener("click", moblob_f_openimg);
     //_("moblob_input_image")
     //    .addEventListener("input", moblob_f_input_image);
-    _('moblob_input_image_2')
-        .addEventListener('input', moblob_f_captureInputFile);
-    _("mo_blob_content")
-        .addEventListener("click", moblob_f_displaySelectedImage);
-    _("moblob_toggle_cover_bg")
-        .addEventListener("click", scevent_f_toggleBackgdSize);
+    //_('moblob_input_image_2')
+    //    .addEventListener('input', moblob_f_captureInputFile);
+    //_("mo_blob_content")
+    //    .addEventListener("click", moblob_f_displaySelectedImage);
+    //_("moblob_toggle_cover_bg")
+    //    .addEventListener("click", scevent_f_toggleBackgdSize);
     //    _("moblob_erase")
     //        .addEventListener("click", moblob_f_removeFromBlob);
     //

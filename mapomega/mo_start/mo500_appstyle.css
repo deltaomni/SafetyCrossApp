@@ -185,18 +185,21 @@ input[type="file"] {
 
 .cover_image_toggle {
     background-size: contain !important;
-
 }
 
-
+/* INCOGNITO */
+.mouser_id.incognito.d-none {
+    display: none;
+}
+.mouser_id.incognito {
+    display: block;
+}
 /*Events End*/
-
 .mobg-whatsapp {
-    
     background-image: url(../img/whatsapp.svg);
     background-position: right center !important;
     background-repeat: no-repeat;
-    background-size:30% 50%;
+    background-size: 30% 50%;
 }
 
 .mo-lh-unset{

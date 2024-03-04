@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var pwaLocation = "_service-worker.js";
 
     //Place all your custom Javascript functions and plugin calls below this line
+
     function init_template(){
         //Caching Global Variables
         var i, e, el; //https://www.w3schools.com/js/js_performance.asp
@@ -1678,17 +1679,42 @@ document.addEventListener('DOMContentLoaded', () => {
     //    }
     //}
 
-    //var menunewevent = document.getElementById('mo-menunewevent');
+    /*  var menunewevent = document.getElementById('menu-calendar');*/
+    var menunewevent = document.getElementById('mo-menunewevent');
     //const eventMenuLoaded = new CustomEvent("momenuloaded", {
     //    bubbles: true,
     //    //detail: { text: () => menunewevent.innerHTML },
-    //    detail: { text: () => menunewevent.innerHTML.length },
-        
+    //    //detail: { text: () => menunewevent.id },
+    //    detail: {
+    //        command: () => { console.log("Hey"); var loaded = scevent_f_setNewEventEvents() } },
 
     //});
 
-    //document.addEventListener("momenuloaded", (e) => { console.log(e.detail.text()) }, { once: true });
-    //menunewevent.addEventListener("input", (e) => e.target.dispatchEvent(eventMenuLoaded));
+    //document.addEventListener("momenuloaded", (e) => { e.detail.command() }, { once: true });
+    ///*    menunewevent.addEventListener("pointerenter", (e) => e.target.dispatchEvent(eventMenuLoaded));*/
+    //menunewevent.addEventListener("change", (e) => e.target.dispatchEvent(eventMenuLoaded));
+   
+    function callback(mutationsList, observer) {
+       // console.log('Mutations:', mutationsList)
+       // console.log('Observer:', observer)
+        mutationsList.forEach(mutation => {
+            if (mutation.attributeName === 'class') {
+              //  console.log(mutation.target.classList)
+                var checkactive = mutation.target.classList.contains('menu-active')
+                if (checkactive) {
+                    var loaded = scevent_f_setNewEventEvents()
+                //} else {
+                  //  scevent_clearAllFormEvent();
+                }
+            }
+        })
+    }
+
+    const mutationObserver = new MutationObserver(callback)
+
+    mutationObserver.observe(menunewevent, { attributes: true })
+
+
 
     init_template();
 });

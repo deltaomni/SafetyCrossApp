@@ -29,29 +29,58 @@ var _sc_new_event =
 }
 
 function scevent_f_setNewEventEvents() {
+    // console.log('setNewEventEvents')
 
+    // Add current date time to form
+    var dd = new Date().toISOString(_locale)
+    _("sc_event_datetime").innerHTML = dd;
+    // format date time for the event
+   // var ddformatted = [dd.getFullYear(), dd.getMonth() + 1, dd.getDate()].join('-')
+   //console.log(ddformatted)
+    //_("sc_event_data").setAttribute("value", dd.split("T")[0]);
+    //_("sc_event_data").setAttribute("max", dd.split("T")[0]);
+    console.log(dd)
+
+    if (_('mo-menunewevent-body').classList.contains('listeners')) {
+        console.log('Listeners Attached')
+        return false
+    }
+
+    //Add User Name
+    _("sc_event_username").innerHTML = _user[1];
+
+
+
+    _('moblob_input_image_2')
+        .addEventListener('input', moblob_f_captureInputFile, { once: false });
+    _("mo_blob_content")
+        .addEventListener("click", moblob_f_displaySelectedImage, { once: false });
+    _("moblob_toggle_cover_bg")
+        .addEventListener("click", scevent_f_toggleBackgdSize, { once: false });
 
     // Image Operations
     _("moimg_tostart")
-        .addEventListener("click", function () { scevent_f_moveimg('start') });
+        .addEventListener("click", function () { scevent_f_moveimg('start'), { once: false } });
     _("moimg_toend")
-        .addEventListener("click", function () { scevent_f_moveimg('end') });
+        .addEventListener("click", function () { scevent_f_moveimg('end'), { once: false } });
     _("moimg_remove")
-        .addEventListener("click", scevent_f_removeImgFromCollection);
+        .addEventListener("click", scevent_f_removeImgFromCollection, { once: false });
 
     // toggle User/ Incognito 
     _("sc_event_user")
-        .addEventListener("click", scevent_f_toggleIncognito);
+        .addEventListener("click", scevent_f_toggleIncognito, { once: false });
 
     // Cancel/close Events
-    //_("moevent_close")
-    //    .addEventListener("click", scevent_clearAllFormEvent);
-    //_("moevent_cancel")
-    //    .addEventListener("click", scevent_clearAllFormEvent);
+    _("moevent_close")
+        .addEventListener("click", scevent_clearAllFormEvent);
+    _("moevent_cancel")
+        .addEventListener("click", scevent_clearAllFormEvent);
 
     // Submit/ POST Event
-    const form = document.querySelector('form');
-    form.addEventListener('submit', scevent_f_handleSubmit);
+    const form = _('mo-menunewevent-form');
+    form.addEventListener('submit', scevent_f_handleSubmit, { once: false });
+
+    _('mo-menunewevent-body').classList.add('listeners');
 
     //_("moevent_submitForm")
     //    .addEventListener("click", moblob_io_toblob);
@@ -79,94 +108,37 @@ function scevent_f_removeImgFromCollection(ev) {
 
     //console.log(_selectedCover)
     _collection.splice(_selectedCover, 1);
-    scevent_f_clearCollection(_collection)
+    scevent_f_clearCollection(_collection);
 }
 
-// sc_form_input
-// sc_form_btn
-// sc_form_html
-// sc_form_check
-// sc_form_radio
-// sc_form_date
-// sc_form_textarea
-// sc_form_img
-// sc_form_style
-//function scevent_f_clearEvent(type, value) {
 
-//    var coll_ = _cn(type);
-//    for (var i = 0; i < coll_.length; i++) {
-//        var ci = coll_[i]
-//        switch (type) {
-//            case 'sc_form_input':
-//                console.log(type, ci.id, "value:", ci.value)
-//                break;
-//            case 'sc_form_btn':
-//                console.log(type, ci.id, "class:", ci.classList)
-//                break;
-//            case 'sc_form_html':
-//                console.log(type, ci.id, "Html:", ci.innerHTML)
-//                break;
-//            case 'sc_form_check':
-//                console.log(type, ci.id, "Checked:", ci.checked)
-//                break;
-//            case 'sc_form_radio':
-//                console.log(type, ci.id, "Radio:", ci.checked)
-//                break;
-//            case 'sc_form_date':
-//                console.log(type, ci.id, "Date:", ci.value)
-//                break;
-//            case 'sc_form_textarea':
-//                console.log(type, ci.id, "TextArea:", ci.value)
-//                break;
-//            case 'sc_form_img':
-//                console.log(type, ci.id, "Img:", ci.src)
-//                break;
-//            case 'sc_form_style':
-//                console.log(type, ci.id, "Style:", ci.style)
-//                break;
-//            default:
-//                break;
-//        }
-//    }
-//}
+function scevent_clearAllFormEvent() {
+   // console.log('Clear Form');
 
-//function scevent_clearAllFormEvent() {
-//    // sc_form_input
-//    scevent_f_clearEvent("sc_form_input", null)
-//    // sc_form_btn
-//    scevent_f_clearEvent("sc_form_btn", null)
-//    // sc_form_html
-//    scevent_f_clearEvent("sc_form_html", null)
-//    // sc_form_check
-//    scevent_f_clearEvent("sc_form_check", null)
-//    // sc_form_radio
-//    scevent_f_clearEvent("sc_form_radio", null)
-//    // sc_form_date
-//    scevent_f_clearEvent("sc_form_date", null)
-//    // sc_form_textarea
-//    scevent_f_clearEvent("sc_form_textarea", null)
-//    // sc_form_img
-//    scevent_f_clearEvent("sc_form_img", null)
-//    // sc_form_style
-//    scevent_f_clearEvent("sc_form_style", null)
-//}
+    // clean collection
+    _collection = [];
+    scevent_toggleCollectionClass(_collection)
 
-function scevent_f_handleSubmit(event) {
-    event.preventDefault();
+    // Clear Cover Image
+    scevent_f_clearcoverImage()
 
-    const data = new FormData(event.target);
+    // clear incognito
+    scevent_f_toggleIncognito(null)
 
-    // Do a bit of work to convert the entries to a plain JS object
-    const value = Object.fromEntries(data.entries());
-    value.scimpact = data.getAll("scimpact");
-    value.scoptions = data.getAll("scoptions");
-    value["scimages"] = _collection;
-
-    //console.log({value });
-    console.log(value);
-
+    //Reset Form
+    _("mo-menunewevent-form").reset();
 }
 
+function scevent_f_clearcoverImage() {
+    var ci = _('moblob_cover_image')
+    if (!_collection.length) {
+        ci.style = '';
+        ci.classList.remove('cover_image_selected')
+        ci.classList.add('cover_image_blank')
+        return false;
+    }
+
+}
 
 
 function scevent_f_clearSelectedImage() {
@@ -179,7 +151,7 @@ function scevent_f_clearSelectedImage() {
 // show/hide moblob_img_collection when _collection is null/not
 function scevent_toggleCollectionClass(_collection) {
 
-    console.log(_collection)
+   // console.log(_collection)
     var cncoll = _cn('moimg_uploads')
     
     for (var i = 0; i < cncoll.length; i++) {
@@ -213,14 +185,9 @@ function scevent_f_showSelectedUpload(e, imgid) {
         _selectedCover = id;
     }
 
-   // console.log(id)
-    var ci = _('moblob_cover_image')
-    if (!_collection.length) {
-        ci.style = '';
-        ci.classList.remove('cover_image_selected')
-        ci.classList.add('cover_image_blank')
-        return false;
-    }
+    // Clear Cover Image
+    var ci = _('moblob_cover_image');
+    scevent_f_clearcoverImage()
 
     var dstyle = "background-image: url('" + _collection[id][0].src + "');";
 
@@ -297,10 +264,56 @@ function scevent_f_toggleBackgdSize() {
 
 }
 
-function scevent_f_toggleIncognito() {
+function scevent_f_toggleIncognito(status) {
+   
     var incognito = _cn('mouser_id')
+ //   console.log(incognito);
     for (var i = 0; i < incognito.length; i++) {
-        incognito[i].classList.toggle('d-none');
+        var cl = incognito[i].classList;
+    
+        if (status) { // add incognito
+            incognito[i].classList.toggle('d-none');
+            _('sc_event_user').value = 'Incognito';
+          //  console.log(incognito[i]);
+        } else { // remove incognito
+            if (cl.contains('incognito')) {
+                incognito[i].classList.add('d-none');
+            } else {
+                incognito[i].classList.remove('d-none');
+            }
+            _('sc_event_user').value = _user;
+        }
     }
 } 
+
+function scevent_f_handleSubmit(event) {
+    event.preventDefault();
+
+    const data = new FormData(event.target);
+    console.log(event)
+
+    // Do a bit of work to convert the entries to a plain JS object
+    const value = Object.fromEntries(data.entries());
+    value.scimpact = data.getAll("scimpact");
+    value.scoptions = data.getAll("scoptions");
+    var scimages = []
+    for (var i = 0; i < _collection.length; i++) {
+        scimages.push(_collection[i][0])
+    }
+    value["scimages"] = scimages;
+    value.scformdatetime = _('sc_event_datetime').innerHTML;
+
+
+    // Locale
+    value.sclocale = _locale;
+
+    //console.log({value });
+    console.log(value);
+
+    // Images to Blob
+    //moblob_io_toblob()
+
+    // Reset Form
+    scevent_clearAllFormEvent();
+}
 
