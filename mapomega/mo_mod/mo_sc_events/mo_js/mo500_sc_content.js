@@ -34,21 +34,16 @@ function scevent_f_setNewEventEvents() {
     // Add current date time to form
     var dd = new Date().toISOString(_locale)
     _("sc_event_datetime").innerHTML = dd;
-    // format date time for the event
-   // var ddformatted = [dd.getFullYear(), dd.getMonth() + 1, dd.getDate()].join('-')
-   //console.log(ddformatted)
-    //_("sc_event_data").setAttribute("value", dd.split("T")[0]);
-    //_("sc_event_data").setAttribute("max", dd.split("T")[0]);
-    console.log(dd)
+
+    //Add User Name
+    _("sc_event_user").value = _user[1];
+    _("sc_event_username").innerHTML = _user[1];
+    
 
     if (_('mo-menunewevent-body').classList.contains('listeners')) {
         console.log('Listeners Attached')
         return false
     }
-
-    //Add User Name
-    _("sc_event_username").innerHTML = _user[1];
-
 
 
     _('moblob_input_image_2')
@@ -106,9 +101,11 @@ function scevent_f_setNewEventEvents() {
 
 function scevent_f_removeImgFromCollection(ev) {
 
-    //console.log(_selectedCover)
+    console.log(_selectedCover)
+
     _collection.splice(_selectedCover, 1);
     scevent_f_clearCollection(_collection);
+
 }
 
 
@@ -127,6 +124,9 @@ function scevent_clearAllFormEvent() {
 
     //Reset Form
     _("mo-menunewevent-form").reset();
+
+    // Scroll form to top
+    scevent_f_scrolltoTop("mo-menunewevent");
 }
 
 function scevent_f_clearcoverImage() {
@@ -172,7 +172,7 @@ function scevent_toggleCollectionClass(_collection) {
 }
 
 function scevent_f_showSelectedUpload(e, imgid) {
-  //  console.log('selected:', imgid);
+    //  console.log('selected:', imgid);
 
     if (e && !imgid) {
         var id = e.id.split('-')[1];
@@ -188,6 +188,10 @@ function scevent_f_showSelectedUpload(e, imgid) {
     // Clear Cover Image
     var ci = _('moblob_cover_image');
     scevent_f_clearcoverImage()
+    // scroll to top
+    scevent_f_scrolltoTop("mo-menunewevent");
+
+    if (!_collection.length) { return false }
 
     var dstyle = "background-image: url('" + _collection[id][0].src + "');";
 
@@ -210,12 +214,15 @@ function scevent_f_showSelectedUpload(e, imgid) {
     } else {
         dstyle += " height:" + imgh + "px; width:" + imgw + "px";
     }
+
     ci.style = dstyle;
     ci.classList.add('cover_image_selected')
     ci.classList.remove('cover_image_blank')
 
-    // scroll to top
-    _("mo-menunewevent").scrollTo({
+}
+
+function scevent_f_scrolltoTop(elid) {
+    _(elid).scrollTo({
         top: 0,
         left: 0,
         behavior: "smooth",
@@ -231,6 +238,7 @@ function scevent_f_clearImageInput() {
 function scevent_f_clearCollection(_collection, imgid) {
 
     imgid = imgid || 0
+
     // select First Image in _collection
     scevent_f_showSelectedUpload(null, imgid)
 
@@ -281,7 +289,7 @@ function scevent_f_toggleIncognito(status) {
             } else {
                 incognito[i].classList.remove('d-none');
             }
-            _('sc_event_user').value = _user;
+            _('sc_event_user').value = _user[1];
         }
     }
 } 
@@ -296,13 +304,24 @@ function scevent_f_handleSubmit(event) {
     const value = Object.fromEntries(data.entries());
     value.scimpact = data.getAll("scimpact");
     value.scoptions = data.getAll("scoptions");
+
+    // get image collection
     var scimages = []
     for (var i = 0; i < _collection.length; i++) {
         scimages.push(_collection[i][0])
     }
-    value["scimages"] = scimages;
-    value.scformdatetime = _('sc_event_datetime').innerHTML;
+    value.scimages = scimages;
 
+    // insert Date Open and Sent
+    value.scformDatetimeUTC = _("sc_event_datetime").innerHTML;
+    value.scformSentDatetimeUTC = new Date().toISOString(_locale);
+
+    var formuser = _("sc_event_user").value;
+    if (formuser == 'Incognito') {
+        value.scmuser = "Incognito"
+    } else {
+        value.formuser = _user
+    }
 
     // Locale
     value.sclocale = _locale;
@@ -315,5 +334,8 @@ function scevent_f_handleSubmit(event) {
 
     // Reset Form
     scevent_clearAllFormEvent();
+
+    // Scroll form to top
+    scevent_f_scrolltoTop("mo-menunewevent");
 }
 
