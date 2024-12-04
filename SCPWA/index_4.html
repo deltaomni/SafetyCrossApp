@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
     <!-- MapOmega -->
-    <link href="mapomega/mo500_appstyle.css" rel="stylesheet" />
+    <link href="mapomega/mo_start/mo500_appstyle.css" rel="stylesheet" />
     <link rel="manifest" href="_manifest.json">
     <!--<link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">-->
     <link rel="apple-touch-icon" sizes="57x57" href="https://www.safetycross.app/app/icons/apple-icon-57x57.png">
@@ -40,6 +40,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+
 </head>
 
 <body class="theme-light">
@@ -50,7 +51,7 @@
 
         <div class="header header-fixed header-logo-left">
             <h2><a href="index.html" class="header-title mo-1">Safety Cross</a></h2>
-            <a href="#" class="spinner-grow text-warning header-icon header-icon-4 mo_blinkEl" role="status">
+            <a href="#" class="spinner-grow text-warning header-icon header-icon-4 mo_blinkEl d-none" role="status">
                 <i class="fas fa-circle"></i>
             </a>
 
@@ -77,7 +78,7 @@
             <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
             <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-dark"><i class="fas fa-sun"></i></a>
             <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-light"><i class="fas fa-moon"></i></a>
-            <a href="#" class="spinner-grow text-warning header-icon header-icon-2 mo_blinkEl" role="status">
+            <a href="#" class="spinner-grow text-warning header-icon header-icon-2 mo_blinkEl d-none" role="status">
                 <i class="fas fa-circle"></i>
             </a>
         </div>
@@ -94,17 +95,15 @@
 
         <div id="footer-bar" class="footer-bar-6">
             <a href="index-components.html"><i class="fa fa-cog"></i></a>
-            <a href="index-pages.html" class="active-nav"><i class="fa fa-calendar"></i><span>Período</span></a>
+            <a data-menu="menu-calendar" href="#" class="active-nav"><i class="fa fa-calendar"></i><span>Período</span></a>
             <a href="index.html" class="mo_1 circle-nav">
                 <i><img width="54" src="mapomega/img/SC_523_Short_24x24.svg" /></i>
             </a>
-            <a data-menu="menu-cart" href="#"><i class="fa fa-filter"></i><span>Legenda</span></a>
+            <a data-menu="menu-filter" href="#"><i class="fa fa-filter"></i><span>Legenda</span></a>
             <a href="#" data-menu="menu-main"><i class="fa fa-bars"></i></a>
         </div>
 
-
         <div class="page-title-clear"></div>
-
 
         <div class="page-content">
             <div class="splide story-slider slider-no-dots  mb-0" id="moheader-story-slider">
@@ -113,7 +112,7 @@
                         <div class="splide__slide text-center active">
                             <a data-menu="menu-story" href="#">
                                 <img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-light border border-s">
-                                <span class="position-absolute end-0 bottom-0 mb-4 me-4">
+                                <span class="position-absolute start-50 top-0 me-4 mt-4 icon-l">
                                     <i class="fa fa-plus-circle"></i>
                                 </span>
                                 <br><span class="d-block pt-2 font-12 color-theme opacity-60">Consolidado</span>
@@ -136,6 +135,36 @@
 
             <div class="card card-style bg-transparent shadow-0 border-0 m-0 rounded-0 ">
                 <div class="content mb-0">
+                    <div data-splide='{"autoplay":false}' class="splide single-slider slider-no-arrows slider-no-dots" id="user-slider-1">
+                        <div class="splide__track">
+                            <div class="splide__list">
+                                <div class="splide__slide mx-3">
+                                    <div class="d-flex">
+                                        <div><img src="images/pictures/faces/1s.png" class="me-3 rounded-circle shadow-l" width="50"></div>
+                                        <div>
+                                            <h5 class="mt-1 mb-0">Johnatan Doe</h5>
+                                            <p class="font-10 mt-n1 color-red-dark">Executive Officer</p>
+                                        </div>
+                                        <div class="ms-auto"><span class="slider-next badge bg-red-dark mt-2 p-2 font-8">TAP FOR MORE</span></div>
+                                    </div>
+                                </div>
+                                <div class="splide__slide mx-3">
+                                    <div class="d-flex">
+                                        <div>
+                                            <h5 class="mt-1 mb-0">Johnatan Doe</h5>
+                                            <p class="font-10 mt-n1 color-red-dark">Executive Officer</p>
+                                        </div>
+                                        <div class="ms-auto">
+                                            <a href="#" class="icon icon-xs rounded-circle shadow-l bg-phone"><i class="fa fa-phone"></i></a>
+                                            <a href="#" class="icon icon-xs rounded-circle shadow-l bg-facebook me-2 ms-2"><i class="fab fa-facebook-f"></i></a>
+                                            <a href="#" class="icon icon-xs rounded-circle shadow-l bg-twitter"><i class="fab fa-twitter"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
 
                     <div class="d-flex align-items-center flex-fill mb-3">
                         <div class="d-flex flex-column flex-fill">
@@ -144,12 +173,15 @@
                             </p>
                             <h1 class="color-dark-dark">Supra Ltda.</h1>
                         </div>
+
                         <!-- Pointer -->
                         <div class="col-3 text-center align-self-center">
-                            <a href="#" data-menu="mo-new-event" class="icon icon-xxl rounded-xl bg-highlight text-light">
-                                <!--<a href="#" data-menu="menu-cart" class="icon icon-xxl rounded-xl bg-highlight text-light">-->
+                            <a id="mo_event_pointer" href="#"
+                               data-menu="mo-menunewevent"
+                               class="icon icon-xxl rounded-xl bg-highlight border border-3 border-highlight-light icon-border text-light">
+
                                 <i class="fa fa-hand-point-right"></i>
-                                <span class="position-absolute start-0 top-0 ms-4 mt-4">
+                                <span class="position-absolute start-50 top-0 me-4 mt-4 icon-l">
                                     <i class="fa fa-plus-circle color-red-light"></i>
                                 </span>
                             </a>
@@ -168,25 +200,29 @@
                 <div class="card card-style mo_blob_content">
                     <div class="content my-2">
                         <p class="mb-2 color-highlight font-600">Dias sem acidentes</p>
-                        <div class="d-flex flex-row mx-3">
-                            <div class="col-4 text-center align-self-center text-success">
-                                <svg class="mo-ic-32" viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="M18 2C17.1 2 16 3 16 4H8C8 3 6.9 2 6 2H2V11C2 12 3 13 4 13H6.2C6.6 15 7.9 16.7 11 17V19.08C8 19.54 8 22 8 22H16C16 22 16 19.54 13 19.08V17C16.1 16.7 17.4 15 17.8 13H20C21 13 22 12 22 11V2H18M6 11H4V4H6V11M16 11.5C16 13.43 15.42 15 12 15C8.59 15 8 13.43 8 11.5V6H16V11.5M20 11H18V4H20V11Z" />
-                                </svg>
-                                <div class="text-success mb-0 font-24 font-700">
-                                    188
+                        <div class="d-flex">
+                            <a href="page-appptbr-dashboard.html" id="mouix_dashboard" class="d-flex flex-fill">
+                                <div class="d-flex flex-row flex-fill">
+                                    <div class="flex-fill text-center align-self-center text-success">
+                                        <svg class="mo-ic-32" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M18 2C17.1 2 16 3 16 4H8C8 3 6.9 2 6 2H2V11C2 12 3 13 4 13H6.2C6.6 15 7.9 16.7 11 17V19.08C8 19.54 8 22 8 22H16C16 22 16 19.54 13 19.08V17C16.1 16.7 17.4 15 17.8 13H20C21 13 22 12 22 11V2H18M6 11H4V4H6V11M16 11.5C16 13.43 15.42 15 12 15C8.59 15 8 13.43 8 11.5V6H16V11.5M20 11H18V4H20V11Z" />
+                                        </svg>
+                                        <div class="text-success mb-0 font-24 font-700">
+                                            188
+                                        </div>
+                                        Recorde
+                                    </div>
+                                    <div class="flex-fill text-center align-self-center text-secondary">
+                                        <svg class="mo-ic-32" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M12,2L1,21H23M12,6L19.53,19H4.47M11,10V14H13V10M11,16V18H13V16" />
+                                        </svg>
+                                        <div class="mb-0 font-24 font-700">
+                                            0
+                                        </div>
+                                        Último
+                                    </div>
                                 </div>
-                                Recorde
-                            </div>
-                            <div class="col-4 text-center align-self-center text-secondary">
-                                <svg class="mo-ic-32" viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="M12,2L1,21H23M12,6L19.53,19H4.47M11,10V14H13V10M11,16V18H13V16" />
-                                </svg>
-                                <div class="mb-0 font-24 font-700">
-                                    0
-                                </div>
-                                Último
-                            </div>
+                            </a>
                             <div class="col-4 text-center align-self-center text-danger">
                                 <svg class="mo-ic-40" viewBox="0 0 24 24">
                                     <path fill="currentColor" d="M6,3A1,1 0 0,1 7,4V4.88C8.06,4.44 9.5,4 11,4C14,4 14,6 16,6C19,6 20,4 20,4V12C20,12 19,14 16,14C13,14 13,12 11,12C8,12 7,14 7,14V21H5V4A1,1 0 0,1 6,3Z" />
@@ -235,19 +271,20 @@
                                 <p class="color-highlight font-600 mb-n1 font-14">março 2024</p>
                                 <h4>Últimos Apontamentos</h4>
                             </div>
-                            <div class="flex-fill text-end align-self-center pe-2">
-                                <a id="mo-swich-images" href="#" class="icon icon-m color-theme">
+                            <div class="flex-fill text-end align-self-center">
+                                <a id="mo-switch-images" href="#" class="icon icon-xxl color-theme">
                                     <i class="fa fa-th-list"></i>
                                 </a>
-
                             </div>
                         </div>
 
                         <div class="content m-0 p-0 mb-3">
-                            <div id="mo_blob_content" class="mo_blob_content d-flex flex-row flex-wrap justify-content-center">
+                            <div id="mo_blob_content"
+                                 sccontent-toggle="mo_blob_content"
+                                 class="mo_blob_content d-flex flex-row flex-wrap justify-content-center">
                                 <!-- Blob Images -->
                             </div>
-                            <div id="mo_card_content" class="mo_card_content d-flex flex-row flex-wrap justify-content-center d-none">
+                            <div id="mo_card_content" sccontent-toggle="mo_blob_content" class="mo_card_content d-flex flex-row flex-wrap justify-content-center d-none">
                                 <!-- Blob content -->
                                 <div class="mt-n3 ">
                                     <div class="content">
@@ -382,7 +419,7 @@
                                         Linha direta
                                     </p>
                                     <h1 class="color-white font-27 mb-n2 py-1">Emergência</h1>
-                                    <h6 class="text-dark font-17 font-600 pt-1">Aperte em caso de emergência</h6>
+                                    <h6 class="color-red-dark font-16 font-600 pt-1">Aperte em caso de emergência</h6>
                                 </div>
                             </div>
                         </div>
@@ -390,23 +427,21 @@
                     <div class="card-overlay bg-whatsapp opacity-50"></div>
                 </a>
 
-
                 <div data-menu-load="menu-footer.html"></div>
-
 
             </div>
         </div>
-
     </div>
 
-    <!--Toasts blobs-->
-    <div id="mo_msgtoast_ok" class="snackbar-toast m-4  p-3 bg-green-dark z-3" data-bs-delay="3000"
+
+    <!--Toasts-->
+    <div id="mo_msgtoast_ok" class="snackbar-toast m-4  p-3 bg-green-dark z-3" data-bs-delay="3500"
          data-bs-autohide="true">
         <i class="fa fa-check color-white"></i>
-        <span id="mo_msgtoast_ok-title" class="font-20 font-600 color-white ms-3">Apontamento Recebido</span>
+        <span id="mo_msgtoast_ok-title" class="font-16 font-600 color-white ms-3">Carregamento Completado</span>
         <div id="mo_msgtoast_ok-body" class="d-flexmo-lh-unset color-white"></div>
     </div>
-    <div id="mo_msgtoast_nok" class="snackbar-toast color-white m-4 mx-1 px-3 bg-red-dark" data-bs-delay="3000"
+    <div id="mo_msgtoast_nok" class="snackbar-toast color-white m-4 mx-1 px-3 bg-red-dark" data-bs-delay="3500"
          data-bs-autohide="true">
         <i class="fa fa-close color-white"></i>
         <span id="mo_msgtoast_nok-title" class="font-20 font-600 color-white ms-3">Erro</span>
@@ -432,147 +467,52 @@
     </div>
 
     <!-- Instants -->
-    <div id="mo-new-event"
+
+    <div id="mo-menunewevent"
          class="menu menu-box-modal rounded-0"
          data-menu-height="cover"
-         data-menu-width="cover">
-
-
-        <div class="card-top pt-4 ps-3 pe-3">
-            <a href="#" class="float-end close-menu icon icon-s rounded-l bg-theme "><i class="fa fa-times color-red-dark"></i></a>
-        </div>
-        <div class="header-clear-medium"></div>
-
-        <div class="menu-title">
-            <p class="color-highlight font-14 font-700 ">Novo</p>
-            <h1 class="font-25 font-800">Apontamento Individual</h1>
-        </div>
-
-        <div class="d-flex flex-row  justify-content-center">
-            <div class="card2 ">
-                <div class="card-img-top ">
-                    <div class="d-flex justify-content-center text-center">
-                        <!--IMAGE TO INPUT-->
-                        <input id="moblob_input_image" type="file"
-                               multiple accept=".gif,.jpg,.jpeg,.png,.svg"
-                               class="form-control mo-1 bg-transparent">
-                    </div>
-                </div>
-                <div class="card-body d-none">
-                    <ul class="list-group">
-                        <li class="list-group-item border-0 p-0 m-0">
-
-                            <div class="btn-group w-100" role="group">
-                                <a href="#" id="moblob_copyimg" class="btn btn-primary">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-                                    </svg>
-                                </a>
-                                <a href="#" id="moblob_openimg" class="btn btn-primary">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
-                                    </svg>
-                                </a>
-                                <a href="#" class="btn btn-primary ">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M19.35,10.04C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.04C2.34,8.36 0,10.91 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.04M19,18H6A4,4 0 0,1 2,14C2,11.95 3.53,10.24 5.56,10.03L6.63,9.92L7.13,8.97C8.08,7.14 9.94,6 12,6C14.62,6 16.88,7.86 17.39,10.43L17.69,11.93L19.22,12.04C20.78,12.14 22,13.45 22,15A3,3 0 0,1 19,18M8,13H10.55V16H13.45V13H16L12,9L8,13Z" />
-                                    </svg>
-                                </a>
-                                <a href="#" id="moblob_erase" class="btn btn-danger">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8,9H16V19H8V9M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="content">
-            <div class="list-group list-custom-large mb-4 pb-3">
-                <a data-trigger-switch="switch-1d" class="border-0" href="#">
-                    <div class="d-flex">
-                        <div>
-                            <i class="font-16 bg-transparent color-theme">
-                                <svg viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="M17.47 8.67H19V23H17.47V12.6C16.67 12.44 15.92 12.14 15.21 11.71S13.9 10.78 13.39 10.2L12.77 13.27L15 15.47V23H13V17L10.76 14.8L8.89 23H6.73C6.73 23 9.86 7.22 9.89 7.09C10 6.61 10.22 6.24 10.59 6C10.96 5.73 11.33 5.6 11.71 5.6C12.1 5.6 12.46 5.69 12.79 5.87C13.13 6.04 13.39 6.29 13.58 6.61L14.64 8.24C14.93 8.78 15.32 9.25 15.81 9.63S16.86 10.3 17.47 10.5V8.67M8.55 5.89L7.4 5.65C6.83 5.5 6.31 5.62 5.84 5.94C5.38 6.26 5.1 6.7 5 7.28L4.19 11.26C4.16 11.55 4.22 11.81 4.38 12.05C4.54 12.29 4.75 12.42 5 12.46L7.21 12.89L8.55 5.89M13 1C11.9 1 11 1.9 11 3S11.9 5 13 5 15 4.11 15 3 14.11 1 13 1Z" />
-                                </svg>
-                            </i>
-                            <span>Estou visitando o local</span>
-                            <strong>Visitas externas tem mais peso</strong>
-                        </div>
-                    </div>
-                    <div class="custom-control scale-switch ios-switch">
-                        <input type="checkbox" class="ios-input" id="switch-1d">
-                        <label class="custom-control-label" for="switch-1d"></label>
-                    </div>
-                </a>
-                <a data-trigger-switch="switch-2d" class="border-0" href="#">
-                    <div class="d-flex">
-                        <div>
-                            <i class="font-16 bg-transparent color-theme">
-                                <svg viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="M17.06 13C15.2 13 13.64 14.33 13.24 16.1C12.29 15.69 11.42 15.8 10.76 16.09C10.35 14.31 8.79 13 6.94 13C4.77 13 3 14.79 3 17C3 19.21 4.77 21 6.94 21C9 21 10.68 19.38 10.84 17.32C11.18 17.08 12.07 16.63 13.16 17.34C13.34 19.39 15 21 17.06 21C19.23 21 21 19.21 21 17C21 14.79 19.23 13 17.06 13M6.94 19.86C5.38 19.86 4.13 18.58 4.13 17S5.39 14.14 6.94 14.14C8.5 14.14 9.75 15.42 9.75 17S8.5 19.86 6.94 19.86M17.06 19.86C15.5 19.86 14.25 18.58 14.25 17S15.5 14.14 17.06 14.14C18.62 14.14 19.88 15.42 19.88 17S18.61 19.86 17.06 19.86M22 10.5H2V12H22V10.5M15.53 2.63C15.31 2.14 14.75 1.88 14.22 2.05L12 2.79L9.77 2.05L9.72 2.04C9.19 1.89 8.63 2.17 8.43 2.68L6 9H18L15.56 2.68L15.53 2.63Z" />
-                                </svg>
-                            </i>
-                            <span>Modo Incógnito</span>
-                            <strong>Sua ID não é registrada.</strong>
-                        </div>
-                    </div>
-                        <div class="custom-control scale-switch ios-switch">
-                            <input type="checkbox" class="ios-input" id="switch-2d">
-                            <label class="custom-control-label" for="switch-2d"></label>
-                        </div>
-                    
-                </a>
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="d-flex mb-4">
-                <div class="me-2"><img src="images/pictures/faces/1s.png" width="50" class="rounded-s"></div>
-                <div>
-                    <h5>Jack Louder</h5>
-                    <p class="mb-0 mt-n2">22/2/2024, 11:45:07 AM</p>
-                </div>
-                <div class="ms-auto">
-                    <a id="moblob_toblob" href="#" class="close-menu btn btn-full rounded-s gradient-green font-16 font-600 p-3 float-end">
-                        Apontar
-                    </a>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-6">
-                    <a id="moblob_cancelblob" href="#" class="close-menu btn btn-full gradient-red font-12 btn-m font-600 mt-3 rounded-s">Cancelar</a>
-                </div>
-            </div>
-
-        </div>
-
+         data-menu-width="cover"
+        data-menu-load="menu-ptbr-newevent.html">
     </div>
 
-        <!-- Main Menu-->
-        <div id="menu-main" class="menu menu-box-left rounded-0" data-menu-load="menu-main.html" data-menu-width="280" data-menu-active="nav-pages"></div>
+    <!-- Calendar Menu-->
+    <div id="menu-calendar" class="menu menu-box-bottom rounded-m" data-menu-load="menu-ptbr-mocalendar.html" data-menu-height="480"></div>
 
-        <!-- Share Menu-->
-        <div id="menu-share" class="menu menu-box-bottom rounded-m" data-menu-load="menu-share.html" data-menu-height="370"></div>
+    <!-- Filter Menu-->
+    <div id="menu-filter" class="menu menu-box-bottom rounded-m" data-menu-load="menu-ptbr-mofilter.html" data-menu-height="480"></div>
 
-        <!-- Colors Menu-->
-        <div id="menu-colors" class="menu menu-box-bottom rounded-m" data-menu-load="menu-colors.html" data-menu-height="480"></div>
+    <!-- Main Menu-->
+    <div id="menu-main" class="menu menu-box-left rounded-0" data-menu-load="menu-main.html" data-menu-width="280" data-menu-active="nav-pages"></div>
+
+    <!-- Share Menu-->
+    <div id="menu-share" class="menu menu-box-bottom rounded-m" data-menu-load="menu-share.html" data-menu-height="370"></div>
+
+    <!-- Colors Menu-->
+    <div id="menu-colors" class="menu menu-box-bottom rounded-m" data-menu-load="menu-colors.html" data-menu-height="480"></div>
 
 
-        <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
-        <script type="text/javascript" src="scripts/custom.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/custom.js"></script>
 
-        <!-- MapOmega -->
-        <script src="mapomega/mo_mod/mo_blob_putimage/mo_js/mo500_blob_putImage.js"></script>
-        <script src="mapomega/mo_mod/mo_uix/mo_js/mo500_uix.js"></script>
-        <script src="mapomega/mo_io/moio500_app.js"></script>
-        <script src="mapomega/mo500_appstart.js"></script>
+    <!-- MapOmega -->
+    <script src="mapomega/mo_mod/mo_blob_putimage/mo_js/mo500_blob_putImage.js"></script>
+    <script src="mapomega/mo_mod/mo_sc_events/mo_js/mo500_sc_content.js"></script>
+    <script src="mapomega/mo_mod/mo_uix/mo_js/mo500_uix.js"></script>
+    <script src="mapomega/mo_io/moio500_app.js"></script>
+    <script src="mapomega/mo_start/mo500_appstart.js"></script>
 
+    <!--<script>
+        function detectbroswer() {
+            window.onpopstate = function (event) {
+                var dd = Date.now();
+                var crtLocation =
+                    window.location.protocol + "//" +
+                    window.location.host +
+                    window.location.pathname + "?=" + dd;
+                console.log(crtLocation)
+                window.location = crtLocation;
+            }
+        }
+        detectbroswer()
+    </script>-->
 </body>
-
