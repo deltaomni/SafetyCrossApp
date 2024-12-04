@@ -1,488 +1,264 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-741770V4ZG"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-741770V4ZG');
-    </script>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
-    <title>Safety Cross App</title>
-    <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="styles/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
-    <!-- MapOmega -->
-    <link href="mapomega/mo_start/mo500_appstyle.css" rel="stylesheet" />
-    <link rel="manifest" href="_manifest.json">
-    <!--<link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">-->
-    <link rel="apple-touch-icon" sizes="57x57" href="https://www.safetycross.app/app/icons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="https://www.safetycross.app/app/icons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="https://www.safetycross.app/app/icons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="https://www.safetycross.app/app/icons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="https://www.safetycross.app/app/icons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="https://www.safetycross.app/app/icons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="https://www.safetycross.app/app/icons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="https://www.safetycross.app/app/icons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.safetycross.app/app/icons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="https://www.safetycross.app/app/icons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://www.safetycross.app/app/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="https://www.safetycross.app/app/icons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://www.safetycross.app/app/icons/favicon-16x16.png">
-    <!--<link rel="manifest" href="/_manifest.json">-->
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-
-</head>
-
-<body class="theme-light">
-
-    <div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
-
-    <div id="page">
-
-        <div class="header header-fixed header-logo-left">
-            <h2><a href="index.html" class="header-title mo-1">Safety Cross</a></h2>
-            <a href="#" class="spinner-grow text-warning header-icon header-icon-4 mo_blinkEl d-none" role="status">
-                <i class="fas fa-circle"></i>
-            </a>
-
-            <a href="#" class="header-icon icon-l header-icon-2 me-4 color-theme">
-                <!-- Alerts Header -->
-                <svg class="mo-ic" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M12,2L1,21H23M12,6L19.53,19H4.47M11,10V14H13V10M11,16V18H13V16" />
-                </svg>
-                <span class="position-absolute bottom-50 end-0 translate-end p-1 me-2 mb-1 bg-danger rounded-circle">
-                    <span class="visually-hidden">New alerts</span>
-                </span>
-            </a>
-            <a href="#" data-menu="menu-share" class="header-icon icon-l header-icon-1 me-3 color-theme">
-                <!-- Share Header -->
-                <svg class="mo-ic-28" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M14,5V9C7,10 4,15 3,20C5.5,16.5 9,14.9 14,14.9V19L21,12L14,5M16,9.83L18.17,12L16,14.17V12.9H14C11.93,12.9 10.07,13.28 8.34,13.85C9.74,12.46 11.54,11.37 14.28,11L16,10.73V9.83Z" />
-                </svg>
-            </a>
-        </div>
-        <div class="header header-fixed header-logo-center header-auto-show">
-            <h2><a href="index.html" class="header-title mo-1">Supra Ltda.</a></h2>
-            <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-chevron-left"></i></a>
-
-            <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
-            <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-dark"><i class="fas fa-sun"></i></a>
-            <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-light"><i class="fas fa-moon"></i></a>
-            <a href="#" class="spinner-grow text-warning header-icon header-icon-2 mo_blinkEl d-none" role="status">
-                <i class="fas fa-circle"></i>
-            </a>
-        </div>
-
-        <!--<div id="footer-bar" class="footer-bar-6">
-            <a href="index-components.html"><i class="fa fa-layer-group"></i><span>Features</span></a>
-            <a href="index-pages.html" class="active-nav"><i class="fa fa-file"></i><span>Pages</span></a>
-            <a href="index.html" class="mo_1 circle-nav">
-                <i><img width="54" src="mapomega/img/SC_523_Short_24x24.svg" /></i>
-            </a>
-            <a data-menu="menu-cart" href="#"><i class="fa fa-camera"></i><span>Projects</span></a>
-            <a href="#" data-menu="menu-main"><i class="fa fa-bars"></i><span>Menu</span></a>
-        </div>-->
-
-        <div id="footer-bar" class="footer-bar-6">
-            <a href="index-components.html"><i class="fa fa-cog"></i></a>
-            <a data-menu="menu-calendar" href="#" class="active-nav"><i class="fa fa-calendar"></i><span>Período</span></a>
-            <a href="index.html" class="mo_1 circle-nav">
-                <i><img width="54" src="mapomega/img/SC_523_Short_24x24.svg" /></i>
-            </a>
-            <a data-menu="menu-filter" href="#"><i class="fa fa-filter"></i><span>Legenda</span></a>
-            <a href="#" data-menu="menu-main"><i class="fa fa-bars"></i></a>
-        </div>
-
-        <div class="page-title-clear"></div>
-
-        <div class="page-content">
-            <div class="splide story-slider slider-no-dots  mb-0" id="moheader-story-slider">
-                <div class="splide__track">
-                    <div class="splide__list">
-                        <div class="splide__slide text-center active">
-                            <a data-menu="menu-story" href="#">
-                                <img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-light border border-s">
-                                <span class="position-absolute start-50 top-0 me-4 mt-4 icon-l">
-                                    <i class="fa fa-plus-circle"></i>
-                                </span>
-                                <br><span class="d-block pt-2 font-12 color-theme opacity-60">Consolidado</span>
-                            </a>
-                        </div>
-                        <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-dark-dark border border-s"><br><span class="d-block pt-2 font-12 color-theme opacity-60">GER MNT 1</span></a></div>
-                        <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-warning border border-s"><br><span class="d-block pt-2 font-12 color-theme opacity-60">GER MNT 2</span></a></div>
-                        <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-primary border border-s"><br><span class="d-block pt-2 font-12 color-theme opacity-60">MNT 1</span></a></div>
-                        <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-dark-light border border-s"><br><span class="d-block pt-2 font-12 color-theme opacity-60">MNT 2</span></a></div>
-                        <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-fade-pink2-dark border border-s"><br><span class="d-block pt-2 font-12 color-theme opacity-60">MNT 3</span></a></div>
-                        <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-success border border-s"><br><span class="d-block pt-2 font-12 color-theme opacity-60">DIR OPER</span></a></div>
-                        <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-yellow-light border border-s"><br><span class="d-block pt-2 font-12 color-theme opacity-60">CAVA 1</span></a></div>
-                        <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-blue-dark border border-s"><br><span class="d-block pt-2 font-12 color-theme opacity-60">CAVA 2</span></a></div>
-                        <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-fade-teal-dark border border-s"><br><span class="d-block pt-2 font-12 color-theme opacity-60">CAVA 3</span></a></div>
-                        <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-brown-dark border border-s"><br><span class="d-block pt-2 font-12 color-theme opacity-60">RES 1</span></a></div>
-                        <div class="splide__slide text-center"><a data-menu="menu-story" href="#"><img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle mx-auto mb-n4 bg-green-dark border border-s"><br><span class="d-block pt-2 font-12 color-theme opacity-60">RES 2</span></a></div>
-                    </div>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>New Age - Start Bootstrap Theme</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Start of HubSpot Embed Code -->
+        <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/48096263.js"></script>
+        <!-- End of HubSpot Embed Code -->
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+            <div class="container px-5">
+                <a class="navbar-brand fw-bold" href="#page-top">SAFETYCROSS.APP</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="bi-list"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="#features">Features</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="#download">Download</a></li>
+                    </ul>
+                    <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+                        <span class="d-flex align-items-center">
+                            <i class="bi-chat-text-fill me-2"></i>
+                            <span class="small">Wait List</span>
+                        </span>
+                    </button>
                 </div>
             </div>
-
-            <div class="card card-style bg-transparent shadow-0 border-0 m-0 rounded-0 ">
-                <div class="content mb-0">
-
-                    <div class="d-flex align-items-center flex-fill mb-3">
-                        <div class="d-flex flex-column flex-fill">
-                            <p class="mb-n1 color-highlight opacity-100 font-600">
-                                <i class="fa fa-map-marker me-2"></i>São Paulo, SP
-                            </p>
-                            <h1 class="color-dark-dark">Supra Ltda.</h1>
-                        </div>
-
-                        <!-- Pointer -->
-                        <div class="col-3 text-center align-self-center">
-                            <a id="mo_event_pointer" href="#"
-                               data-menu="mo-menunewevent"
-                               class="icon icon-xxl rounded-xl bg-highlight border border-3 border-highlight-light icon-border text-light">
-
-                                <i class="fa fa-hand-point-right"></i>
-                                <span class="position-absolute start-50 top-0 me-4 mt-4 icon-l">
-                                    <i class="fa fa-plus-circle color-red-light"></i>
-                                </span>
-                            </a>
+        </nav>
+        <!-- Mashead header-->
+        <header class="masthead">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6">
+                        <!-- Mashead text and app badges-->
+                        <div class="mb-5 mb-lg-0 text-center text-lg-start">
+                            <h1 class="display-1 lh-1 mb-3">Risk Intelligence</h1>
+                            <p class="lead fw-normal text-muted mb-5">Stop risks in their tracks—prevent accidents before they happen!</p>
+                            <div class="d-flex flex-column flex-lg-row align-items-center">
+                                <a class="me-lg-3 mb-4 mb-lg-0" href="#!" data-bs-toggle="modal" data-bs-target="#feedbackModal"><img class="app-badge" src="assets/img/PWA-dark-en.svg" alt="..." /></a>
+                                <!--<a href="#!"><img class="app-badge" src="assets/img/app-store-badge.svg" alt="..." /></a>-->
+                            </div>
                         </div>
                     </div>
-                    <div class="row mo_blob_content">
-                        <div class="col-12 text-center">
-                            <!-- SAFETY CROSS -->
-                            <img class="img-fluid" src="mapomega/img/sc_sample1.svg" />
-                            <!--<img class="img-fluid" src="https://safetycross.blob.core.windows.net/blank/2024-1.png" />-->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dias sem Acidentes -->
-                <div class="card card-style mo_blob_content">
-                    <div class="content my-2">
-                        <p class="mb-2 color-highlight font-600">Dias sem acidentes</p>
-                        <div class="d-flex">
-                            <a href="page-appptbr-dashboard.html" id="mouix_dashboard" class="d-flex flex-fill">
-                                <div class="d-flex flex-row flex-fill">
-                                    <div class="flex-fill text-center align-self-center text-success">
-                                        <svg class="mo-ic-32" viewBox="0 0 24 24">
-                                            <path fill="currentColor" d="M18 2C17.1 2 16 3 16 4H8C8 3 6.9 2 6 2H2V11C2 12 3 13 4 13H6.2C6.6 15 7.9 16.7 11 17V19.08C8 19.54 8 22 8 22H16C16 22 16 19.54 13 19.08V17C16.1 16.7 17.4 15 17.8 13H20C21 13 22 12 22 11V2H18M6 11H4V4H6V11M16 11.5C16 13.43 15.42 15 12 15C8.59 15 8 13.43 8 11.5V6H16V11.5M20 11H18V4H20V11Z" />
-                                        </svg>
-                                        <div class="text-success mb-0 font-24 font-700">
-                                            188
-                                        </div>
-                                        Recorde
-                                    </div>
-                                    <div class="flex-fill text-center align-self-center text-secondary">
-                                        <svg class="mo-ic-32" viewBox="0 0 24 24">
-                                            <path fill="currentColor" d="M12,2L1,21H23M12,6L19.53,19H4.47M11,10V14H13V10M11,16V18H13V16" />
-                                        </svg>
-                                        <div class="mb-0 font-24 font-700">
-                                            0
-                                        </div>
-                                        Último
+                    <div class="col-lg-6">
+                        <!-- Masthead device mockup feature-->
+                        <div class="masthead-device-mockup">
+                            <svg class="circle" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="circleGradient" gradientTransform="rotate(45)">
+                                        <stop class="gradient-start-color" offset="0%"></stop>
+                                        <stop class="gradient-end-color" offset="100%"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="50" cy="50" r="50"></circle>
+                            </svg><svg class="shape-1 d-none d-sm-block" viewBox="0 0 240.83 240.83" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="-32.54" y="78.39" width="305.92" height="84.05" rx="42.03" transform="translate(120.42 -49.88) rotate(45)"></rect>
+                                <rect x="-32.54" y="78.39" width="305.92" height="84.05" rx="42.03" transform="translate(-49.88 120.42) rotate(-45)"></rect>
+                            </svg><svg class="shape-2 d-none d-sm-block" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"></circle></svg>
+                            <div class="device-wrapper">
+                                <div class="device" data-device="iPhoneX" data-orientation="portrait" data-color="black">
+                                    <div class="screen bg-black">
+                                        <!-- PUT CONTENTS HERE:-->
+                                        <!-- * * This can be a video, image, or just about anything else.-->
+                                        <!-- * * Set the max width of your media to 100% and the height to-->
+                                        <!-- * * 100% like the demo example below.-->
+                                        <video muted="muted" autoplay="" loop="" style="max-width: 100%; height: 100%"><source src="assets/img/demo-screen.mp4" type="video/mp4" /></video>
                                     </div>
                                 </div>
-                            </a>
-                            <div class="col-4 text-center align-self-center text-danger">
-                                <svg class="mo-ic-40" viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="M6,3A1,1 0 0,1 7,4V4.88C8.06,4.44 9.5,4 11,4C14,4 14,6 16,6C19,6 20,4 20,4V12C20,12 19,14 16,14C13,14 13,12 11,12C8,12 7,14 7,14V21H5V4A1,1 0 0,1 6,3Z" />
-                                </svg>
-                                <p class="m-0 mb-n2">Bandeira</p>
-                                <p class="m-0">Vermelha</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="card card-style">
-                    <div class="content mb-0">
-
-                        <div id="mouix_SelectedItem" class="d-flex mb-3 mo_blob_content">
-                            <div class="d-flex flex-row flex-fill bg-transparent p-2 rounded-2">
-
-                                <div class="me-2 align-self-center">
-                                    <img src="mapomega/img/logo_supra.svg" width="60" class="rounded-circle bg-white">
+            </div>
+        </header>
+        <!-- Quote/testimonial aside-->
+        <aside class="text-center bg-gradient-primary-to-secondary">
+            <div class="container px-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-xl-8">
+                        <div class="h2 fs-1 text-white mb-4">"An intuitive solution to a common problem that we all face, wrapped up in a single app!"</div>
+                        <img src="assets/img/tnw-logo.svg" alt="..." style="height: 3rem" />
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- App features section-->
+        <section id="features">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-8 order-lg-1 mb-5 mb-lg-0">
+                        <div class="container-fluid px-5">
+                            <div class="row gx-5">
+                                <div class="col-md-6 mb-5">
+                                    <!-- Feature item-->
+                                    <div class="text-center">
+                                        <i class="bi-phone icon-feature text-gradient d-block mb-3"></i>
+                                        <h3 class="font-alt">Mobile</h3>
+                                        <p class="text-muted mb-0">Ready to use, no Download required!</p>
+                                    </div>
                                 </div>
-
-                                <div class="d-flex flex-column">
-                                    <p class="badge mb-n1 bg-red-dark font-14 font-700">SEGUINDO</p>
-                                    <p class="mt-1 mb-0 color-theme font-12 font-600">Consolidado</p>
-                                    <p class="my-n2 color-theme font-12 font-600">Acidentes Obras</p>
+                                <div class="col-md-6 mb-5">
+                                    <!-- Feature item-->
+                                    <div class="text-center">
+                                        <i class="bi-camera icon-feature text-gradient d-block mb-3"></i>
+                                        <h3 class="font-alt">Point! Shot!</h3>
+                                        <p class="text-muted mb-0">Capture Hazards, risks, unsafe acts, incidents, accidents, wastes or anything else!</p>
+                                    </div>
                                 </div>
-
                             </div>
-                            <div class="col-2 d-flex flex-row align-items-center">
-                                <a id="mouix_setPin" href="#" class="position-relative color-theme opacity-25">
-
-                                    <svg class="mo-ic-40" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M16,12V4H17V2H7V4H8V12L6,14V16H11.2V22H12.8V16H18V14L16,12Z" />
-                                    </svg>
-
-                                </a>
-                                <!--<a href="#" class="icon icon-xs bg-theme rounded-xl float-end flex-grow-1"><i class="fa color-theme fa-calendar"></i></a>
-                                <a href="#" class="icon icon-xs bg-theme rounded-xl float-end"><i class="fa color-theme fa-filter"></i></a>-->
+                            <div class="row">
+                                <div class="col-md-6 mb-5 mb-md-0">
+                                    <!-- Feature item-->
+                                    <div class="text-center">
+                                        <i class="bi-heart icon-feature text-gradient d-block mb-3"></i>
+                                        <h3 class="font-alt">Free to Use</h3>
+                                        <p class="text-muted mb-0">Fast adoption, no training curve!</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <!-- Feature item-->
+                                    <div class="text-center">
+                                        <i class="bi-patch-check icon-feature text-gradient d-block mb-3"></i>
+                                        <h3 class="font-alt">Controlled</h3>
+                                        <p class="text-muted mb-0">You're in control of all the content!</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="divider mb-2 mo_blob_content"></div>
-
-                        <div class="d-flex flex-row p-2">
-                            <div>
-                                <p class="color-highlight font-600 mb-n1 font-14">março 2024</p>
-                                <h4>Últimos Apontamentos</h4>
-                            </div>
-                            <div class="flex-fill text-end align-self-center">
-                                <a id="mo-switch-images" href="#" class="icon icon-xxl color-theme">
-                                    <i class="fa fa-th-list"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="content m-0 p-0 mb-3">
-                            <div id="mo_blob_content"
-                                 sccontent-toggle="mo_blob_content"
-                                 class="mo_blob_content d-flex flex-row flex-wrap justify-content-center">
-                                <!-- Blob Images -->
-                            </div>
-                            <div id="mo_card_content" sccontent-toggle="mo_blob_content" class="mo_card_content d-flex flex-row flex-wrap justify-content-center d-none">
-                                <!-- Blob content -->
-                                <div class="mt-n3 ">
-                                    <div class="content">
-                                        <div class="d-flex">
-                                            <div class="align-self-center">
-                                                <img src="mapomega/img/logo_supra.svg" class="rounded-xl me-3" width="35">
-                                            </div>
-                                            <div class="align-self-center">
-                                                <h5 class="font-14 font-600 mb-n1">Consolidado Acidentes Obras</h5>
-                                                <p class="mb-0 font-11">Supra Ltda., São Paulo, SP</p>
-                                            </div>
-                                            <div class="align-self-center ms-auto">
-                                                <a href="#" data-menu="menu-controls" class="icon icon-xxs color-theme"><i class="fa fa-ellipsis-h"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="https://safetycross.blob.core.windows.net/scapp/0dfa9635-201e-4696-984e-49e6e4c243cd.jpg" class="img-fluid">
-                                    <div class="content">
-                                        <div class="d-flex ms-n2 pb-1">
-                                            <div>
-                                                <a href="#" class="icon icon-xs color-theme"><i class="far fa-heart font-20"></i></a>
-                                            </div>
-                                            <div>
-                                                <a href="#" class="icon icon-xs color-theme"><i class="far fa-comment font-20"></i></a>
-                                            </div>
-                                            <div>
-                                                <a href="#" class="icon icon-xs color-theme"><i class="far fa-paper-plane font-20"></i></a>
-                                            </div>
-                                            <div class="ms-auto">
-                                                <a href="#" class="icon icon-xs color-theme"><i class="far fa-bookmark font-20"></i></a>
-                                            </div>
-                                        </div>
-                                        <h5>531 likes</h5>
-                                        <p class="line-height-sm mb-1"><strong class="color-theme font-600">karla_black88</strong> got my photos featured on <storng>@envato_elements</storng>. Thanks guys!</p>
-                                        <p class="line-height-sm mb-1"><strong class="color-theme font-600">gina_rose</strong> congrats Karla! 👍🏻</p>
-                                        <p class="line-height-sm mb-1"><strong class="color-theme font-600">dana_doe</strong> well deserved ❤️</p>
-                                        <span class="font-300 font-11 pt-2">2 DAYS AGO</span>
+                    </div>
+                    <div class="col-lg-4 order-lg-0">
+                        <!-- Features section device mockup-->
+                        <div class="features-device-mockup">
+                            <svg class="circle" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="circleGradient" gradientTransform="rotate(45)">
+                                        <stop class="gradient-start-color" offset="0%"></stop>
+                                        <stop class="gradient-end-color" offset="100%"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="50" cy="50" r="50"></circle>
+                            </svg><svg class="shape-1 d-none d-sm-block" viewBox="0 0 240.83 240.83" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="-32.54" y="78.39" width="305.92" height="84.05" rx="42.03" transform="translate(120.42 -49.88) rotate(45)"></rect>
+                                <rect x="-32.54" y="78.39" width="305.92" height="84.05" rx="42.03" transform="translate(-49.88 120.42) rotate(-45)"></rect>
+                            </svg><svg class="shape-2 d-none d-sm-block" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"></circle></svg>
+                            <div class="device-wrapper">
+                                <div class="device" data-device="iPhoneX" data-orientation="portrait" data-color="black">
+                                    <div class="screen bg-black">
+                                        <!-- PUT CONTENTS HERE:-->
+                                        <!-- * * This can be a video, image, or just about anything else.-->
+                                        <!-- * * Set the max width of your media to 100% and the height to-->
+                                        <!-- * * 100% like the demo example below.-->
+                                        <video muted="muted" autoplay="" loop="" style="max-width: 100%; height: 100%"><source src="assets/img/demo-screen.mp4" type="video/mp4" /></video>
                                     </div>
                                 </div>
-
-                                <div class="mt-n3 ">
-                                    <div class="content">
-                                        <div class="d-flex">
-                                            <div class="align-self-center">
-                                                <img src="mapomega/img/logo_supra.svg" class="rounded-xl me-3 bg-dark-dark" width="35">
-                                            </div>
-                                            <div class="align-self-center">
-                                                <h5 class="font-14 font-600 mb-n1">GER MNT 1 Acidentes Oficina</h5>
-                                                <p class="mb-0 font-11">Supra Ltda., São Paulo, SP</p>
-                                            </div>
-                                            <div class="align-self-center ms-auto">
-                                                <a href="#" data-menu="menu-controls" class="icon icon-xxs color-theme"><i class="fa fa-ellipsis-h"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="https://safetycross.blob.core.windows.net/scapp/80f4a17a-e51c-4b06-9d04-f3106f87e797.jpg" class="img-fluid">
-                                    <div class="content">
-                                        <div class="d-flex ms-n2 pb-1">
-                                            <div>
-                                                <a href="#" class="icon icon-xs color-theme"><i class="far fa-heart font-20"></i></a>
-                                            </div>
-                                            <div>
-                                                <a href="#" class="icon icon-xs color-theme"><i class="far fa-comment font-20"></i></a>
-                                            </div>
-                                            <div>
-                                                <a href="#" class="icon icon-xs color-theme"><i class="far fa-paper-plane font-20"></i></a>
-                                            </div>
-                                            <div class="ms-auto">
-                                                <a href="#" class="icon icon-xs color-theme"><i class="far fa-bookmark font-20"></i></a>
-                                            </div>
-                                        </div>
-                                        <h5>531 likes</h5>
-                                        <p class="line-height-sm mb-1"><strong class="color-theme font-600">karla_black88</strong> got my photos featured on <storng>@envato_elements</storng>. Thanks guys!</p>
-                                        <p class="line-height-sm mb-1"><strong class="color-theme font-600">gina_rose</strong> congrats Karla! 👍🏻</p>
-                                        <p class="line-height-sm mb-1"><strong class="color-theme font-600">dana_doe</strong> well deserved ❤️</p>
-                                        <span class="font-300 font-11 pt-2">2 DAYS AGO</span>
-                                    </div>
-                                </div>
-
-                                <div class="mt-n3 ">
-                                    <div class="content">
-                                        <div class="d-flex">
-                                            <div class="align-self-center">
-                                                <img src="mapomega/img/logo_supra.svg" class="rounded-xl me-3 bg-warning" width="35">
-                                            </div>
-                                            <div class="align-self-center">
-                                                <h5 class="font-14 font-600 mb-n1 ">GER MNT 2 Acidentes Oficina</h5>
-                                                <p class="mb-0 font-11">Supra Ltda., São José dos Campos, SP</p>
-                                            </div>
-                                            <div class="align-self-center ms-auto">
-                                                <a href="#" data-menu="menu-controls" class="icon icon-xxs color-theme"><i class="fa fa-ellipsis-h"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="https://safetycross.blob.core.windows.net/scapp/3fa79358-4a17-4c62-ad18-4fa81a6a62e4.jpg" class="img-fluid">
-                                    <div class="content">
-                                        <div class="d-flex ms-n2 pb-1">
-                                            <div>
-                                                <a href="#" class="icon icon-xs color-theme"><i class="far fa-heart font-20"></i></a>
-                                            </div>
-                                            <div>
-                                                <a href="#" class="icon icon-xs color-theme"><i class="far fa-comment font-20"></i></a>
-                                            </div>
-                                            <div>
-                                                <a href="#" class="icon icon-xs color-theme"><i class="far fa-paper-plane font-20"></i></a>
-                                            </div>
-                                            <div class="ms-auto">
-                                                <a href="#" class="icon icon-xs color-theme"><i class="far fa-bookmark font-20"></i></a>
-                                            </div>
-                                        </div>
-                                        <h5>531 likes</h5>
-                                        <p class="line-height-sm mb-1"><strong class="color-theme font-600">karla_black88</strong> got my photos featured on <storng>@envato_elements</storng>. Thanks guys!</p>
-                                        <p class="line-height-sm mb-1"><strong class="color-theme font-600">gina_rose</strong> congrats Karla! 👍🏻</p>
-                                        <p class="line-height-sm mb-1"><strong class="color-theme font-600">dana_doe</strong> well deserved ❤️</p>
-                                        <span class="font-300 font-11 pt-2">2 DAYS AGO</span>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <a href="https://wa.me/5521996485172?text=*Emergência:*%20Safety%20Cross%20no%20Local%20L1234!"
-                   class="default-link card card-style mobg-whatsapp"
-                   data-card-height="120">
-                    <div class="card-center p-2">
-                        <div class="content m-1">
-                            <div class="d-flex flex-row">
-                                <div>
-                                    <p class="color-white mb-n2 font-17 pb-1">
-                                        Linha direta
-                                    </p>
-                                    <h1 class="color-white font-27 mb-n2 py-1">Emergência</h1>
-                                    <h6 class="color-red-dark font-16 font-600 pt-1">Aperte em caso de emergência</h6>
-                                </div>
-                            </div>
-                        </div>
+            </div>
+        </section>
+        <!-- Basic features section-->
+        <section class="bg-light">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
+                    <div class="col-12 col-lg-5">
+                        <h2 class="display-4 lh-1 mb-4">Enter a new age of Risk Mitigation</h2>
+                        <p class="lead fw-normal text-muted mb-5 mb-lg-0">
+                            "Your shop floor holds the key to safety—let your people and machines share their insights. Our AI agent will analyze the data and deliver real-time safety reports, alerts, and actionable priorities right to your hands."
+                        </p>
                     </div>
-                    <div class="card-overlay bg-whatsapp opacity-50"></div>
-                </a>
-
-                <div data-menu-load="menu-footer.html"></div>
-
+                    <div class="col-sm-8 col-md-6">
+                        <div class="px-5 px-sm-0"><img class="img-fluid rounded-circle" src="assets/img/Safety_IA.webp" alt="..." /></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Call to action section-->
+        <section class="cta">
+            <div class="cta-content">
+                <div class="container px-5">
+                    <h2 class="text-white display-1 lh-1 mb-4">
+                        Stop waiting.
+                        <br />
+                        Start eliminating.
+                    </h2>
+                    <a class="btn btn-outline-light py-3 px-4 rounded-pill" href="#" data-bs-toggle="modal" data-bs-target="#feedbackModal">Download for free</a>
+                </div>
+            </div>
+        </section>
+        <!-- App badge section-->
+        <section class="bg-gradient-primary-to-secondary" id="download">
+            <div class="container px-5">
+                <h2 class="text-center text-white font-alt mb-4">Get the app now!</h2>
+                <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center">
+                    <!--<a class="me-lg-3 mb-4 mb-lg-0" href="#!"><img class="app-badge" src="assets/img/google-play-badge.svg" alt="..." /></a>-->
+                    <a href="#!" data-bs-toggle="modal" data-bs-target="#feedbackModal"><img class="app-badge" src="assets/img/PWA-dark-en.svg" alt="..." /></a>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="bg-black text-center py-5">
+            <div class="container px-5">
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <a href="https://www.mapomega.com" target="_blank"><img height="100" src="assets/img/MapOmega_Tecnologia_Logo_Short_1200x1200.png" /></a>
+                    </div>
+                </div>
+            </div>
+                <div class="container px-5">
+                    <div class="text-white-50 small">
+                        <div class="mb-2">&copy; safetycross.app (C)2024 All Rights Reserved.</div>
+                        <a href="#!">Privacy</a>
+                        <span class="mx-1">&middot;</span>
+                        <a href="#!">Terms</a>
+                        <span class="mx-1">&middot;</span>
+                        <a href="#!">FAQ</a>
+                    </div>
+                </div>
+        </footer>
+        <!-- Feedback Modal-->
+        <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-gradient-primary-to-secondary p-4">
+                        <h5 class="modal-title font-alt text-white" id="feedbackModalLabel">Enter Wait List</h5>
+                        <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body border-0 p-4">
+                        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+                        <script>
+                            hbspt.forms.create({
+                                portalId: "48096263",
+                                formId: "afab0e1a-5c81-4a5b-b6db-165397bba4ef"
+                            });
+                        </script>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
 
-
-    <!--Toasts-->
-    <div id="mo_msgtoast_ok" class="snackbar-toast m-4  p-3 bg-green-dark z-3" data-bs-delay="3500"
-         data-bs-autohide="true">
-        <i class="fa fa-check color-white"></i>
-        <span id="mo_msgtoast_ok-title" class="font-16 font-600 color-white ms-3">Carregamento Completado</span>
-        <div id="mo_msgtoast_ok-body" class="d-flexmo-lh-unset color-white"></div>
-    </div>
-    <div id="mo_msgtoast_nok" class="snackbar-toast color-white m-4 mx-1 px-3 bg-red-dark" data-bs-delay="3500"
-         data-bs-autohide="true">
-        <i class="fa fa-close color-white"></i>
-        <span id="mo_msgtoast_nok-title" class="font-20 font-600 color-white ms-3">Erro</span>
-    </div>
-
-    <!-- Fixado/Removido Toast -->
-    <div id="mo_pintoast_ok" class="snackbar-toast menu-box-bottom rounded-m bg-theme border border-highlight" data-bs-delay="3500"
-         data-bs-autohide="true" style="height:360px; bottom:0 !important;">
-        <div class="text-center">
-            <i class="fa fa-check-circle color-green-dark fa-5x scale-box px-3 py-2"></i>
-            <div id="mo-pin-fixed">
-                <h1 class="pt-2 mb-0">FIXADO</h1>
-                <p class="boxed-text-xl mb-0 font-14">Este ítem foi <strong>FIXADO</strong> na página de entrada</p>
-            </div>
-            <div id="mo-pin-removed" class="d-none">
-                <h1 class="pt-2 mb-0">REMOVIDO</h1>
-                <p class="boxed-text-xl mb-0 font-14">Este ítem foi <strong>REMOVIDO</strong> na página de entrada</p>
-            </div>
-            <div class="row m-0">
-                <div id="mo_pintoast_ok-body" class="d-flex mb-3 mo-lh-unset text-start"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Instants -->
-
-    <div id="mo-menunewevent"
-         class="menu menu-box-modal rounded-0"
-         data-menu-height="cover"
-         data-menu-width="cover"
-        data-menu-load="menu-ptbr-newevent.html">
-    </div>
-
-    <!-- Calendar Menu-->
-    <div id="menu-calendar" class="menu menu-box-bottom rounded-m" data-menu-load="menu-ptbr-mocalendar.html" data-menu-height="480"></div>
-
-    <!-- Filter Menu-->
-    <div id="menu-filter" class="menu menu-box-bottom rounded-m" data-menu-load="menu-ptbr-mofilter.html" data-menu-height="480"></div>
-
-    <!-- Main Menu-->
-    <div id="menu-main" class="menu menu-box-left rounded-0" data-menu-load="menu-main.html" data-menu-width="280" data-menu-active="nav-pages"></div>
-
-    <!-- Share Menu-->
-    <div id="menu-share" class="menu menu-box-bottom rounded-m" data-menu-load="menu-share.html" data-menu-height="370"></div>
-
-    <!-- Colors Menu-->
-    <div id="menu-colors" class="menu menu-box-bottom rounded-m" data-menu-load="menu-colors.html" data-menu-height="480"></div>
-
-
-    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
-    <script type="text/javascript" src="scripts/custom.js"></script>
-
-    <!-- MapOmega -->
-    <script src="mapomega/mo_mod/mo_blob_putimage/mo_js/mo500_blob_putImage.js"></script>
-    <script src="mapomega/mo_mod/mo_sc_events/mo_js/mo500_sc_content.js"></script>
-    <script src="mapomega/mo_mod/mo_uix/mo_js/mo500_uix.js"></script>
-    <script src="mapomega/mo_io/moio500_app.js"></script>
-    <script src="mapomega/mo_start/mo500_appstart.js"></script>
-
-    <!--<script>
-        function detectbroswer() {
-            window.onpopstate = function (event) {
-                var dd = Date.now();
-                var crtLocation =
-                    window.location.protocol + "//" +
-                    window.location.host +
-                    window.location.pathname + "?=" + dd;
-                console.log(crtLocation)
-                window.location = crtLocation;
-            }
-        }
-        detectbroswer()
-    </script>-->
-</body>
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
